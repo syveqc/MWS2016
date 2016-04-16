@@ -1,0 +1,527 @@
+In diesem Abschnitt werden wir uns drei Fragen stellen:
+	\begin{itemize}
+		\item Was können wir messen?
+		\item Wie können wir messen?
+		\item Wie können wir Maße ökonomisch definieren?
+	\end{itemize}
+	
+	\section{Mengensysteme}
+		\begin{defi}
+			Sei $\Omega$ eine beliebige Menge. Dann heißt $\mf{C}\subseteq 2^\Omega$ ein Mengensystem (über $\Omega$).
+		\end{defi}
+		
+		\begin{defi} [Semiring]
+			Sei $\mf{T}$ ein nichtleeres Mengensystem über $\Omega$. Dann heißt $\mf{T}$ Semiring (im weiteren Sinn), falls
+			\begin{enumerate}
+				\item Durchschnittsstabilität:
+				\[ A,B\in\mf{T}\Rightarrow A\cap B\in\mf{T} \]
+				\item Leiterbildung:
+				\[ A,B\in\mf{T}, A\subseteq B\Rightarrow \exists n\in\N: C_1,...,C_n\in\mf{T}: \forall i\neq j: C_i\cap C_j=\varnothing, A\setminus B=\bigcup_{i=1}^n C_i \]
+			\end{enumerate}
+			gilt zusätzlich für die Leiter
+			\[ \forall k=1,...,n: A\cup\bigcup_{i=1}^k C_i\in\mf{T}, \]
+			so spricht man von einem Semiring im engeren Sinn.
+		\end{defi}
+		
+		\begin{defi}[Ring]
+			Sei $\mf{R}$ ein nichtleeres Mengensystem über $\Omega$. $\mf{R}$ heißt Ring, falls
+			\begin{enumerate}
+				\item Differenzenstabilität:
+				\[ A,B\in\mf{R}\Rightarrow B\setminus A\in\mf{R} \]
+				\item Vereinigungsstabilität:
+				\[ A,B\in\mf{R}\Rightarrow A\cup B\in\mf{R} \]
+			\end{enumerate}
+		\end{defi}
+		
+		\begin{defi}[Sigmaring]
+			Sei $\mf{R}_\sigma$ ein nichtleeres Mengensystem über $\Omega$. $\mf{R}_\sigma$ heißt Sigmaring, falls
+			\begin{enumerate}
+				\item Differenzenstabilität:
+				\[ A,B\in\mf{R}_\sigma\Rightarrow B\setminus A\in\mf{R}_\sigma \]
+				\item Sigma-Vereinigungsstabilität:
+				\[ A_n\in\mf{R}_\sigma\Rightarrow \bigcup_{n\in\N}A_n\in\mf{R}_\sigma \]
+			\end{enumerate}
+		\end{defi}
+		
+		\begin{defi}[Algebra]
+			Sei $\mf{A}$ ein nichtleeres Mengensystem über $\Omega$. $\mf{A}$ heißt Ring, falls
+			\begin{enumerate}
+				\item Abgeschlossenheit bzgl. Komplementbildung:
+				\[ A\in\mf{A}\Rightarrow A^c\in\mf{A} \]
+				\item Vereinigungsstabilität:
+				\[ A,B\in\mf{A}\Rightarrow A\cup B\in\mf{A} \]
+			\end{enumerate}
+		\end{defi}
+		
+		\begin{defi}[Dynkin System]
+			Sei $\mf{D}$ ein nichtleeres Mengensystem über $\Omega$. $\mf{D}$ heißt Dynkin-System (im weiteren Sinn), falls
+			\begin{enumerate}
+				\item Sigmaadditivität:
+					\[A_i\in\mf{D}: A_i \text{ disjunkt}\Rightarrow \bigcup_{i\in\N} A_i\in\mf{D}\] 
+				\item Differenzenstabilität:
+					\[ \forall A,B\subseteq \Omega: A,B\in\mf{D}\Rightarrow B\setminus A\in\mf{D}\]
+			\end{enumerate}
+			Ist zusätzlich noch
+			\[ \Omega\in\mf{D} \]
+			erfüllt, so spricht man von einem Dynkin-System im engeren Sinn.
+		\end{defi}
+	
+	\section{Maße und Inhalte}
+		\begin{defi}
+			Ein Inhalt $\mu$ auf einem Mengensystem $\mathfrak{C}$ heißt endlich, wenn für alle $A\in C$:
+			\[ \mu(A)<\infty \]
+		\end{defi}
+		\begin{defi}
+			Ein Maß $\mu$ auf $C$ heißt sigmaendlich, wenn für jedes $A\in C$ Mengen $A_n\in C, n\in \N$ existieren mit $\mu(A_n)<\infty, A\subseteq \bigcup_{n\in\N} A_n$.
+		\end{defi}
+		\begin{defi}
+			Ein Inhalt $\mu$ auf $C$ heißt totalendlich, wenn
+			\[ \Omega\in C\land \mu(\Omega)<\infty \]
+		\end{defi}
+		\begin{defi}
+			Ein Inhalt $\mu$ auf $C$ heißt total sigmaendlich, wenn es $A_n\in C, n\in \N$ gibt mit $\mu(A_n)<\infty$ und $\Omega\subseteq \bigcup_{n\in \N} A_n$. 
+		\end{defi}
+		\begin{defi}
+			$A\in C$ hat sigmaendliches Maß ($A$ ist sigmaendlich), wen es $A_n\in C, n\in\N: \mu(A_n)<\infty$ und $A\subseteq \bigcup A_n$. 
+		\end{defi}
+		\begin{defi}
+			$\mu$ heißt Wahrscheinlichkeitsmaß, wenn $\mu(\Omega)=1$.
+		\end{defi}
+		\begin{bsp}
+			Sei $\Omega\neq\varnothing$ endlich, $C=2^\Omega, \mu(A)=\frac{|A|}{|\Omega|}$.
+		\end{bsp}
+		\begin{bsp}
+			Sei $\Omega=\{1,2,3,4,5,6\}$, also ein "`fairer Würfel"'.
+			\end{bsp}
+		\begin{bsp}
+			Sei $\Omega=\{(1,1), (1,2),...,(2,1),(2,2),...,(6,6)\}$, also würfeln mit zwei Würfeln, Würfel sind unterscheidbar. 
+		\end{bsp}
+		\begin{defi}
+			Sei $\Omega\neq\varnothing$ beliebige Menge und $\ms{S}$ eine Sigmaalgebra über $\Omega$. Dann heißt $(\Omega, \ms{S})$ Messraum. 
+		\end{defi}
+		\begin{defi}
+			Sei $\mu$ ein Maß auf $\ms{S}$ und $(\Omega, \ms{S})$ Messraum. Dann heißt $(\Omega, \ms{S}, \mu)$ Maßraum. 
+		\end{defi}
+		\begin{bsp}
+			$(\Omega, 2^\Omega, \mu)$, $\Omega\neq\varnothing$ endlich, $C=2^\Omega, \mu(A)=\frac{|A|}{|\Omega|}$ ist der Laplace-Wahrscheinlichkeitsraum.
+		\end{bsp}
+		\begin{satz}
+			Seien $\mu_n$ Inhalte auf $\ms{C}$, und existiere $\mu(A)=\lim_{n\to\infty} \mu_n(A)$. Dann ist $\mu$ ein Inhalt. 
+		\end{satz}
+		\begin{bew}
+			$A=\sum_{i=1}^k A_i$, $\mu(A)=\sum_{i=1}^k \mu_n(A_i)$, für $n\to\infty$ gehen beide Seiten gegen $\mu$, stimmt also. 
+		\end{bew}
+		\begin{satz}[Satz von Vitali-Hahn Saks:]
+			Wenn $\ms{C}$ ein Sigmaring ist und $\mu_n$ endliche Maße und für alle $A\in\ms{C}: \mu(A)=\lim_{n\to\infty} \mu_n(A)$, dann ist $\mu$ auch ein Maß. 
+		\end{satz}
+		\begin{bew}
+			noch nicht, Eigenschaften fehlen noch. 
+		\end{bew}
+		\begin{satz}
+			Sei $\mu$ ein Inhalt/Maß auf einem Ring. Dann gilt:
+			\begin{enumerate}
+				\item Monotonie: 
+				\[ A,B\in\ms{R}, A\subseteq B\Rightarrow \mu(A)\le \mu(B) \]
+				\item Additionstheorem:
+				\[ \mu(A\cup B)=\mu(A)+\mu(B)-\mu(A\cap B) \]
+				\item Allgemeineres Additionstheorem:
+				\begin{align*}
+				\mu\left(\bigcup_{i=1}^n A_i\right)&=\sum_{J\subseteq\{1,...,n\}, J\neq \varnothing} (-1)^{|J|-1}\mu\left(\bigcap_{i\in J} A_i\right)\\
+				&=\sum_{k=1}^n (-1)^{k-1} S_k \:\:\:\text{für } S_k=\sum_{i\le i_1<...<i_k\le n} \mu\left(\bigcap_{k=1}^n A_{i_k}\right)
+				\end{align*}
+				\item Subadditivität:
+				\[ \mu\left(\bigcup_{i=1}^n A_i\right)\le \sum_{i=1}^n \mu(A_i) \]
+			\end{enumerate}
+			
+		\end{satz}
+		\begin{bew}
+			\begin{enumerate}
+				\item Es gilt:
+				\[ B=A\cup (B\setminus A)\Rightarrow \mu(B)=\mu(A)+\mu(B\setminus A)\ge \mu(A) \]
+				Nun ist außerdem mit $\mu(A)<\infty$:
+				\[ \mu(B\setminus A)=\mu(B)-\mu(A) \]
+				\item
+				Für $A,B\in\ms{R}$:
+				\[ \mu(B\setminus A)=\mu(B\setminus (A\cap B))=\mu(B)-\mu(A\cap B) (\text{ wenn }\mu(A\cap B)<\infty) \]
+				\[ \Rightarrow \mu(A\cup B)=\mu(A)+\mu(B)-\mu(A\cap B) \]
+				Außerdem (Zusatz für zwei Mengen):
+				\[ \mu(A\cup B\cup C)=\mu((A\cup B)\cup C)=\mu(A)+\mu(B)+\mu(C)-\mu(A\cap B)-\mu(A\cap C)-\mu(B\cap C)+\mu(A\cap B\cap C) \]
+				\item Es gilt:
+				\[ A,B\in\ms{R}: \mu(A\cup B)=\mu(A\cup (B\setminus A))=mu(A)+\mu(B\setminus A)\le \mu(A)+\mu(B) \]
+				\[ \Rightarrow \mu\left(\bigcup_{i=1}^n A_i\right)\le \sum_{i=1}^n \mu(A_i) \]
+				\item Induktion (wahrscheinlich)
+			\end{enumerate}
+		\end{bew}
+		\begin{satz}
+			Sei $\mu$ Inhalt auf $\ms{R}$, $A_n, n\in\N, A\subseteq\ms{R}$, dann gilt:
+			\[ \sum_{n\in\N} A_n\subseteq A\Rightarrow \sum_{n\in\N}\mu(A_n)\le \mu(A) \]
+		\subsection{Beweis:}
+			Es gilt:
+			\[ \sum_{n=1}^N A_n\subseteq A\Rightarrow \mu\left(\sum_{n=1}^N A_n\right) \le \mu(A) \]
+			\[ \Rightarrow \sum_{n=1}^N \mu(A_n)\le \mu(A) \]
+			Für $n\to\infty$:
+			\[ \sum_{n\in\N} \mu(A_n)\le \mu(A) \]
+		\end{satz}
+		
+		\subsection{Folgerungen für Maße}
+		
+		\begin{satz}
+			Sei $\mu$ ein Maß auf $\ms{R}$:
+			\begin{enumerate}
+				\item Stetigkeit von unten:
+				\[ A_n\uparrow A, A_n, A\in\ms{R} \]
+				\[ \Rightarrow \mu(A)=\lim_{n\to\infty} \mu(A_n) \]
+				\item Stetigkeit von oben:
+				\[ A_n\downarrow A, A_n, A\in\ms{R}\land \mu(A_1)<\infty \]
+				\[ \Rightarrow \mu(A)=\lim_{n\to\infty} \mu(A_n) \]
+			\end{enumerate}
+		\end{satz}
+			
+		\begin{bew}
+			\begin{enumerate}
+				\item Sei $B_1=A_1$ und $B_n=A_n\setminus A_{n-1}$. Nun sind $B_n$ disjunkt und $A_n=\sum_{i=1}^n B_i$. Nun gilt:
+				\[ \mu(A_n)\sum_{i=1}^n \mu(B_i) \]
+				und:
+				\[ A=\sum_{i=1}^\infty B_i \]
+				\[ \Rightarrow \mu(A)=\sum_{i=1}^\infty \mu(B_i)=\lim_{n\to\infty}\sum_{i=1}^n \mu(B_i)=\lim_{n\to\infty} \mu(A_n) \]
+				\item 
+				\[ \mu(A)=\lim_{n\to\infty}\mu(A_n) \]
+				\[ \mu(A_1\setminus A)=\lim_{n\to\infty} \mu(A_1\setminus A_n)=\lim_{n\to\infty} \mu(A_1)-\lim_{n\to\infty} \mu(A_n) \]
+			\end{enumerate}
+		\end{bew}
+			
+		\subsection{Eigenschaften von Maßen (Inhalten) auf Ringen(Semiringen)}
+			\begin{satz}
+				Sei $\mu$ ein Maß auf dem Ring $\ms{R}$, $A_n\uparrow A$, $A_n, A\in \ms{R}$. Dann gilt
+				\[ \mu(A)=\lim_{n\to\infty} \mu(A_n) \]
+				Entsprechendes für $A_n\downarrow A$.
+			\end{satz}
+			\begin{satz}
+				Sei $\mu$ Inhalt auf Ring $\ms{R}$ ist genau dann ein Maß, wenn $\mu$ stetig von unten ist.
+			\end{satz}
+			\begin{bew}
+				Seien $A_n, A\in\ms{R}$, $A=\sum_{n\in\N} A_n$, $A_n$ paarweise disjunkt. Sei 
+				\[ B_n=\sum_{i=1}^n A_i \]
+				Nun gilt $B_n\uparrow A$. $\mu$ ist nun stetig von unten, also
+				\[ \mu(A)=\lim_{n\to\infty}\mu(B_n)=\lim_{n\to\infty}\mu(\sum_{i=1}^n A_i)=\lim_{n\to\infty} \sum_{i=1}^n \mu(A_i)=\sum_{i=1}^\infty \mu(A_i) \]\arge
+			\end{bew}
+			\begin{satz}
+				Sei $\mu$ ein endlicher Inhalt auf einem Ring $\ms{R}$. Dann ist $\mu$ genau dann ein Maß, wenn er stetig von oben bei $\varnothing$ ist, also
+				\[ A_n\downarrow \varnothing\Rightarrow \mu(A_n)\to 0. \]
+			\end{satz}
+			
+			\begin{bew}
+				Sei $A_n,A\in\ms{R}, A=\sum_{n=1}^\infty A_n$. \newline
+				\zz: $\mu(A)=\sum_{n=1}^\infty \mu(A_n)$. \newline
+				Nämlich:
+				\[ A=\sum_{i=1}^n A_i\cup \sum_{i=n+1}^\infty \]
+				\[ B_n:=\sum_{i=n+1}^\infty \Rightarrow B_n=A\setminus(\sum_{i=1}^n A_i)\in\ms{R} \]
+				Nun gilt:
+				\[ \mu(A)=\sum_{i=1}^n \mu(A_i)+\mu(B_n) \]
+				Nun gilt:
+				\[ \lim_{n\to\infty} B_n=\bigcap_{n\in\N} B_n=\bigcap_{n\in\N} A\setminus \left(\bigcup_{i=1}^n A_i\right)=A\setminus\left(\bigcup_{n\in\N}\bigcup_{i=1}^n A_i\right)=\varnothing \]
+				Also $B_n\downarrow \varnothing$. Also:
+				\[ \mu(A)=\lim_{n\to\infty} \left( \sum_{i=1}^n A_i + \mu(B_n)\right)=\sum_{i=1}^\infty + 0 \]
+				\arge
+			\end{bew}
+			
+			\begin{bem}
+				Dieses Argument kann auch umgedreht werden. Dies werden wir später zumindest einmal benutzen.
+			\end{bem}
+			
+			\begin{satz}
+				Sei $\mu$ ein Maß auf dem Ring(Semiring) $\ms{R}$, $A_n, A\in\ms{R}$ mit
+				\[ A\subseteq \bigcup_{n\in\N} A_n \]
+				so gilt
+				\[ \mu(A)\le \sum_{n\in\N}\mu(A_n).\:\:(\mu\text{ ist abzählbar-, bzw sigmasubadditiv}) \]
+			\end{satz}
+			
+			\begin{bew}
+				Sei $B_n=A\cap\bigcup_{i=1}^n A_i=\bigcup_{i=1}^n A\cap A_i$. Es gilt also $B_n\uparrow A$. Aus der endlichen Subadditivität erhalten wir:
+				\[ \mu(B_n)\le\sum_{i=1}^n \mu(A_i\cap A)\le \sum_{i=1}^n\mu(A_i)\le \sum_{i=1}^\infty \mu(A_i) \]
+				\[ \Rightarrow \mu(A)=\lim_{n\to\infty} \mu(B_n)\le\sum_{i=1}^\infty \mu(A_i) \]
+			\end{bew}
+			
+			\begin{satz}
+				Sei $\mu$ ein Maß auf dem Sigmaring $\ms{R}$ und $A_n$ eine Folge von Mengen aus $\ms{R}$. Dann gilt:
+				\[ \limsup_{n\to\infty} A_n = \bigcap_{n\in\N}\bigcup_{k\ge n} A_k \]
+			\end{satz}
+			
+			\begin{satz}
+				Lemma von Borel Cantelli:\newline
+				Sei $\mu$ ein Maß auf einem Sigamring $\ms{R}$. Ist $\sum_{n\in\N} \mu(A_n)<\infty$ für $A_n\in\ms{R}$, so gilt:
+				\[ \mu(\limsup_{n\to\infty} A_n)=0 \]
+			\end{satz}
+			
+			\begin{bew}
+				Sei $\epsilon>0$ beliebig. Es gilt:
+				\[ \mu(\limsup A_n)\le \mu\left(\bigcup_{k\ge n_0} A_k\right)\le \sum_{k\ge n_0} \mu(A_k)\le \epsilon \]
+				\arge
+			\end{bew}
+			
+			\begin{bem}
+				Als Hausübung: Ist $\mu$ endliches Maß auf einem Sigmaring, so gilt
+				\[ \mu(\limsup_{n\to\infty} A_n)\ge \limsup_{n\to\infty} \mu(A_n). \]
+			\end{bem}
+			
+			\begin{bsp}[Additionstheorem]
+				Die Anzahl der Permutationen von $n$ Elementen ohne Fixpunkt. 
+				\[ \mathbb{P}(\text{kein Fixpunkt})=1-\mathbb{P}(\text{Fixpunkt})=1-\mathbb{P}\left(\bigcup A_i\right) \]
+				mit $A_i=[i$ ist Fixpunkt $]$. 
+				\[ \mathbb{P}\left(\bigcup A_i\right)=\sum_{i=1}^n\mathbb{P}(A_i)-\sum_{1\le i_1\le i_2\le n} \mathbb{P}(A_{i_1}\cap A_{i_2})+\sum \mathbb{P}(A_{i_1}\cap A_{i_2}\cap A_{i_2})-... \]
+				Es gilt:
+				\[ \mathbb{P}(A_i)=\frac{(n-1)!}{n!} \]
+				\[ \mathbb{P}(A_i\cap A_0)=\frac{(n-2)!}{n!} \]
+				\[ \mathbb{P}(A_{i_1}\cap ... \cap A_{i_k})=\frac{(n-k)!}{n!} \]
+				Jetzt: (was auch immer $S_k$ ist...)
+				\[ S_k=\frac{(n-k)!}{n!} \left(\begin{array}{c} n \\ k \end{array}\right)=\frac{1}{k!} \]
+				Damit:
+				\[ \mathbb{P}\left(\bigcup A_i\right)=\sum_{k=1}^n (-1)^{k-1} \frac{1}{k!} \]
+				\[ \Rightarrow \mathbb{P}(\text{kein Fixpunkt})=1-\sum_{k=1}^n(-1)^{k-1} \frac{1}{k!}=\sum_{k=0}^n (-1)^k \frac{1}{k!}\stackrel{\rightarrow}{n\to\infty} \frac{1}{e} \]
+			\end{bsp}
+			
+			\subsection{Bedingte Wahrscheinlichkeit}
+			\begin{defi}
+				Sei $(\Omega, \ms{S}, \P)$ ein Wahrscheinlichkeitsraum. Nun heißt $A,B\in\ms{S}$ Ereignisse. Gilt $\P(B)\neq 0$ so heißt 
+				\[ \P(A|B):=\frac{\P(A\cap B)}{\P(B)} \]
+				die bedingte Wahrscheinlichkeit. 
+			\end{defi}
+			
+			\begin{defi}
+				Ereignisse $A$ und $B$ heißen unabhängig, wenn
+				\[ P(A\cap B)=\P(A)\P(B). \]
+			\end{defi}
+			
+			\begin{defi}
+				Allgemeiner heißen Ereignisse $A_1,...,A_n$ unabhängig, wenn
+				\[ \P\left(\bigcap_{i=1}^n A_i\right) = \prod_{i=1}^n \P(A_i). \]
+			\end{defi}
+			
+			\begin{defi}
+				Ereignisse $A_1,...,A_n$ heißen paarweise unabhängig, wenn:
+				\[ \forall i,j\in\{1,...,n\}: i\neq j\Rightarrow \P(A_i\cap A_j)=\P(A_i)\P(A_j). \]
+			\end{defi}
+			
+			\begin{bem}
+				Es gilt:
+				\[ \P(A\cap B)=\P(B)\P(A|B)=\P(A)\P(B|A) \]
+				und:
+				\[ \P(A_i\cap...\cap A_n)=\P(A_1)\P(A_2|A_1)\P(A_3|A_1\cap A_2)...P(A_n|A_1\cap...\cap A_n) \]
+				Dies ist das Multiplikationstheorem für Wahrscheinlichkeiten. 
+			\end{bem}
+			
+			\begin{bsp}[Bedingte Wahrscheinlichkeiten (Multiplikationstheorem)]
+				In einer Urne liegen zwei schwarze und drei weiße Kugeln. Es wird 3-mal ohne Zurücklegen gezogen, wobei das Ziehen der Laplace-Wahrscheinlichkeit folgt. Nun ist
+				\[ \P(\text{Alle 3 Kugeln weiß})=\P(A_1\cap A_2\cap A_3) \]
+				wobei $A_i=$ "`$i$-te Kugel ist weiß"'. Also
+				\[ \P(A_1\cap A_2\cap A_3)=\P(A_1)\P(A_2| A_1)\P(A_3|A_1\cap A_2) \]
+				mit
+				\[ P(A_1)=\frac{3}{5} \]
+				\[ P(A_2| A_1)=\frac{2}{4}=\frac{1}{2} \]
+				\[ P(A_3|A_2\cap A_1)=\frac{1}{3} \]
+				und damit 
+				\[ \P(\text{Alle 3 Kugeln weiß})=\frac{1}{10} \]
+			\end{bsp}
+			
+			\begin{bsp}
+				Selbe Voraussetzungen wie im vorigen Beispiel. Nun ist
+				\begin{align*}
+				\P(\text{genau 2 Kugeln weiß})&=\P(\text{wws})+\P(\text{wsw})+\P(\text{sww})\\
+				&=\P(A_1\cap A_2\cap A_3^c)+\P(A_1\cap A_2^c+A_3)+\P(A_1^c\cap A_2 \cap A_3)\\
+				&=\frac{3}{5}\frac{2}{4}\frac{2}{3}+\frac{3}{5}\frac{2}{4}\frac{2}{3}+\frac{2}{5}\frac{3}{4}\frac{2}{3}=3\cdot\frac{12}{60}=\frac{3}{5}.
+				\end{align*}
+				Dieses Beispiel kann analog auf jede Anzahl an Kugeln fortgesetzt werden.
+			\end{bsp}
+			
+			\begin{satz}[Borel-Cantelli II]
+				Sei $(\Omega, \ms{S}, \P)$ ein Wahrscheinlichkeitsraum. Sei $A_n\in\ms{S}$ eine Folge unabhängiger Ereignisse. \newline
+				Ist nun 
+				\[ \sum_{n=0}^\infty \P(A_n)=\infty \]
+				so folgt
+				\[ \P(\limsup_{n\to\infty} A_n)=1 \]
+			\end{satz}
+			
+			\begin{bew}
+				Definition des $\limsup$ war:
+				\[ \limsup_{n\to\infty} A_n=\bigcap_{n\in\N}\bigcup_{k\ge n} A_k \]
+				und damit nach den de Morgan'schen Regeln:
+				\[ (\limsup_{n\to\infty} A_n)^c=\bigcup_{n\in\N}\bigcap_{k\ge n} A_k^c \]
+				Betrachten wir nun $\bigcap_{k\ge n} A_k^c$. Die $A_k^c$ sind nun auch unabhängig. (siehe Übung) Also:
+				\[ \bigcap_{k\ge n} A_k^c = \lim_{N\to\infty} \bigcap_{k=n}^N A_k^c \]
+				\[ \Rightarrow \P\left(\bigcap_{k\ge n} A_k^c\right)=\lim_{N\to\infty}\prod_{k=n}^\infty \P(A_k^c)=\prod_{k=n}^\infty \P(A_k^c)=\prod_{k=n}^\infty (1-\P(A_k)) \]
+				mit $1+x\le e^x$ folgt
+				\[ \prod_{k=n}^\infty (1-\P(A_k)) \le\prod_{k=n}^\infty e^{-\P(A_k)}=e^{-\sum_{k\ge n}^\infty \P(A_k)}=\lim_{n\to \infty} -e^{-n}=0 \]
+				Damit:
+				\[ \P\left(\bigcup_{n=1}^\infty\bigcap_{k=n}^\infty A_k\right)\le \sum_{n=1}^\infty \P\left(\bigcap_{k=n}^\infty A_k\right)=\sum_{n=1}^\infty 0=0 \]\arge
+			\end{bew}
+			
+			
+			\begin{satz}[Fortsetzungssatz für Maßfunktionen]
+				Sei $\mu$ ein Maß auf einem Ring $\mf{R}$. Dann gilt:
+				\begin{enumerate}
+					\item $\mu$ kann zu einem Maß $\widetilde{\mu}$ auf dem erzeugten Sigmaring fortgesetzt werden. 
+					\item Wenn $\mu$ sigmaendlich ist, dann ist $\widetilde{\mu}$ eindeutig bestimmt. 
+				\end{enumerate}
+				
+			\end{satz}
+			
+			\begin{bem}
+				Wir werden $\widetilde{\mu}$ im Folgenden immer mit $\mu$ bezeichnen, da es nicht wichtig ist, ob wir auf einem Ring oder auf dem erzeugten Sigmaring arbeiten. 
+			\end{bem}
+			
+			\begin{bem}
+				Die Motivation für diesen Satz ist das klassische Ausschöpfungs-, bzw Exhaustionsprinzip, das z.B. Archimedes und Eudoxos bearbeitet haben. Dabei wurde die Fläche eines Kreises durch Rechtecke approximiert. Damit ist ($A$ ist die Fläche des Kreises, $B$ die Fläche der Vierecke)
+				\[ \mu^+(A)=\inf\{\mu(B):A\subseteq B, B\in\mf{R}\} \]
+				\[ \mu^-(A)=\sup\{\mu(B):B\subseteq A, B\in\mf{R}\} \]
+				wenn $\mu^+(A)=\mu^-(A)$, dann ist $A$ messbar (im Sinn von Jordan). Dann $\mu^*$ das Jordon-Maß. 
+				\begin{align*}
+				\mu^*(A) &= \inf\left(\sum_{n\in\N}\mu(B_n)\right), B_n\in\mf{R}, A\subseteq \bigcup_{n\in\N} B_n\\
+				&=\inf\{\sum_{n\in\N}\mu(B_n): B_n\in\mf{R}, A\subseteq \sum_{n\in\N} B_n\}
+				\end{align*}
+				Die letzte Gleichheit folgt durch Zeigen von $\le$ und $\ge$. 
+				
+			\end{bem}
+			
+			\begin{defi}
+				Das Maß von einem Maß $\mu$ erzeugte Maß
+				\[ \mu^*(A) =\inf\{\sum_{n\in\N}\mu(B_n): B_n\in\mf{R}, A\subseteq \sum_{n\in\N} B_n\} \]
+				heißt äußeres Maß oder Jordan-Maß. Hierbei wird 
+				\[ \inf\varnothing=\infty \]
+				gesetzt. 
+			\end{defi}
+			
+			\begin{defi}
+				Ist $\mu(\Omega)<\infty$, so ist 
+				\[ \mu_*(A)=\mu(\Omega)-\mu^*(A^c) \]
+				das innere Maß. 
+			\end{defi}
+			
+			\begin{defi}[vorläufige Definition]
+				$A$ heißt messbar, falls
+				\[ \forall E\in\mf{R}: \mu(E)=\mu^*(E\cap A)+\mu^*(E\setminus A). \]
+			\end{defi}
+			
+			\begin{defi}
+				$A$ heißt messbar, wenn
+				\[ \forall B\subseteq \Omega: \mu^*(B)=\mu^*(B\cap A)+\mu^*(B\setminus A). \]
+			\end{defi}	
+			
+			\begin{satz}[Eigenschaften von äußeren Maßfunktionen]
+				Sei $\mu$ ein Maß und $\mu^*$ das von $\mu$ erzeugte äußere Maß. Dann gilt:
+				\begin{enumerate}
+					\item $\mu^*(A)\ge 0$
+					\item $\mu^*(\varnothing)=0$
+					\item Monotonie: 
+					\[ A\subseteq B\subseteq \Omega \Rightarrow \mu^*(A)\le \mu^*(B) \]
+					\item Sigmasubadditivität: 
+					\[ A\subseteq \bigcup_{n\in\N} A_n\subseteq \Omega \]
+					\[ \Rightarrow \mu^*(A)\le \sum_{n\in\N} \mu^*(A_n) \]
+				\end{enumerate}
+			\end{satz}
+			
+			\begin{defi}
+				Eine Funktion $\mu^*: 2^\Omega \to [0,\infty]$ heißt eine äußere Maßfunktion, wenn sie die Eigenschaften 1.-4. besitzt.
+			\end{defi}	
+			
+			\begin{bem}
+				Will man zeigen, dass $\mu^*$ ein äußeres Maß ist, so muss man nur 1.,2. und 4. zeigen, 3. folgt dann automatisch. 
+			\end{bem}
+			
+			\begin{bew}
+				Eigenschaften 1. und 2. sind klar. Bleibt also noch 4. zu zeigen, 3. folgt ja automatisch. \newline
+				Sei also $A\subseteq \bigcup_{n\in\N} A_n$. Zu zeigen ist nun, dass 
+				\[ \mu^* (A)\le \sum_{n\in\N} \mu^*(A_n) \]
+				wenn $\sum_{n\in\N} \mu^*(A_n)=\infty$, so sind wir fertig.\newline
+				Sei also $\sum_{n\in\N} \mu^*(A_n)<\infty$. Dann ist
+				\[ \mu^*(A_n)=\inf\{\sum_{k\in\N}\mu(B_k): A_n\subseteq \bigcup B_k, B_k\in\mf{R}\} \]
+				Sei $\epsilon >0$. Für $B_{nk}\in\mf{R}: A_n\subseteq\bigcup_{k\in\N} B_{nk}$ und $\sum_{k\in\N} \mu(B_{nk})\le \mu^*(A_n)+\frac{\epsilon}{2}$. Nun ist
+				\[ \bigcup_{n\in\N} A_n\subseteq \bigcup_{n\in\N}\bigcup_{k\in\N} B_{nk} \]
+				und damit
+				\[ \mu^*\left(\bigcup_{n\in\N} A_n\right)\le \sum_{n\in\N}\sum_{k\in\N} \mu(B_nk) \le \sum_{n\in\N} (\mu^*(A_n)+\frac{\epsilon}{2^n})=\sum_{n\in\N} \mu^* (A_n)+\epsilon \]
+				\[ \Rightarrow \mu\left(\bigcup_{n\in\N}A_N\right)\le\sum_{n\in\N} \mu^* (A_n) \]
+				\arge
+			\end{bew}
+			
+			\begin{bsp}
+				Sei $|\Omega|\ge 3$ und 
+				$$\mu^*(A)=\left\{\begin{array}{l}
+					0: A=\varnothing\\
+					1: A\notin\{\varnothing, \Omega\}, A\subseteq\Omega\\
+					2: A=\Omega
+				\end{array}\right. $$
+			\end{bsp}
+			
+			\begin{defi}
+				$A\subseteq \Omega$ heißt messbar ($\mu^*$-messbar), wenn 
+				\[ \forall B\subseteq \Omega: \mu^*(B)=\mu^*(B\cap A)+\mu^*(B\cap A^c). \]
+			\end{defi}
+			
+			\begin{bem}
+				Um die Messbarkeit von $A$ zu zeigen, genügt es zu zeigen, dass
+				\[ \mu^*(B)\ge \mu^*(B\cap A)+\mu^*(B\cap A^c), \]
+				da die Ungleichung "`$\le$"' trivialerweise immer erfüllt ist. 
+			\end{bem}
+			
+			\begin{defi}
+				$m_{\mu^*}$ bezeichnet das System aller $\mu^*$-messbaren Mengen. Ist klar, um welches Maß $\mu^*$ es sich handelt (oder das egal ist), so schreiben wir einfach $m$.
+			\end{defi}
+			
+			\begin{satz}
+				\begin{enumerate}
+					\item $m$ ist eine Sigmaalgebra, $\mu^*|_m$ ein Maß.
+					\item Wenn $\mu^*$ von einem Maß $\mu$ auf einem Ring $\mf{R}$ erzeugt wird und $\mu^*(B)=\mu(B)$, so folgt $\mf{R}\subseteq m$.
+				\end{enumerate}  
+			\end{satz}
+			
+			\begin{bew}
+				Wir beweisen zunächst 2.:\newline
+				Sei $B\subset\Omega, A\in\mf{R} B_n\in\mf{R}, B\subseteq \bigcup_{n\in\N} B_n, \mu^*(B)<\infty$. Dann ist
+				\begin{align*}
+				\sum_{n\in\N}\mu(B_n)&=\sum_{n\in\N}\mu\left((B_n\cap A)\cup(B_n\cap A^c)\right)\\
+				&=\sum_{n\in\N} \left(\mu(B_n\cap A)+\mu(B_n\setminus A)\right)\\
+				&=\sum_{n\in\N}\mu(B_n\cap A)+\sum_{n\in\N} \mu(B_n\setminus A)\\
+				&\ge \mu^*(B\cap A)+\mu^*(B\cap A^c)
+				\end{align*}
+				\[ \Rightarrow \mu^*(B)\ge \mu^*(B\cap A)+\mu^*(B\setminus A) \]
+				\arge
+				Sei nun $A\in \mf{R}, A\subseteq \bigcup A_n, A_n\in\mf{R}$. 
+				\[ \mu(A)\le \sum \mu(A_n) \]
+				wurde schon gezeigt. Sei jetzt $A_1=A$, $A_n=\varnothing$ für $n>1$. Dann folgt 
+				\[ \mu^*(A)\ge\mu(A), \]
+				A ist also messbar.\newline\newline
+				Für 1. erste Behauptung: $m$ ist Algebra und $\mu^*|_m$ ist additiv. Wir wollen zeigen:
+				\[ A_1,A_2\text{ messbar}\Rightarrow A_1\cup A_2 \text{ messbar} \]
+				\[ A \text{ messbar}\Rightarrow A^c \text{ messbar} \]
+				Das zweite folgt direkt daraus, dass ${A^c}^c=A$ und die Definition von "`messbar"' diesbezüglich symmetrisch ist. \newline
+				Für das erste sei $B\subseteq\Omega$. Nun ist $A_1$ messbar, also
+				\[ \mu^*(B)=\mu^*(B\cap A_1)+\mu^*(B\cap A_1^c) \]
+				und mit
+				\[ \mu^*(B\cap A_1)=\mu^*(B\cap A_1\cap A_2)+\mu^*(B\cap A_1\cap A_2^c) \]
+				\[ \mu^*(B\cap A_1^c)=\mu^* (B\cap A_1^c\cap A_2)+\mu^*(B\cap A_1^c\cap A_2^c) \]
+				ergibt sich:
+				\begin{align*}
+				\mu^*(B)&=\mu^*(B\cap A_1\cap A_2)+\mu^*(B\cap A_1\cap A_2^c)+\mu^* (B\cap A_1^c\cap A_2)+\mu^*(B\cap A_1^c\cap A_2^c)\\
+				&\ge \mu^*\left((B\cap A_1\cap A_2)\cup(B\cap A_1\cap A_2^c)\cup (B\cap A_1^c\cap A_2)\right)+ \mu^*(B\cap (A_1\cup A_2)^c)\\
+				&=\mu^*(B\cap(A_1\cup A_2))+\mu^*(B\cap (A_1\cup A_2)^c)
+				\end{align*}
+				Damit ist $m$ tatsächlich eine Algebra.\newline
+				Um nachzuweisen, dass $\mu^*|_m$ additiv ist, seien $A_1, A_2\in m$, $A_1\cup A_2=\varnothing$. Über die Messbarkeit von $A_1$ erhalten wir:
+				\[ \mu^*(A_1\cup A_2)=\mu^*((A_1\cup A_2)\cap A_1)+\mu^*((A_1\cup A_2)\cap A_1^c)=\mu^*(A_1)+\mu^*(A_2) \]
+				\arge
+				Nun bleibt noch zu zeigen, dass $m$ Sigmaalgebra ist, seien also $A_n\in m, A_n\text{ disjunkt}, B\subseteq \Omega$.\newline
+				\zz:
+				\[ \mu^*(B)\ge \mu^*\left(B\cap \bigcup_{n\in \N} A_n\right)+\mu^*\left(B\setminus \bigcup_{n\in\N} A_n\right) \]
+				Wir wissen schon:
+				\begin{align*}
+				\mu^*(B)=\mu^*\left(B\cap \bigcup_{n=1}^N A_n\right)+\mu^*\left(B\setminus\bigcup_{n=1}^N A_n\right)\\
+				&\ge \mu^*\left(B\cap \bigcup_{n=0}^N A_n\right)+\mu^*\left(B\setminus\bigcup_{n\in\N} A_n\right)\\
+				&=\sum_{n=1}^N\mu^*(B\cap A_n)+\mu^*\left(B\setminus\bigcup_{n\in\N} A_n\right)\\
+				\end{align*}
+				Für $n\to\infty$ erhalten wir also
+				\[ \mu^*(B)\ge \sum_{n\in\N} \mu^*(B\cap A_n)+\mu^*\left(B \setminus \bigcup_{n\in\N} A_n\right)\ge\mu^*\left(\bigcup_{n\in\N} (B\cap A_n)\right)+\mu^*\left(B\setminus\bigcup_{n\in\N} A_n\right) \]
+				\arge
+			\end{bew}
+			
+			\begin{bew}[Fortsetzungssatz für Maßfunktionen]
+				
+			\end{bew}
