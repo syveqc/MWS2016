@@ -355,7 +355,9 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				\[ \P\left(\bigcup_{n=1}^\infty\bigcap_{k=n}^\infty A_k\right)\le \sum_{n=1}^\infty \P\left(\bigcap_{k=n}^\infty A_k\right)=\sum_{n=1}^\infty 0=0 \]\arge
 			\end{bew}
 			
+			\subsection{Der Fortsetzungssatz für Maßfunktionen}
 			
+			In diesem Abschnitt werden wir den folgenden Satz beweisen:
 			\begin{satz}[Fortsetzungssatz für Maßfunktionen]
 				Sei $\mu$ ein Maß auf einem Ring $\mf{R}$. Dann gilt:
 				\begin{enumerate}
@@ -522,6 +524,150 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				\arge
 			\end{bew}
 			
-			\begin{bew}[Fortsetzungssatz für Maßfunktionen]
-				
+			\begin{bem}
+				Der erste Teil des Fortsetzungssatzes ist damit bewiesen. Bleibt also noch der folgende Satz zu zeigen:
+			\end{bem}
+			
+			\begin{satz}
+				Ist $\widetilde{\mu}$ eine Fortsetzung von $\mu$ auf $\mf{R}_\sigma(\mf{R})$ ist, dann gilt 
+				\[ \widetilde{\mu}=\mu^*|_{\mf{R}_\sigma} \]
+			\end{satz}
+			
+			\begin{satz}
+				Ist $\mu$ auf $\mf{R}$ sigmaendlich, dann auch auf dem erzeugten Sigmaring.
+			\end{satz}
+			
+			\begin{bew}
+				\zz:
+				\[ \mf{R}^*=\{A\subseteq \Omega: A \text{ ist sigmaendlich}\}=\{A\subseteq \exists B_1\in\mf{R}, n\in\N: \mu(B_n)<\infty \land A\subseteq\bigcup B_n\} \]
+				ist Sigmaring. \newline
+				\begin{itemize}
+					\item $A,B\in\mf{R}^*\Rightarrow A\setminus B\in\mf{R}^*$: trivial
+					\item $A_n\in\mf{R}^*, n\in\N\Rightarrow \bigcup A_n\in\mf{R}^*$:\newline
+					Sei $A_n\subseteq \bigcup B_{nk}, B_{k}\in\mf{R}, \mu(B_{nk})<\infty$. Dann ist
+					\[ \bigcup A_n\subseteq \bigcup_{n}\bigcup_k B_{nk} \]
+					und damit folgt die Behauptung.
+				\end{itemize}
 			\end{bew}
+			
+			\begin{satz}
+				Für $A\in\mf{R}_\sigma(\mf{R}): \widetilde{A}\le \mu^*(A)$
+			\end{satz}
+			
+			\begin{bew}
+				Sei $A\in\mf{R}, A\subseteq \bigcup B_n, B_n\in\mf{R}$. Nun gilt:
+				\[ \sum_{n\in\N}\mu(B_n)=\sum_{n\in\N} \widetilde{\mu}(B_n)\ge \widetilde{\mu}\left(\bigcup B_N\right)\ge \widetilde{\mu}(A) \]
+				Nimmt man das $\inf$ über alle $(B_n)_{n\in\N}$, so erhält man $\mu^*(A)$.
+			\end{bew}
+			
+			\begin{satz}
+				$\widetilde{\mu}(A)=\mu^*(A)$ (siehe oben)
+			\end{satz}
+			
+			\begin{bew}
+				Ist $A$ sigmaendlich, so folgt:
+				\[ \exists B_n\in\mf{R}, n\in\N, \mu(B_n)<\infty, a\subseteq \bigcup B_n, \]
+				wobei wir die $B_n$ oBdA als disjunkt annehmen können, da wir sie notfalls disjunkt machen können.\newline
+				Nun ist
+				\[ \widetilde{\mu}(A)=\widetilde{\mu}\left(A\cap\bigcup_{n\in\N}B_n\right)=\widetilde{\mu}\left(\bigcup_{n\in\N}A\cap B_n\right)=\sum_{n\in\N} \widetilde{\mu}(A\cap B_n) \]
+				Nun zeigen wir:
+				\[ \widetilde{\mu}(A\cap B_n)=\mu^*(A\cap B_n), \]
+				dann können wir die obere Gleichungskette nach hinten durchlaufen und sind fertig.\newline
+				Also: Wir wissen: 
+				\[ \widetilde{\mu}(A\cap B_n)\le \mu^*(A\cap B_n) \]
+				\[ \widetilde{\mu}(A^c\cap B_n)\le\mu^*(A^c\cap B_n) \]
+				Außerdem, da $A$ messbar:
+				\[ \mu(B_n)=\mu^*(B_n)=\mu^*(A^c\cap B_n)+\mu(A\cap B_n)\ge \widetilde{\mu}(A^c\cap B_n)+\widetilde{\mu}(A^c\cap B_n)=\widetilde{\mu}(B_n)=\mu(B_n), \]
+				womit für $\ge$ auch $=$ folgt und $\widetilde{\mu}(A\cap B_n)=\mu^*(A\cap B_n)$ bewiesen ist. Damit folgt also auch:\[ \widetilde{\mu}=\mu^*|_{\mf{R}_\sigma(\mf{R})} \]
+			\end{bew}
+			
+			\begin{bem}
+				Nun ist der Fortsetzungssatz für Maßfunktionen vollständig bewiesen.
+			\end{bem}
+			
+			\subsection{Zusammenhang zwischen dem Maß auf dem Ring und dem Maß auf dem Sigmaring}
+			\begin{satz} [Approximationstheorem I]
+				Sei $\mu$ ein sigmaendliches Maß auf einem Ring $\mf{R}$. Sei $A\in\mf{R}_\sigma(\mf{R}), \mu(A)<\infty$. Dann gilt
+				\[ \forall \epsilon>0: \exists B\in\mf{R}: \mu(A\Delta B)<\epsilon \]
+			\end{satz}
+			
+			\begin{bew}
+				Mit $\mu(A)<\infty$ und
+				\[ \mu(A)=\mu^*(A)=\inf\left\{\sum_{n\in\N}\mu(B_n): B_n\in\mf{R}, A\subseteq \bigcup_{n\in\N} B_n\right\} \]
+				folgt: Wir wählen ein $(B_n)$, sodass $\sum_{n\in\N} \mu(B_n)\le \mu(A)+\frac{\epsilon}{2}$. Das geht, weil wir ja beliebig nahe an das Infimum herankommen können. Wir wählen nun $N$ so, dass $\sum_{n>N}\mu(B_n)<\frac{\epsilon}{2}$. Sei weiters
+				\[ B:=\bigcup_{n=1}^N B_n\in\mf{R}. \]
+				Dann folgt:
+				\[ \mu(A\Delta B)=\mu (A\setminus B)+\mu(B\setminus A) \]
+				Außerdem:
+				\[ A\setminus B\subseteq\bigcup_{n\in\N} B_n\setminus \bigcup_{n=1}^N B_n\subseteq \bigcup_{n>N}B_n. \]
+				Damit gilt:
+				\[ \mu(A\setminus B)\le\sum_{n>N} \mu(B_n)<\frac{\epsilon}{2} \]
+				\[ \mu(B\setminus A)\le \mu\left(\left(\bigcup_{n\in\N} B_n\right)\setminus A\right)=\mu\left(\bigcup_{n\in\N} B_n\right)-\mu(A)\le \sum_{n\in\N} \mu(B_n)-\mu(A)<\frac{\epsilon}{2} \]
+				und wir sind fertig. 
+			\end{bew}
+			
+			\begin{bem}
+				Es gilt auch 
+				\[ |\mu(A)-\mu(B)|\le \mu(A\Delta B) \]
+			\end{bem}
+			
+			\begin{bem}
+				Wir nehmen nun an, dass $\Omega\in\mf{R}_\sigma(\mf{R})$, der erzeugte Sigmaring ist also schon eine Sigmaalgebra. 
+			\end{bem}
+			
+			
+			\begin{defi}
+				Sei $(\Omega, \mf{S}, \mu)$ Maßraum. Ist $\mu(A)=0$, so heißt $A$ Nullmenge.
+				
+			\end{defi}
+			
+			\begin{satz}
+				Ist $A$ messbar, so kann man $A$ schreiben als Vereinigung einer Menge aus dem Sigmaring und einer Nullmenge, also
+				\[ A=F\cup N, F\in\mf{R}_\sigma, N\subseteq M\in\mf{R}_\sigma:\mu(M)=0 \]
+			\end{satz}
+			
+			\begin{bew}
+				Sei $A\subseteq \Omega$. Mit 
+				\[ \mu^*(A)=\inf\left\{\sum_{n\in\N} \mu(B_n), B_n\in\mf{R}, A\subseteq \bigcup_{n\in\N}B_n \right\} \]
+				erhalten wir über
+				\[ \sum_{n\in\N} \mu(B_n)\ge \mu\left(\bigcup_{n\in\N}B_n\right) \]
+				das folgende:
+				\[ \mu^*(A)\ge\inf\left\{\mu(B):B\in\mf{R}_\sigma, A\subseteq B\right\} \]
+				und damit folgt
+				\[ \mu^*(A)=\inf\left\{\mu(B):B\in\mf{R}_\sigma, A\subseteq B\right\} \]
+				Wir nehmen nun ein $(C_n)$ mit $C_n\in\mf{R}, \bigcup_{n\in\N}=\Omega, C_n$ disjunkt und $\forall n\in\N: \mu(C_n)<\infty$. Ist $A\in m_{\mu^*}$ messbar, $\mu^*(A\cap C_n)<\infty$, $\mu^*(A\cap C_n)=\inf\{\mu(B):B\in\mf{R}_\sigma, A\cap C_n\subseteq B\}$, dann wählen wir ein $B_k\in\mf{R}_\sigma$, sodass
+				\[ A\cap C_n\subseteq B_k, \mu(B_k)\le \mu^*(A\cap C_n)+\frac{1}{k}. \]
+				Sei 
+				\[ D_n=\bigcap_{k\in\N} B_k\]
+				also 
+				\[ A\cap C_n\subseteq D_n, \mu(D_n)=\mu^*(A\cap C_n) \]
+				Analog: $E_n\in\mf{R}_\sigma, A^c\cap C_n\subseteq E_n, \mu(E_n)=\mu^*(A^c\cap C_n)$:
+				\[ \mu(C_n)=\mu^*(C_n\cap A)+\mu(C_n\cap A^c)=\mu(E_n)+\mu(D_n) \]
+				oBdA: $E_n,D_n\subseteq C_n$. Nun ist 
+				\[ \mu(D_n)=\mu(C_n)-\mu(D_n)=\mu(C_n\subseteq D_n) \]
+				Über
+				\[ D_n\supseteq A\cap C_n \land F_n:=C_n\setminus E_n\subseteq A\cap C_n\]
+				\[ \mu(D_n\setminus F_n)=\mu(D_n)-\mu(F_n)=0 \]
+				\[ F_n\subseteq A\cap C_n\subseteq F_n\cup (D_n\setminus F_n) \]
+				erhalten wir
+				\[ \bigcup_{n\in\N} F_n\subseteq A\subseteq \bigcup_{n\in\N} F_n\cup \bigcup_{n\in\N}(D_n\setminus F_n) \]
+				Wir betrachten
+				\[ \mu\left(\bigcup_{n\in\N} (D_n\setminus F_n)\right)\le \sum_{n\in\N} \mu(D_n\setminus F_n)=0 \]
+				Nun können wir $A$ schreiben als
+				\[ A=F\cup N, F\in\mf{R}_\sigma, N\subseteq M\in\mf{R}_\sigma:\mu(M)=0 \]
+			\end{bew}
+			
+			\begin{defi}
+				Ein Maßraum $(\Omega,\mf{S},\mu)$ heißt vollständig, wenn 
+				\[ A\in\mf{S}, \mu(A)=0, B\subseteq A\Rightarrow B\in\mf{S} \]
+			\end{defi}
+			
+			\begin{defi}
+				Sei $(\Omega,\mf{S}, \mu)$ Maßraum. Mit
+				\[ \overline{\mf{S}}:=\{A\cup N, A\in\mf{S}, \exists M\in\mf{S}: N\subseteq M, \mu(B)=0 \} \]
+				und
+				\[ \overline{\mu}(A\cup N)=\mu(A) \]
+				heißt der vollständige Maßraum $(\Omega, \overline{\mf{S}}, \overline{\mu})$ die Vervollständigung von $(\Omega, \mf{S}, \mu)$.
+			\end{defi}
+			
+			
