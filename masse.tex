@@ -155,13 +155,14 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 		\begin{satz}
 			Sei $\mu$ Inhalt auf $\ms{R}$, $A_n, n\in\N, A\subseteq\ms{R}$, dann gilt:
 			\[ \sum_{n\in\N} A_n\subseteq A\Rightarrow \sum_{n\in\N}\mu(A_n)\le \mu(A) \]
-		\subsection{Beweis:}
+		\end{satz}
+		\begin{bew}
 			Es gilt:
 			\[ \sum_{n=1}^N A_n\subseteq A\Rightarrow \mu\left(\sum_{n=1}^N A_n\right) \le \mu(A) \]
 			\[ \Rightarrow \sum_{n=1}^N \mu(A_n)\le \mu(A) \]
 			Für $n\to\infty$:
 			\[ \sum_{n\in\N} \mu(A_n)\le \mu(A) \]
-		\end{satz}
+		\end{bew}
 		
 		\subsection{Folgerungen für Maße}
 		
@@ -670,4 +671,100 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				heißt der vollständige Maßraum $(\Omega, \overline{\mf{S}}, \overline{\mu})$ die Vervollständigung von $(\Omega, \mf{S}, \mu)$.
 			\end{defi}
 			
+			\begin{satz}
+				Ist $\mu*$ das von einem Maß $\mu$ auf dem Ring $\mf{R}$ erzeugte äußere Maß, so ist ein $A\subseteq \Omega$ messbar genau dann, wenn
+				\[ \forall B\in\mf{R}: (\mu^*(B)=)\mu(B)=\mu^*(B\cap A)+\mu^*(B\setminus A). \]
+				Ist zusätzlich $\mu(\Omega)<\infty$ ($\mu^*(\Omega)<\infty$), dann ist $A$ messbar, wenn 
+				\[ \mu(\Omega)=\mu^*(A)+\mu^*(A^c). \]
+			\end{satz}
 			
+			\begin{bew}
+				Eine Richtung ist klar. \newline
+				Für die andere sei $C\subseteq \Omega$. \newline
+				\zz:
+				\[ \mu^*(C)=\mu^*(C\cap A)+\mu^*(C\setminus A), \]
+				also nur die Richtung $\ge$, $\le$ wird durch die Subadditivität schon garantiert. Sei nun $(B_n)$ eine Überdeckung von $C$, $C\subseteq \bigcup_{n\in\N} B_n$. Nun gilt:
+				\[ \sum_{n\in\N}\mu(B_n)=\sum_{n\in\N} \mu^*(B_n\cap A) + \sum_{n\in\N}\mu^*(B_n\setminus A)\ge \mu^*(C\cap A)+\mu^*(C\setminus A) \]
+				Durch Infimumbildung ergibt sich die Behauptung.   \newline
+				Sei nun $\mu(\Omega)<\infty$. Sei $E\in\mf{R}$, dann ist
+				\[ \mu^*(A)=\mu^*(A\cap E)+\mu^*(A\cap E^c) \]
+				\[ \mu^*(A^c)=\mu^*(A^c\cap E)+\mu^*(A^c\cap E^c) \]
+				und somit 
+				\[ \mu(\Omega)=\mu^*(A)+\mu^*(A^c)=\mu^*(A\cap E)+\mu^*(A\cap E^c)+\mu^*(A^c\cap E)+\mu^*(A^c\cap E^c)\ge \mu(E)+\mu(E^c)=\mu(\Omega) \]
+				Damit folgt statt $\ge$ Gleichheit. 
+			\end{bew}
+			
+		\subsection{Maße auf $(\R, \mf{B})$}
+			
+			Die Frage, die sich stellt ist: Ist $\mu^*$ auf $\R$ frei definiert, wann gilt $\mf{B}\subseteq \mf{M}_{\mu^*}$?
+			
+			\begin{defi}
+				Seien $A,B\in\R$. Dann ist der Abstand 
+				\[ d(A,B):=\inf\{|x-y|, x\in A, y\in B\}. \]
+				Ein äußeres Maß $\mu^*$ heißt arithmetisch, wenn 
+				\[ \forall A,B\in\R: d(A,B)>0\Rightarrow \mu^*(A\cup B)=\mu^*(A)+\mu^*(B) \]
+			\end{defi}
+			
+			\begin{satz} [Satz von Carathéodory]
+				$\mf{B}\subseteq \mf{M}_{\mu^*}$ genau dann, wenn $\mu^*$ arithmetisch ist.
+			\end{satz} 
+			
+			\begin{bew}
+				Dieser Satz erfordert einige Trickserei und wird hier nicht bewiesen.
+			\end{bew}
+			
+		\subsection{Maße auf $(\R, \mf{B})$, zweiter Anlauf}
+			Im folgenden ist immer $\mf{T}:=\{(a,b], a\le b, a,b\in\R\}$.
+			
+			\begin{satz}
+				$\mu$ ist genau dann endliches Maß auf $\mf{T}$, wenn
+				\[ \forall x\in\R\exists\delta(x)>0: \mu((x-\delta(x),x])<\infty \]
+			\end{satz}	
+			
+			\begin{bew}
+				In der Übung.
+			\end{bew}
+			
+			\begin{defi}
+				$\mu$ auf $(\R, \mf{B})$ heißt Lebesgue-Stieltjes Maß, oder lokalendlich, wenn jede beschränkte Borelmenge endliches Maß hat. 
+			\end{defi}
+			
+			\begin{bem}
+				Dazu muss man ein Maß finden, dass für alle $a<b$ $\mu((a,b])$ festlegt. Dies ist nicht ganz frei möglich, die Additivität muss erfüllt werden, also 
+				\[ \mu((a,c])=\mu((a,b])+\mu((b,c]). \]
+				
+				Wir beginnen dazu mit einem Spezialfall, dass $\mu(\R)<\infty$:
+			\end{bem}
+			
+			\begin{bsp}
+				Sei
+				\[ F(x)=\mu((-\infty,x])<\infty \]
+				dann ist für $a<b$:
+				\[ (-\infty,a]\cup (a,b]=(-\infty,b] \]
+				\[ \mu((-\infty,a])+\mu((a,b])=\mu((-\infty,b]) \]
+				\[ \Rightarrow \mu((a,b])=F(b)-F(a) \]
+			\end{bsp} 
+			
+			\begin{defi}
+				$F:\R\to\R$ heißt Verteilungsfunktion von $\mu$, wenn $\mu((a,b])=F(b)-F(a)$. 
+			\end{defi}
+			
+			\begin{bem}
+				\[ F(x)=\mu((0,x]), x\ge 0, \]
+				damit:
+				\[ \mu((a,b])=F(b)-F(a) \]
+				und $F(0)=0$. \newline
+				für
+				\[ \mu((x,0])=F(0)-F(x) \]
+				\[ \Rightarrow F(x)=-\mu((x,0]), \]
+				eine Verteilungsfunktion muss also die Form
+				\[ F(x)=\left\{\begin{array}{l}
+				\mu((0,x]): x\ge 0\\
+				-\mu((x,0]): x<0
+				\end{array}\right. \]
+				dies funktioniert, siehe Aufgaben (\zz $\mu((a,b])=F(b)-F(a)$). Dies fassen wir im folgenden Satz zusammen:
+			\end{bem}
+			
+			\begin{satz}
+				Zu jeder Lebesgue-Stieltjes Maßfunktion gibt es eine Verteilungsfunktion. Diese ist bis auf eine additive Konstante eindeutig bestimmt. 
+			\end{satz}
