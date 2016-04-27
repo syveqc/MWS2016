@@ -768,3 +768,120 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			\begin{satz}
 				Zu jeder Lebesgue-Stieltjes Maßfunktion gibt es eine Verteilungsfunktion. Diese ist bis auf eine additive Konstante eindeutig bestimmt. 
 			\end{satz}
+			
+		\subsection{Ergänzungen zu bedingten Wahrscheinlichkeiten}
+			\begin{satz}[Satz von der vollständigen Wahrscheinlichkeit]
+				Sei $(\Omega, \mf{S}, \P)$ ein Wahrscheinlichkeitsraum.
+				Sei dann $(B_i, i\in I)$ eine Partition, $I$ höchstens abzählbar mit $B_i\in\mf{S}, \P(B_i)>0, \sum_{i\in I}B_i=\Omega$ und $A\in\mf{S}$. Dann ist
+				\[ \P(A)=\sum_{i\in I} \P(B_i)\P(A|B_i). \]
+			\end{satz}
+			
+			\begin{bew}
+				Es gilt:
+				\[ \P(A)=\P(A\cap \Omega)=\P\left( A\cap\bigcup_{i\in I}B_i\right)=\P\left(\bigcup_{i\in I} A\cap B_i\right)=\sum_{i\in I} \P(A\cap B_i)=\sum_{i\in I} \P(B_i)\P(A|B_i) \]
+			\end{bew}
+			
+			\begin{satz}[Satz von Bayes]
+				Sei $(\Omega, \mf{S}, \P)$ ein Wahrscheinlichkeitsraum.
+				Sei wieder $(B_i, i\in I)$ eine Partition, $I$ höchstens abzählbar mit $B_i\in\mf{S}, \P(B_i)>0, \sum_{i\in I}B_i=\Omega$ und $A\in\mf{S}$. Zusätzlich zu vorher gelte $\P(A)>0$. Dann gilt:
+				\[ \P(B_i|A)=\frac{\P(A\cap B_i)}{\P(A)}=\frac{\P(B_i)\P(A|B_i)}{\P(A)}=\frac{\P(B_i)\P(A|B_i)}{\sum_{j\in I}\P(B_j)\P(A|B_j)} \]
+			\end{satz}
+			
+			\begin{defi}
+				Die $\P(B_i)$ in den Sätzen vorher heißen a-priori Wahrscheinlichkeiten, $\P(B_i|A)$ die a-posteriori Wahrscheinlichkeiten. 
+			\end{defi}
+			
+			\begin{bsp}
+				Es gibt vier Blutgruppen, A, B, AB, 0. Die Blutgruppe der Frau ist A, die des Sohnes ist 0. Wie ist die Wahrscheinlichkeit für die Blutgruppe des Mannes?\newline
+				Mit zusätzlichem Wissen über Genetik, kann man über die Wahrscheinlichkeiten $p_a,p_b,p_0$ für das Auftreten der Allele $a,b,0$ die Wahrscheinlichkeit der Blutgruppen ausrechnen. In der Bevölkerung haben Blutgruppe 0 40\% der Bevölkerung, Blutgruppe A 47\%, B 9\% und AB 4\%. Damit erhalten wir:
+				\[ 0.4=p_0^2 \]
+				\[ 0.47=p_0^2+2p_ap_0 \]
+				\[ 0.09=p_b^2+2p_bp_0 \]
+				\[ 0.04=2p_ap_b \]
+				Eine gute Approximation ist
+				\[ p_a\approx \frac{9}{30}, \:\:\:\:\:p_b\approx \frac{2}{30}, \:\:\:\:\: p_0\approx\frac{19}{30}. \]
+				Damit erhält man:
+				\[ \P(\text{Sohn 0|0})=1 \]
+				\[ \P(\text{Sohn 0|A})=\frac{1}{2} \]
+				\[ \P(\text{Sohn 0|B})=\frac{1}{2} \]
+				und 
+				\[ \P(\text{0|Sohn 0})=\frac{p_0^2}{p_0^2+p_ap_0+p_bp_0}=p_0, \]
+				genauso für A und B, also ist die Wahrscheinlichkeit für Blutgruppe 0 am größten. 
+			\end{bsp}
+			
+		\subsection{Eigenschaften von Verteilungsfunktionen}
+			\begin{satz}
+				Sei $F:\R\to\R$ eine Verteilungsfunktion. Dann gilt:
+				\begin{enumerate}
+					\item Monotonie:
+					\[ a\le b\Rightarrow F(a)\le F(b) \]
+					\item Rechtsstetigkeit:
+					\[ b_n\downarrow b\Rightarrow F(b_n)\downarrow F(b) \]
+				\end{enumerate}
+			\end{satz}
+			
+			\begin{bew} $\text{  }$ %newline
+				
+				\begin{enumerate}
+					\item trivial
+					\item Sei $a\le b$, $b_n\downarrow b$, also
+					\[ (a,b_n]\downarrow (a,b] \]
+					und über die Stetigkeit von oben von Maßen
+					\[ \mu((a,b_n])\to \mu((a,b]) \]
+					\[ \Rightarrow F(b_n)-F(a)\to F(b)-F(a) \]
+				\end{enumerate}
+			\end{bew}
+			
+			\begin{satz}
+				Sei $F:\R\to\R$ nichtfallend und rechtsstetig. Dann ist durch 
+				\[ \mu_F((A,b]):=F(b)-F(a) \]
+				ein Maß auf $\mf{T}=\{(a,b], a\le b, a,b,\in\R\}$ definiert.
+			\end{satz}
+			
+			\begin{bew}$\text{  }$
+				\begin{enumerate}
+					\item $\mu_F$ ist Inhalt:\newline
+					\[ \mu_F(\varnothing)=\mu_F((a,a])=F(a)-F(a)=0 \]
+					und
+					\[ \mu_F((a,b])\le 0 \]
+					folgt sofort. Für die Additivität benutzen wir, dass $\mf{T}$ ein Semiring im engeren Sinn ist. Ist außerdem die Vereinigung zweier Intervalle wieder ein Intervall, so hat die Vereinigung die Form:
+					\[ (a,b]\cup (b,c]=(a,c], \]
+					also
+					\[ \mu_F((a,b])+\mu_F((b,c])=F(b)-F(a)+F(c)-F(b)=F(c)-F(a)=\mu_F((a,c]). \]
+					\item Sigmaadditivität:\newline
+					Sei also 
+					\[ (a,b]=\sum_{n\in\N} (a_n,b_n]. \]
+					Dann wissen wir schon, dass, da $\mu_F$ Inhalt ist, gilt:
+					\[ \mu_F((a,b])\ge\sum_{n\in\N} \mu_F((a_n,b_n]). \]
+					\zz:
+					\[ \mu_F((a,b])\le\sum_{n\in\N} \mu_F((a_n,b_n]) \]
+					Sei $a'>a$, $F(a')\le F(a)+\epsilon$ und $b_n'>b_n$, $F(b_n')\le F(b_n)+\frac{\epsilon}{2^n}$. Dann ist
+					\[ [a',b]\subseteq (a,b]=\bigcup_{n\in\N}(a_n,b_n]\subseteq \bigcup_{n\in\N} (a_n,b_n') \]
+					Nach dem Satz von Heine-Borel gibt es also eine endliche Teilüberdeckung, also
+					\[ \exists N\in\N: [a',b]\subseteq\bigcup_{n=1}^N(a_n,b_n') \]
+					\[ \Rightarrow (a',b]\subseteq\bigcup_{n=1}^N (a_n,b_n']. \]
+					Nun haben wir eine endliche Vereinigung und wir erhalten aus der endlichen Subadditivität des Inhalts $\mu_F$:
+					\[ \mu_F((a',b])\le\sum_{n=1}^{N}\mu_F((a_n,b_n'])\le\sum_{n=1}^{\infty}\mu_F((a_n,b_n']) \]
+					\[ F(b)-F(a)-\epsilon\le F(b)-F(a')\le\sum_{n\in\N}(F(b_n')-F(a_n) \]
+					\[ \Rightarrow F(b)-F(a)-\epsilon\le\sum_{n\in\N} (F(b_n)+\frac{\epsilon}{2^n}-F(a_n))=\sum_{n\in\N}(F(b_n)-F(a_n))+\epsilon \]
+					\[ \Rightarrow F(b)-F(a)\le \sum_{n\in\N}(F(b_n)-F(a_n))+2\epsilon, \]
+					da $\epsilon$ beliebig, erhalten wir die Behauptung. 
+					
+				\end{enumerate}
+			\end{bew}
+			
+			\begin{bem}
+				Für Wahrscheinlichkeitsmaße $\mu$ hat die Verteilungsfunktion 
+				\[ F(x):=\mu((-\infty,x]) \]
+				die zusätzlichen Eigenschaften:
+				\begin{itemize}
+					\item
+					\[ 0\le F\le 1 \]
+					\item
+					\[ \lim_{x\to-\infty}F(x)=0 \]
+					\item
+					\[ \lim_{x\to +\infty} F(X)=1. \]
+				\end{itemize}
+				Eine Verteilungsfunktion, die das erfüllt, heißt Verteilungsfunktion im engeren Sinn. 
+			\end{bem}
+			
