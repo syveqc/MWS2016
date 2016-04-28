@@ -885,3 +885,120 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				Eine Verteilungsfunktion, die das erfüllt, heißt Verteilungsfunktion im engeren Sinn. 
 			\end{bem}
 			
+		\subsection{Maße von Mengen mit Verteilungsfunktionen}
+			Ab diesem Kapitel werden wir offene Intervallgrenzen auch mit eckigen Klammern schreiben.\newline
+			Wir wissen schon:
+			\[ \mu(]a,b])=F(b)-F(a). \]
+			Was passiert, für$\mu([a,b]), \mu(]a,b[), \mu([a,b[)$? 
+			\[ \mu([a,b])=\mu(\bigcap_{n\in\N}]a-\frac{1}{n},b])=\lim_{n\to\infty}\mu(F(b)-F(a-\frac{1}{n}))=F(b)-F(a-0) \]
+			\[ \mu(]a,b[)=\mu(\bigcup_{n\in\N}]a,b-\frac{1}{n}])=\lim_{n\to\infty}(F(b-\frac{1}{n})-F(a))=F(b-0)-F(a) \]
+			\[ \mu([a,b[)=F(b-0)-F(a-0) \]
+			Und damit auch 
+			\[ \mu(\{x\})=\mu([x,x])=F(x)-F(x-0) (=\text{Sprunghöhe von $F\text{ in $x$}$}) \]
+			\begin{satz}
+				Jedes (sigma-)endliche Maß $\mu$ auf $(\Omega, \mf{S})$ lässt sich darstellen als Summe eines stetigen Maßes $\mu_c$ und eines diskreten Maßes $\mu_d$, wobei
+				\begin{itemize}
+					\item $\mu_d$ diskret, wenn es eine Menge $D$ gib, die höchstens abzählbar ist, sodass
+					\[ \mu(D^c)=0. \]
+					\item $\mu_c$ stetig, wenn 
+					\[ \forall w\in\Omega: \mu_c(\{w\})=0. \]
+				\end{itemize}
+				Nämlich
+				\[ \mu(A)=\mu(A\cap D^c)+\mu(A\cap D)=0+\mu(\bigcup_{x\in A\cap D} \{x\})=\sum_{x\in A\cap D}\mu(\{x\})=\sum_{x\in A}\mu(\{x\}) \]
+			\end{satz}
+			
+			\begin{bew}
+				In der Übung.
+			\end{bew}
+			
+			\begin{bsp}
+				Sei $\mu$ ein endliches Lebesgue-Stieltjes Maß auf $(\R,\mf{B})$. Für die Verteilungsfunktion $F(x)=\mu(]-\infty,x[)$ kann man nun, da $\mu$ dargestellt werden kann als
+				\[ \mu=\mu_c+\mu_d \]
+				auch zerlegen in 
+				\[ F=F_c+F_d, F_d(x)=\sum_{y\le x} \mu_d(\{y\}).\]
+				Wir erhalten den folgenden Satz:
+			\end{bsp}
+			
+			\begin{satz}
+				Jede diskrete Verteilungsfunktion (Verteilungsfunktion eines diskreten, endlichen Maßes) auf $\R$ lässt sich anschreiben als
+				\[ F(x)=\sum_{y\le x} p(y). \]
+				Ist $\sum_{y\in\R} p(y)=1$, so nennen wir $p$ Wahrscheinlichkeitsfunktion. Umgekehrt gibt es zu jeder Funktion $p$ mit $p(y)\ge 0$ eine diskrete Verteilungsfunktion. 
+			\end{satz}
+			
+			\begin{defi}
+				Ein Wahrscheinlichkeitsmaß $\P$ auf $(\R,\mf{B})$ heißt Verteilung. 
+			\end{defi}
+			
+			\begin{satz}
+				Ist eine Verteilungsfunktion $F(x)$ (stückweise) stetig differenzierbar, $f(x):=F'(x)\ge0$, so ist
+				\[ \mu_F(]a,b])=\int_{a}^{b} f(x)dx. \]
+				$f(x)$ heißt dann Dichtefunktion. 
+			\end{satz}
+			
+			\begin{bem}
+				Ist $\mu_F(\R)=1$, so ist
+				\[ 1=\int_{-\infty}^{+\infty} f(x)dx. \]
+			\end{bem}
+			
+			\begin{bem}
+				Wir werden anstatt des Riemann-Integrals bald ein Lebesgue-Integral schreiben.
+			\end{bem}
+			
+			\begin{bsp} [Standardnormalverteilung]
+				\[ \varphi(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}. \]
+				Aus der Analysis ist schon bekannt
+				\[ \int_{-\infty}^{+\infty}e^{-\frac{x^2}{2}}dx=\sqrt{2\pi}, \]
+				also
+				\[ \int_{-\infty}^{+\infty}\varphi(x)dx=1. \]
+				Wir erhalten die Verteilungsfunktion
+				\[ \Phi(x):=\int_{-\infty}^{x}\varphi(x)dx. \]
+				Dann ist
+				\[ \P_\Phi(]a,b])=\Phi(b)-\Phi(a). \]
+				Zum Beispiel also 
+				\[ \P_\Phi(]-1,2])=\Phi(2)-\Phi(-1)=0.9772-0.1587=0.8185, \]
+				\[ \Phi(1.67)=0.9525 \]
+			\end{bsp}
+			
+			\begin{bsp}
+				Allgemeiner nimmt man 
+				\[ \mathcal{N}(\mu,\sigma^2,x)=\frac{1}{\sqrt{2\pi \sigma^2}}e^\frac{-(x-\mu)^2}{2\sigma^2} \]
+			\end{bsp}
+			
+		\subsection{Mehrdimensionale Lebesgue-Stieltjes Maße und Verteilungsfunktionen}
+			Der hier verwendete Maßraum ist $(\R^d, \mf{B}_d)$ mit 
+			\[ \mf{B}_d:=\mf{A}_\sigma\left(\{]a,b]: a,b\in\R, a\le b\}\right), \]
+			wobei die Ungleichung $a\le b$ komponentenweise zu verstehen ist, also
+			\[ a\le b:\Leftrightarrow\forall i\in\{1,...,d\}: a_i\le b_i \]
+			und 
+			\[ ]a,b]:=]a_1,b_1]\times]a_2,b_2]\times...\times]a_d,b_d] \]
+			
+			\begin{defi}
+				Sei $\mu$ ein Lebesgue-Stieltjes Maß auf $(\R^d, \mf{B}_d)$, wenn für beschränkte Mengen $A\in\mf{B}_d$
+				\[ \mu(a)<\infty. \]
+			\end{defi}
+			
+			\begin{bem}
+				Sei $\mu$ ein endliches Maß. Dann können wir die Verteilungsfunktion wieder anschreiben als
+				\[ F(x)=\mu(]-\infty,x])=\mu(]-\infty,x_1])\times...\times\mu(]-\infty,x_d]). \]
+				Genügt dies, um $\mu$ festzulegen?
+			\end{bem}
+			
+			\begin{bsp}
+				Für $d=2$ erhalten wir:
+				\[ \mu(]a,b])=F(b_1,b_2)-F(a_1,b_2)-F(b_1,a_2)+F(a_1,a_1). \]
+				Wir können den Satz von oben also zmd. für den 2-dimensionalen Raum erweitern:
+			\end{bsp}
+			
+			\begin{satz}
+				$F$ ist eine Verteilungsfunktion von einem Lebesgue-Stieltjes Maß $\mu$, wenn 
+				\begin{itemize}
+					\item $F$ rechtsstetig ist, also
+					\[ x_n\downarrow x\Rightarrow F(x_n)\downarrow F(x) \]
+					\item $F$ "monoton" ist, also
+					\[ a\le b\Rightarrow F(b_1,b_2)-F(a_1,b_2)-F(b_1,a_2)+F(a_1,a_2)\ge 0 \]
+				\end{itemize}
+			\end{satz}
+			
+			\begin{bew}
+				Analog zum 1-dimensionalen Fall.
+			\end{bew}
