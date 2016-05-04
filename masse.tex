@@ -994,11 +994,82 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				\begin{itemize}
 					\item $F$ rechtsstetig ist, also
 					\[ x_n\downarrow x\Rightarrow F(x_n)\downarrow F(x) \]
-					\item $F$ "monoton" ist, also
+					\item $F$ monoton ist, also
 					\[ a\le b\Rightarrow F(b_1,b_2)-F(a_1,b_2)-F(b_1,a_2)+F(a_1,a_2)\ge 0 \]
 				\end{itemize}
 			\end{satz}
 			
 			\begin{bew}
 				Analog zum 1-dimensionalen Fall.
+			\end{bew}
+			
+			\begin{bsp}[random shit]
+				Für $d\ge 2$ erhalten wir:
+				\[ \mu(]a,b])=\mu(]a_1,b_1]\times...\times]a_d,b_d])=\sum_{e\in\{0,1\}^d} F(ae+b(1-e)), \]
+				wobei 
+				\[ ae+b(1-e)=\big(a_1e_1+b_1(1-e_1),...,a_de_d+b_d(1-e_d)\big). \]
+			\end{bsp}
+			
+			\begin{defi}[Differenzoperatoren]
+				\begin{align*} \Delta_i(a_i,b_i): &\R^{\R^d}\to\R^{\R^d};\\&f\mapsto \Delta_i (a,b)f(x_1,...,x_d):=f(x_1,...,x_{i-1},b_i,x_{i+1},...x_d)-f(x_1,...,x_{i-1},a_i,x_{i+1},...,x_d)
+				\end{align*}
+			\end{defi}
+			
+			\begin{bsp}
+				$d=2$. $f(x_1,x_2)=x_1x_2$. 
+				\[ \Delta_1(4,17)f(x_1,x_2)=17x_2-4x_2-13x_2-13x_2 \]
+				bzw
+				\[ \Delta_1(a_1,b_1)f(x_1,x_2)=(b_1-a_1)x_2 \]
+				\[ \Delta_1(a_1,b_1)\Delta_2(a_2,b_2)f(x_1,x_2)=(b_1-a_1)b_2-(b_1-a_1)a_2=(b_1-a_1)(b_2-a_2) \]
+			
+			\end{bsp}
+			\begin{bem}
+				Damit ist (für $d\in\N$)
+				\[ \mu_F(a,b)=\Delta_1(a_1,b_1)\Delta_2(a_2,b_2)...\Delta_d(a_d,b_d)F \]
+				Und
+				\[ \Delta_i(a_i,b_i) F(x_1,...,x_d)=\int_{a_i}^{b_i}\frac{\partial}{\partial x_i} F(x_1,...,x_d)dx_i \]
+			\end{bem}
+			
+			\begin{bsp}
+				Endliche Maße:
+				\[ F(x)=\mu(]-\infty,x]) \]
+				Wir betrachten den Spezialfall für $d=2$. Dann ist
+				\[ \mu(]0,x])=F(x_1,x_2)-F(x_1,0)-F(0,x_2)+F(0,0). \]
+				Setze  $F(x_1,0)=F(0,x_2)=0$. Dann ist für $x>0$
+				\[ F(x_1,x_2)=\mu(]0,x_1]\times]0,x_2]) \]
+				und für $x_1\ge 0, x_2 <0$
+				\[ \mu(]0,x_1]\times]x_2,0])=F(x_1,0)-F(0,0)-F(x_1,x_2)+F(0,x_2)=-F(x_1,x_2). \]
+				Dies lässt sich quadrantenweise durchführen. \newline
+				Allgemein: 
+				\[ F(x)=\mu(]\min(x,0),\max(x,0)])\sgn(x), \]
+				wobei das Minimum und Maximum koordinatenweise zu verstehen ist und 
+				\[ \sgn(x)=\prod_{i=1}^{n}\sgn(x_i) \]
+			\end{bsp}
+			
+			\begin{defi}
+				Das $d$-dimensionale Lebesguemaß $\lambda_d$ ist
+				\[ \lambda_d(]a,b])=\prod_{i=1}^d(b_i-a_i) \]
+				und
+				\[ F(x_1,...,x_d)=x_1\cdots x_d. \]
+				Mit Hilfe des Fortsetzungssatzes erhalten wir das Maß $\lambda_d$ auf $\mathfrak{B}_d$.\newline
+				Die $\lambda_d^*$-messbaren Mengen werden mit $\mathfrak{L}_d$ ($d$-dimensionale Lebesguemengen) bezeichnet, wobei
+				\[ A\in \mathfrak{L}_d\Leftrightarrow A=B\cup N, B\in\mathfrak{B}_d, \exists M\in\mathfrak{B}_d: N\subseteq M, \lambda_d(M)=0 \] 
+			\end{defi}
+			
+			\begin{satz}
+				Sei $\lambda_d$ das Lebesguemaß auf $\mathfrak{B}_d$. Dann gilt:
+				\begin{itemize}
+					\item $\lambda_d$ ist translationsinvariant:
+					\[ A\oplus c:=\{x+c:x\in A\}, \]
+					\[ A\in\mathfrak{L}_d, c\in\R^d\Rightarrow A\oplus c\in \mathfrak{L}_d, \lambda_d(A\oplus c)=\lambda_d(A) \]
+				\end{itemize}
+			\end{satz}
+			
+			\begin{bew}
+				$\text{   }$
+				\begin{itemize}
+					\item Wir zeigen zunächst
+					\[  A\in\mathfrak{L}_d, c\in\R^d\Rightarrow A\oplus c\in \mathfrak{L}_d. \]
+					Sei $A=]a,b]$ und $\mathfrak{S}:=\{A\in\mathfrak{B}_d: A\oplus c\in \mathfrak{B}_d\}$. $\mathfrak{S}$ ist Sigmaalgebra, damit gilt die Behauptung. $\lambda_d(A\oplus c)=\lambda_d(A)$ für $A\in\mathfrak{B}$ ist klar, da sie auf dem Semiring gilt, damit auch auf den Borelmengen. 
+				\end{itemize}
 			\end{bew}
