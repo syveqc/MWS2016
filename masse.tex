@@ -1073,3 +1073,122 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 					Sei $A=]a,b]$ und $\mathfrak{S}:=\{A\in\mathfrak{B}_d: A\oplus c\in \mathfrak{B}_d\}$. $\mathfrak{S}$ ist Sigmaalgebra, damit gilt die Behauptung. $\lambda_d(A\oplus c)=\lambda_d(A)$ für $A\in\mathfrak{B}$ ist klar, da sie auf dem Semiring gilt, damit auch auf den Borelmengen. 
 				\end{itemize}
 			\end{bew}
+			
+			\begin{satz}
+				Wenn $\mu$ auf $(\R^d, \mathfrak{B}_d)$ ein translationsinvariantes Lebesgue-Stieltjes Maß ist, dann gilt
+				\[ \mu=c\lambda_d, c\ge 0. \]
+			\end{satz}
+			
+			\begin{bew}
+				Wir führen den Beweis nur im Fall $d=1$, in höheren Dimensionen funktioniert der Beweis analog.\newline
+				Es gilt mit $c:=\mu(]0,1])$
+				\[ \mu(]a,b])=\mu(]0,b-a]) \]
+				\[ \mu(]0,1])=\mu\left(\bigcup_{i=1}^n ]\frac{i-1}{n},\frac{i}{n}]\right)=\sum_{i=1}^{n}\mu(]\frac{i-1}{n},\frac{i}{n}])=n\mu(]0,\frac{1}{n}])
+				\]
+				\[ \Rightarrow \mu(]0,\frac{1}{n}])=\frac{c}{n} \]
+				und damit schließlich
+				\[ \mu(]0,\frac{m}{n}])=\mu\left(\bigcup_{i=1}^m]\frac{i-1}{n},\frac{i}{n}]\right)=m\mu(]0,\frac{1}{n}])=c\frac{m}{n}. \]
+				Für $x\in\Q^+$ folgt dann $\mu(]0,x])=cx$. Für $x\in\R^+$ wähle $x_n\in\Q^+$ mit $x_n\downarrow x$, dann gilt
+				\[ \mu(]0,x])=\mu\left(\bigcap_{n\in\N} ]0,x_n]\right)=\lim\limits_{n\to\infty}\mu(]0,x_n])=\lim\limits_{n\to \infty}cx_n=cx \]
+				also die Behauptung
+				\[ \mu(]a,b]=c(b-a)=c\lambda(]a,b]). \]
+			\end{bew}
+			
+			\begin{defi}
+				Sei $\Omega=[0,1]$, dann ist 
+				\[ x\sim y:\Leftrightarrow y-x\in \Q \]
+				eine Äquivalenzrelation.\newline
+				Dann zerlegen wir $\Omega$ in Äquivalenzklassen und bilden mithilfe des Auswahlaxioms eine Menge $V$, die aus jeder Äquivalenzklasse genau einen Vertreter wählt. Eine solche Menge heißt Vitali-Menge und ist nicht Lebesgue-Messbar.
+			\end{defi}
+			
+			\begin{bew}
+				Wäre $V$ Lebesgue messbar, so hätte sie ein Lebesgue-Maß. Sei $q\in\Q\cap[-1,1]$. Sind nun $q_1\neq q_2$ zwei solche rationalen Zahlen, dann ist
+				\[ (V\oplus q_1)\cap (V\oplus q_2)=\varnothing. \]
+				Nämlich: Wäre dies nicht so, dann würde für ein $y\in(V\oplus q_1)\cap (V\oplus q_2)$ gelten
+				\[ x_1:=y-q_1\in V\text{ und } x_2:=y-q_2\in V \]
+				\[ \Rightarrow x_2-x_1=q_1-q_2\in \Q\Rightarrow x_1\sim x_2, x_1\neq x_2\lightning \]
+				Wäre nun $V\in\mathfrak{L}$, dann auch
+				\[ \bigcup_{q\in\Q\cap[-1,1]}V\oplus q=W, \]
+				also
+				\[ \lambda(W)=\sum_{q\in\Q\cap[-1,1]}\lambda(V\oplus q) \]
+				mit 
+				\[ [0,1]\subseteq W\subseteq[-1,2] \]
+				folgt
+				\[ 1\le\lambda(W)\le 3, \]
+				nun gilt also
+				\[ \lambda(V)=0\Rightarrow \lambda(W)=0 \]
+				\[ \lambda(V)>0\Rightarrow\lambda(W)=\infty  \lightning \]
+			\end{bew}
+			
+			\begin{bem}
+				Übliche Schlamperei:
+				\[ \R^n\times\R^m=\R^{m+n},  \]
+				und
+				\[ \mathfrak{B}_n\times\mathfrak{B}_m=\mathfrak{B}_{n+m} \]
+			\end{bem}
+			
+			\begin{satz}
+				Seien $\Omega_1,\Omega_2$ Mengen und $\mathfrak{C}_1, \mathfrak{C}_2$ Mengensysteme über $\Omega_1,\Omega_2$. Dann ist
+				\[ \mathfrak{A}_\sigma(\mathfrak{C}_1)\times \mathfrak{A}_\sigma(\mathfrak{C}_2)=\mathfrak{A}_\sigma(\mathfrak{C}_1\otimes\mathfrak{C}_2), \]
+				wobei
+				\[ \mathfrak{C}_1\otimes\mathfrak{C}_2:=\{A_1\times A_2: A_1\in \mathfrak{C}_1, A_2\in\mathfrak{C}_2\} \]
+				und
+				\[ \mathfrak{A}_\sigma(\mathfrak{C}_1)\times\mathfrak{A}_\sigma(\mathfrak{C}_2):=\mathfrak{A}_\sigma(\mathfrak{A}_\sigma(\mathfrak{C}_1\otimes\mathfrak{C}_2))\ \]
+			\end{satz}
+			
+			\begin{bew}
+				Kann man mit dem Prinzip der guten Mengen machen, vielleicht in der Übung. 
+			\end{bew}
+			
+		\subsection{Approximationssätze und Regularität}
+			
+			\begin{defi}
+				Sei $\mu$ ein Inhalt auf $(\R^d, \mathfrak{B}_d)$ bzw $(\R^d, \mathfrak{S})$ mit $\mathfrak{B}_d\subseteq\mathfrak{S}$, dann heißt $A\in\mathfrak{S}$ regulär von oben, wenn
+				\[ \mu(A)=\inf\{\mu(U):A\subseteq U, U\text{ offen}\}. \]
+				$\mu$ heißt dann regulär von oben, wenn alle $A\in\mathfrak{S}$ regulär von oben. 
+			\end{defi}
+			
+			\begin{defi}
+				Sei $\mu$ ein Inhalt auf $(\R^d, \mathfrak{B}_d)$ bzw $(\R^d, \mathfrak{S})$ mit $\mathfrak{B}_d\subseteq\mathfrak{S}$, dann heißt $A\in\mathfrak{S}$ regulär von unten, wenn
+				\[ \mu(A)=\sup\{\mu(K):K\subseteq A, K\text{ kompakt}\}. \]
+				$\mu$ heißt dann regulär von unten, wenn alle $A\in\mathfrak{S}$ regulär von oben. 
+			\end{defi}
+			
+			\begin{defi}
+				Wenn $\mu$ bzw $A\in\mathfrak{S}$ sowohl regulär von oben als auch regulär von unten sind, dann heißen sie regulär. 
+			\end{defi}
+			
+			\begin{satz}
+				Ein regulärer Inhalt ist ein Maß. 
+			\end{satz}
+			
+			\begin{bew}
+				ist eh klar. 
+			\end{bew}
+			
+			\begin{satz}
+				Sei $\mu$ ein Lebesgue-Stieltjes Maß auf $(\R^d, \mathfrak{B}_d)$, dann ist $\mu$ regulär von oben.
+			\end{satz}
+			
+			\begin{satz}
+				Ist $\mu$ ein sigmaendliches Maß auf $(\R^d, \mathfrak{B}_d)$, so ist $\mu$ regulär von unten. 
+			\end{satz}
+			
+			Zusammenfassend ergibt das dann:
+			\begin{satz}
+				Jedes Lebesgue-Stieltjes Maß ist regulär. 
+			\end{satz}
+			
+			\begin{bew}[1. Satz]
+				Wir schränken $\mu$ auf den Semiring $\mathfrak{T}=\{]a,b], a\le b, a,b\in\R^d\}$ ein. Dann erzeugt $\mu|_\mathfrak{T}$ ein äußeres Maß $\mu^*$. Mithilfe der Eindeutigkeit der Fortsetzung gilt 
+				\[ \forall A\in\mathfrak{B}: \mu^*(A)=\mu(A), \]
+				also 
+				\[ \mu(A)=\mu^*(A)=\inf\left\{\sum_{n\in\N}\mu(]a_n,b_n]), A\subseteq\bigcup_{n\in\N} ]a_n,b_n]\right\}. \]
+				Im Fall $\mu(A)=\infty$ sind wir fertig. Wir betrachten also $\mu(A)<\infty$. Dann
+				\[ \exists a_n,b_n,n\in\N: A\subseteq \bigcup_{n\in\N}]a_n,b_n]\text{ und } \sum_{n\in\N}\mu(]a_n,b_n])\le\mu(A)+\epsilon \:\:\:\forall \epsilon>0 \]
+				Wähle nun $b_n'>b_n$ sodass 
+				\[\mu(]a_n,b_n'[)\le\mu(]a_n,b_n[)+\frac{\epsilon}{2^n}\]
+				Dann ($U:=\bigcup_{n\in\N} ]a_n,b_n'[$)
+				\[ \mu(U)=\mu\left(\bigcup_{n\in\N} ]a_n,b_n'[\right)\le\sum_{n\in\N}\mu(]a_n,b_n'[)\le\sum_{n\in\N}\mu(]a_n,b_n])+\epsilon \]
+			\end{bew}
+
