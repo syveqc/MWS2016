@@ -1191,4 +1191,140 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				Dann ($U:=\bigcup_{n\in\N} ]a_n,b_n'[$)
 				\[ \mu(U)=\mu\left(\bigcup_{n\in\N} ]a_n,b_n'[\right)\le\sum_{n\in\N}\mu(]a_n,b_n'[)\le\sum_{n\in\N}\mu(]a_n,b_n])+\epsilon \]
 			\end{bew}
-
+			
+			\begin{satz}
+				Ein endliches/sigmaendliches Maß $\mu$ auf $(\R^d, \mathfrak{B}_d)$ ist regulär von unten.	
+			\end{satz}
+			
+			\begin{bew}
+				Auch hier begnügen wir uns mit $d=1$, der allgemeine Fall läuft genau so, ist nur mehr Schreibarbeit.\newline
+				Zunächst ist $\mu$ endlich und damit regulär von oben. Sei $A\in\mathfrak{B}$, dann gibt es ein offenes $U$ mit $A^c\subseteq U, \mu(U)\le\mu(A^c)+\epsilon$. Bekannterweise ist dann $U^c$ abgeschlossen und
+				\[ \mu(U^c)=\mu(\Omega)-\mu(U)\ge \mu(\Omega)-\mu(A^c)-\epsilon=\mu(A)-\epsilon, \]
+				wir können also A durch eine abgeschlossene Menge approximieren. Es fehlt also noch der Schritt der Beschränktheit. $K_N:=U^c\cap[-N,N]$ ist nun also kompakt und monoton steigend, $K_N\subseteq K_{N+1}$ und $\bigcup_{N\in\N}K_N=U^c$. Weiters ist
+				\[ \mu(U^c)=\mu\left(\bigcup_{N\in\N} K_N\right)=\lim\limits_{n\to\infty}\mu(K_N) \]
+				\[ \Rightarrow \exists N\in\N: \mu(K_N)\ge\mu(A)-2\epsilon, \]
+				damit ist für endliche Maße die Regularität von unten gezeigt. \newline
+				Sei nun $\mu$ sigmaendlich, dann 
+				\[ \exists (B_n)_{n\in\N}\in\mathfrak{B}, \forall n\in\N:\mu(B_n)<\infty \]
+				mit oBdA $B_n\subseteq B_{n+1}$. (oBdA weil wir ja jede Mengenfolge monoton machen können)\newline
+				Für $A\in\mathfrak{B}$ gilt dann
+				\[ A=A\cap\Omega=A\cap\bigcup_{n\in\N} B_n=\bigcup_{n\in\N} A\cap B_n, \]
+				also ist 
+				\[ \mu(A)=\lim\limits_{n\to\infty}\mu(B_n\cap A). \]
+				Wähle nun $M<\mu(A)$. Also 
+				\[ \exists n\in N:\mu(B_n\cap A)> M. \]
+				Wir definieren das (endliche) Maß
+				\[ \mu_n(A):=\mu(B_n\cap A). \]
+				Damit gibt es ein kompaktes $K\subseteq A$ mit $\mu_n(K)>M$. Damit folgt
+				\[ \mu(K)\ge\mu(K\cap B_n)>M. \]
+				\arge
+			\end{bew}
+			
+			\begin{bem}
+				Eine Funktion $F:\R^d\to\R$ heißt Verteilungsfunktion im engeren Sinn, wenn es ein Wahrscheinlichkeitsmaß $\P$ auf $(\R^d, \mathfrak{B}_d)$ mit 
+				\[ F(x)=\P(]-\infty,x])\:\:\:\left(=\P(]-\infty,x_1]\times...\times]-\infty,x_d])\right) \]
+				gibt und $F$ rechtsstetig ist, also
+				\[ \Delta_1(a_1,b_1)...\Delta_d(a_d,b_d)F\ge0. \]
+				Zusätzlich muss ein solches $F$ nichtfallend in jeder Argumentvariable $x_1,...,x_d$ sein, also
+				\[ \forall i=1,...,d:\lim\limits_{x_i\to-\infty}F(x_1,...,x_d)=0 \]  
+				\[ \lim\limits_{\min(x_1,...,x_d)\to\infty}F(x_1,...,x_d)=1 \]
+			\end{bem}
+			
+			\chapter{Das Lebesgue-Integral}
+			
+			Motivation für dieses Kapitel: Wir wollen einen neuen Integralbegriff auf Basis des Riemann-Integrals definieren,
+			\[ \int f=\int_0^\infty \mu([f>x])dx, \]
+			wobei $f$ auf beliebigen Mengen definiert sein darf, also wenn $\mu$ Maß auf einem Messraum $(\Omega, \mathfrak{S})$, dann ist 
+			\[ f:\Omega\to\R \]
+			und $\mu([f>x])$ definiert sein soll, also $[f>x]\in\mathfrak{\sigma}$, wobei
+			\[ [f>x]:=\{\omega\in\Omega: f(\omega)>x\}. \]
+			
+			\begin{defi}
+				Seien $(\Omega_1, \mathfrak{S}_1)$, $(\Omega_2, \mathfrak{S}_2)$ zwei Messräume, dann heißt 
+				\[ f:\Omega_1\to\Omega_2 \]
+				messbar bezüglich $(\Omega_1, \mathfrak{S}_1)$ und $(\Omega_2, \mathfrak{S}_2)$ (oder kürzer $\mathfrak{S}_1-\mathfrak{S}_2$-messbar), wenn
+				\[ f^{-1}(\mathfrak{S}_2)\subseteq\mathfrak{S}_1, \]
+				also wenn $\forall A\in\mathfrak{S}_2: f^{-1}(A)\in\mathfrak{S}_1$. Für eine solche Funktion schreiben wir 
+				\[ f:(\Omega_1,\mathfrak{S}_1)\to(\Omega_2, \mathfrak{S}_2). \]
+				Eine Funktion
+				\[ f:(\Omega,\mathfrak{S})\to(\R,\mathfrak{B}) \]
+				heißt dann $\mathfrak{S}$-messbar bzw
+				\[ f:(\R^{d_1},\mathfrak{S}_{d_1})\to(\R^{d_2},\mathfrak{B}_{d_2}) \]
+				heißt Borelmessbar,
+				\[ f::(\R^{d_1},\mathfrak{L}_{d_1})\to(\R^{d_2},\mathfrak{B}_{d_2}) \]
+				heißt Lebesguemessbar. 
+			\end{defi}
+			
+			\begin{satz}
+				Sei $\mathfrak{C}$ ein Mengensystem über $\Omega_2$, das $\mathfrak{S}_2$ erzeugt, $\mathfrak{S}_2=\mathfrak{A}_\sigma(\mathbb{C}$, dann ist $f:\Omega_1\to\Omega_2$ $\mathfrak{S}_1-\mathbb{S}_2$-messbar genau dann, wenn
+				\[ f^{-1}(\mathfrak{C})\subseteq \mathfrak{S}_1 \]
+			\end{satz}
+			
+			\begin{bew}
+				$\mathfrak{A}_\sigma(f^{-1}(\mathfrak{C})=f^{-1}(\mathfrak{A}_\sigma(\mathfrak{C}))$ wurde schon zu Beginn der Vorlesung gezeigt. Wegen
+				\[ f^{-1}(\mathfrak{A}_\sigma(\mathfrak{C}))=f^{-1}(\mathfrak{S}_2), \]
+				sind wir an dieser Stelle schon fertig. 
+			\end{bew}
+			
+			\begin{bem}
+				Für $\mathfrak{S}_2=\mathfrak{B}$ ist $\mathfrak{C}$ z.B. die Menge der halboffenen Intervalle. Wir können aber auch $\mathfrak{C}=\{]-\infty,b],b\in\R\}$ oder $\mathfrak{C}=\{U\subseteq \R, U\text{ offen}\}$ hernehmen. Damit können wir schon einige Sätze beweisen.
+			\end{bem}
+			
+			\begin{satz}
+				Sei $f:\R\to\R$, bzw $f:\R^d\to\R$, dann ist $f$ Borelmessbar, wenn $f$
+				 \begin{itemize}
+				 	\item monoton oder
+				 	\item stetig
+				 \end{itemize}
+				 ist. 
+			\end{satz}
+			
+			\begin{bew}
+				trivial, mit Erzeugendensystem $\mathfrak{C}=\{U\subseteq \R, U\text{ offen}\}$ und dem Faktum, dass eine Funktion genau dann stetig ist, wenn das Bild offener Mengen wieder offen ist. 
+			\end{bew}
+			
+			\begin{satz}
+				Ist 
+				\[ f_1:(\Omega_1,\mathfrak{S}_1)\to(\Omega_2,\mathfrak{S}_2) \]
+				und
+				\[ f_2:(\Omega_2,\mathfrak{S}_2)\to(\Omega_3,\mathfrak{S}_3), \]
+				dann ist auch
+				\[ f_2\circ f_1:(\Omega_1,\mathfrak{S}_1)\to(\Omega_3,\mathfrak{S}_3) \]
+				messbar. 
+			\end{satz}
+			
+			\begin{bew}
+				Sei $A\in\mathfrak{S}_3$, dann ist
+				\[ (f_2\circ f_1)^{-1}(A)=f_1^{-1}(f_2^{-1}(A))\in\mathfrak{S}_1, \]
+				da $f_2^{-1}(A)\in\mathfrak{S}_2$. \arge
+			\end{bew}
+			
+			\begin{satz}
+				Seien $(\Omega_1,\mathfrak{S}_1),(\Omega_2,\mathfrak{S}_2),(\Omega_3,\mathfrak{S}_3)$ Messräume. Wir bilden den Produktraum $(\Omega_2\times\Omega_3, \mathfrak{S}_2\times\mathfrak{S}_3)$. Dann ist
+				\[ f:\Omega_1\to\Omega_2\times\Omega_3, f=(f_2,f_3) \]
+				genau dann
+				\[ f:(\Omega_1,\mathfrak{S}_1)\to (\Omega_2\times\Omega_3, \mathfrak{S}_2\times\mathfrak{S}_3), \]
+				wenn
+				\[ f_2:(\Omega_1,\mathfrak{S}_1)\to (\Omega_2,\mathfrak{S}_2) \]
+				und
+				\[ f_3:(\Omega_1,\mathfrak{S}_1)\to(\Omega_3,\mathfrak{S}_3). \]
+			\end{satz}
+			
+			\begin{bew}
+				\begin{itemize}
+					\item "$\Rightarrow$":\newline
+					Sei $A\in\mathfrak{S}_2$. Dann ist $A\times\Omega_3\in\mathfrak{S}_2\times\mathfrak{S}_3$. Damit ist $f^{-1}(A\times\Omega_3)\in\mathfrak{S}_1$, da $f^{-1}(A\times\Omega_3)=f_2^{-1}(A)$. 
+					
+					\item "$\Leftarrow$":\newline
+					Seien $A\in\mathfrak{S}_2, B\in\mathfrak{S}_3$, dann ist
+					\[ f_2^{-1}(A\times B)=f_2^{-1}(A)\cap f_3^{-1}(B)\in\mathfrak{S}_1. \]
+					Da $C:=\{A\times B: A\in\mathfrak{S}_2, B\in\mathfrak{S}_3\}$ $\mathfrak{S}_2\times\mathfrak{S}_3$ erzeugt, folgt die Behauptung. 
+				\end{itemize}
+				\arge
+			\end{bew}
+			
+			\begin{bem}
+				Speziell für $f=(f_1,...,f_d)$, $f:(\Omega, \mathfrak{S})\to(\R^d, \mathfrak{B}_d)$ genau dann, wenn 
+				\[ \forall i=1,...,d: f_i:(\Omega,\mathfrak{S})\to(\R, \mathfrak{B}). \]
+			\end{bem}
+			
