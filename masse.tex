@@ -10,6 +10,11 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			Sei $\Omega$ eine beliebige Menge. Dann heißt $\mf{C}\subseteq 2^\Omega$ ein Mengensystem (über $\Omega$).
 		\end{defi}
 		
+		\begin{defi}
+			Eine Mengenfunktion $\mu$ auf dem Mengensystem $\mf{C}$ heißt additiv, falls
+			\[ \mu \left ( \biguplus_{i \in I} A_i \right ) = \sum_\In \mu (A_i)\]
+		\end{defi}
+		
 		\begin{defi} [Semiring]
 			Sei $\mf{T}$ ein nichtleeres Mengensystem über $\Omega$. Dann heißt $\mf{T}$ Semiring (im weiteren Sinn), falls
 			\begin{enumerate}
@@ -65,7 +70,174 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			\[ \Omega\in\mf{D} \]
 			erfüllt, so spricht man von einem Dynkin-System im engeren Sinn.
 		\end{defi}
-	
+		
+		\begin{lemma}
+			\begin{enumerate}[(i)]
+				\item Wenn ein Dynkinsystem abgeschlossen bezüglich $\cap$ ist, so ist es eine Sigmaalgebra.
+				\item Sei $\mf{C}$ ein Mengensystem, welches abgeschlossen bezüglich $\cap$ ist, so gilt:
+				\[ \mf D(\mf C) = \mf A_\sigma(\mf C) \]
+				\item Für endliche Maße $\mu,\nu$ auf einem Ring $\mf R$ ist
+				\[ \{a \in \mf R:\mu (A)=\nu(A) \} \]
+				ein Dynkinsystem im weiteren Sinn.
+			\end{enumerate}
+		\end{lemma}
+		
+		\begin{satz}
+			Eine Mengenfunktion $\mu$ auf einem Semiring im engeren Sinn $\mf T$ ist genau dann additiv, wenn für disjunkte Mengen $A,B \in \mf T$ mit $A \cup B \in \mf T$ gilt:
+			\[ \mu(A \cup B)=\mu(A) + \mu(B) \]
+		\end{satz}
+		\begin{bew}
+			Es gilt $ A \cap B = \emptyset $ und $ \mu(A \cup B)=\mu(A) + \mu(B) $ \\
+			Dann folgt mittels vollständiger Induktion, dass für disjunkte $(A_i)_\In$ aus $\mf T$ gilt:
+			\[ \mu \left ( \biguplus_\In A_i \right ) = \sum_\In \mu(A_i) \]
+		\end{bew}
+		
+		\begin{bsp} $ $ \\
+			\begin{enumerate}[-]
+				\item Für ein beliebiges $\Omega$ ist $\mf C := \{ A \subset \Omega: |A|< \infty \} $ ein Ring und damit auch ein Semiring.
+				\item Sei $a \in \N$, so ist $ \mf C:=\{ A \subset \Omega: |A|<a \}$ für $|\Omega|>a$ nur ein Semiring
+				\item $ \mf C := \{ A \subset \Omega: card(A) \leq \aleph_0 \} $ eine Sigmaalgebra
+			\end{enumerate}
+		\end{bsp}
+		
+		\begin{satz}
+			$\mf T$ sei ein Semiring ( in weiterem Sinne) und $I:=\{1,...,n\}$. Dann gilt:
+			\[ \mf R(\mf T) = \{ \bigcup_{i=1}^n A_i,n \in \N, A_i \in \mf T \} = \{ \sum_{i=1}^n, n \in \N, A \in \mf T \} \]
+		\end{satz}
+		\begin{bew}
+			Da $\mf R(\mf T)$ abgeschlossen bezüglich der Vereinigung ist, gilt
+			\[ \mf R(\mf T) \supset \{ \bigcup_{i=1}^n A_i,n \in \N, A_i \in \mf T \} \]
+			Nun muss man nur noch die andere Inklusion zeigen.\\
+			Es gilt $M:=\{ \bigcup_{i=1}^n A_i,n \in \N, A_i \in \mf T \}$ ist abgeschlossen bezüglich der Vereinigung. Nun wollen wir die Abgeschlossenheit bezüglich der Mengendifferenz zeigen. Dazu seien $A,B \in M$. Es gilt:
+			\begin{align*}
+				A \backslash B = A \cap B^c = A \cap (\Omega \cap B) \in M
+			\end{align*}
+			da $M$ abgeschlossen bezüglich des Durchschnittes ist. Somit ist die Gleichheit gezeigt.	
+		\end{bew}
+		
+		\begin{satz}
+			Sei $\mf C$ ein nicht leeres Mengensystem. Dann ist
+			\[ \{ \bigcap_{i=1}^n A_i | n \in \N , A_1 \in \mf C, A_i \in \mf C \vee A_i^c \in \mf C ,i \geq 1 \} \]
+			ein Semiring.
+		\end{satz}
+		
+		\begin{bsp}Intervalle\\
+				$ \mf T:=\{ (a,b] | a \leq b \wedge a,b \in \R \} $
+				"westlich" $ $ und 
+				$ \{ [a,b) | a \leq b \wedge a,b \in \R \} $ 
+				"russisch"
+			bilden Semiringe.\\
+			Im $\R^n:(a,b]=(a_1,b_1] \times (a_2,b_2] \times ... \times (a_n,b_n]$\\
+			Der erzeugte Sigmaring von $\mf T$ sind die Borelmengen $ \mf B (\mf B_n)$\\
+			Für zwei Semiringe $\mf T_1, \mf T_2$ ist 
+			\[ \mf T_1 \times \mf T_2 = \{ A_1 \times A_2 | A_1 \in \mf T_1 \wedge A_2 \in \mf T_2 \} \]
+			ein Semiring.			
+		\end{bsp}
+		
+		\begin{defi}
+			Ein Mengensystem $\mf C$ heißt monoton, wenn
+			\[ A_n \in \mf C, A_n \subset A_{n+1} , n\in \N \Rightarrow \bigcup_{n \in \N} A_n \in \mf C \]
+			oder 
+			\[ A_n \in \mf C, A_n \supset A_{n+1} , n\in \N \Rightarrow \bigcap_{n \in \N} A_n \in \mf C \]
+		\end{defi}
+		
+		\begin{satz}[monotone classstheorem]
+			Der von einem Ring erzeugte Sigmaring stimmt mit dem erzeugten monotonen System überein (Jeder monotone Ring ist Sigmaring)
+		\end{satz}
+		
+		\begin{defi}
+			Für Zahlenfolgen:
+			\begin{align*}
+				\limsup_{n \in \N} x_n &= \inf_{n \in \N} \sup_{k \geq n} x_n\\
+				\liminf_{n \in \N} x_n &= \sup_{n \in \N} \inf_{k \geq n} x_n
+			\end{align*}
+			Für Mengenfolgen:
+			\begin{align*}
+			\limsup_{n \in \N} A_n &= \bigcap_{n \in \N} \bigcup_{k \geq n} A_n=\{ x:x \in A_n \text{ für unenlich viele n} \}\\
+			\liminf_{n \in \N} A_n &= \bigcup_{n \in \N} \bigcap_{k \geq n} A_n=\{ x:x \in A_n \text{ für fast alle n} \}
+			\end{align*}
+		\end{defi}
+		\begin{bem} Es gibt einige Tricks, wenn man mit Mengen arbeitet:
+			\begin{enumerate}[1.]
+				\item Folgen monoton machen:\\
+					Sei $(A_n)_{n \in \N}$ eine Mengenfolge, so ist $B_n=\bigcup_{i=1}^n A_i$ eine monoton wachsende Folge.
+				\item Folgen disjunkt machen:\\
+					Sei $C_1 =B_1=A_1$
+					\[ C_n=B_n \backslash B_{n-1} = \left (\bigcup_{j=1}^{n}A_j \right ) \backslash \bigcup_{i=1}^{n-1} A_i=
+					\left ( \bigcup_{j=1}^{n-1}A_j \cup A_n \right ) \backslash \bigcup_{i=1}^{n-1} A_i = \emptyset \cup A_n \backslash \bigcup_{i=1}^{n-1} A_i  \]
+					mit $ \bigcup_{n \in \N} C_n = \bigcup_{n \in \N} A_n$
+				\item Klassische Tauschgeschäft:\\
+					Wenn du eine Gleichung willst, musst du 2 Ungleichungen zeigen
+					\begin{align*}
+						&x=y \Leftrightarrow (x \leq y) \wedge (x \geq y)\\
+						&A=B \Leftrightarrow (A \subset B) \wedge (A \supset B)
+					\end{align*}
+				\item Prinzip der guten Menge:
+					Wenn du zeigen willst, dass alle Elemente x aus einer Menge $X$ eine Eigenschaft haben, dann zeigt man $ Y \supset X $ für:
+					\[ Y:=\{ x \in X | x \text{ hat die Eigenschaft} \} \]
+			\end{enumerate}
+		\end{bem}
+		
+		\begin{defi}
+			Seien $\mf S_1, \mf S_2$ Sigmaalgebren über $\Omega$, so heißt $ \mf S_1 \times \mf S_2 = \mf A_\sigma(\mf S_1 \otimes \mf S_2) $ die Produktalgebra
+		\end{defi}
+		
+		\begin{defi}
+			Sei $f:\Omega_1 \to \Omega_2$ und $A \in \Omega_2$, so heißt
+			\[ f^{-1}(A):=\{ x \in \Omega_1 |f(x) \in A \} \]
+			das Urbild von $A$.
+		\end{defi}
+		
+		\begin{satz}
+			Sei $f:\Omega_1 \to \Omega_2$ , $\mf S_2$ Sigmaalgebra über $\Omega_2$ dann ist $ f^{-1}(\mf S_2) := \{ f^{-1}(A) :A \in \mf S_2 \} $ eine Sigmaalgebra über $\Omega_1$
+		\end{satz}
+		\begin{bew}
+			Es gilt zu zeigen:
+			\begin{enumerate}[1.]
+				\item $ f^{-1}(\mf S_2) \neq \emptyset $\\
+					da $\emptyset \in \mf S_2$ und stets $f(\emptyset) = \emptyset$.
+				\item $A \in f^{-1}(\mf S_2) \Rightarrow A^c \in f^{-1}(\mf S_2)$ \\
+					\[ A \in f^{-1}(\mf S_2) \Rightarrow \exists B \in \mf S_2:f^{-1}(B)=A \Rightarrow A^c=f^{-1}(B)^c=f^{-1}(B^c) \in f^{-1}(\mf S_2) \]
+				\item $ (A_n)_{n \in \N}, A_n \in f^{-1}(\mf S_2) \Rightarrow \bigcup_{n \in \N} A_n \in f^{-1}(\mf S_2) $
+					\[ \Rightarrow \exists (B_n)_{n \in \N} : A_n = f^{-1}(B_n) \Rightarrow \bigcup_{n \in \N} A_n = \bigcup_{n \in \N} f^{-1}(B_n) =f^{-1} \left ( \bigcup_{n \in \N} B_n \right ) \in f^{-1}(\mf S_2) \]
+			\end{enumerate}
+			Also ist $f^{-1}(\mf S_2)$ eine Sigmaalgebra.
+		\end{bew}
+		
+		\begin{bem}
+			Dieser Satz funktioniert auch für:
+			\begin{enumerate}[-]
+				\item Semiringe
+			\end{enumerate}
+			Jedoch nicht für
+			\begin{enumerate}[-]
+				\item Dynkin-Systeme
+				\item monotone Systeme
+			\end{enumerate}
+		\end{bem}
+		
+		\begin{satz}
+			Sei $ f:\Omega_1 \to \Omega_2 $ und $\mf C$ ein beliebiges Mengensystem über $\Omega_2$
+			\[ \Rightarrow \mf A_\sigma(f^{-1}(\mf C)) = f^{-1}(\mf A_\sigma(\mf C)) \]
+		\end{satz}
+		\begin{bew}
+			Wir zeigen zwei Inklusionen:\\
+			$ A_1:= \mf A_\sigma(f^{-1}(\mf C)) \subset f^{-1}(\mf A_\sigma(\mf C)) =: A_2$ laut dem vorherigen Satz.\\
+			"$ A_1 \supset A_2 $" vermittels dem Prinzip der gutem Menge\\
+			Sei $G:=\{ A \in \mf A_\sigma(\mf C)| f^{-1}(A) \in \mf A_\sigma(f^{-1}(\mf C)) \}$
+			\begin{enumerate}[1.]
+				\item Es ist klar, dass $\mf C \subset G$
+				\item Zu zeigen: G ist Sigmaalgebra \\
+					Sei $A \in G: f^{-1}(A) \in \mf A_\sigma(f^{-1}(\mf C)) $
+					\[\Rightarrow f^{-1}(A^c) = f^{-1}(A)^c \in  \mf A_\sigma(f^{-1}(\mf C))\]
+					Also ist $A^c \in G$. \\
+					Sei $A_n \in G, n \in \N$
+					\[ \Rightarrow f^{-1} (A_n) \in  \mf A_\sigma(f^{-1}(\mf C)) \Rightarrow f^{-1} \left ( \bigcup_{n \in \N} A_n \right ) = \bigcup_ {n \in \N} f^{-1}(A_n) \in  \mf A_\sigma(f^{-1}(\mf C)) \]
+					Also ist $G=\mf A_\sigma(\mf C)$.
+			\end{enumerate}
+			Damit ist die Aussage bewiesen.
+		\end{bew}
+				
 	\section{Maße und Inhalte}
 		\begin{defi}
 			Ein Inhalt $\mu$ auf einem Mengensystem $C$ heißt endlich, wenn für alle $A\in C$:
@@ -843,7 +1015,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 					\item $\mu_F$ ist Inhalt:\newline
 					\[ \mu_F(\varnothing)=\mu_F((a,a])=F(a)-F(a)=0 \]
 					und
-					\[ \mu_F((a,b])\le 0 \]
+					\[ \mu_F((a,b])\geq 0 \]
 					folgt sofort. Für die Additivität benutzen wir, dass $\mf{T}$ ein Semiring im engeren Sinn ist. Ist außerdem die Vereinigung zweier Intervalle wieder ein Intervall, so hat die Vereinigung die Form:
 					\[ (a,b]\cup (b,c]=(a,c], \]
 					also
