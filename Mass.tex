@@ -15,6 +15,8 @@
 \usepackage{enumerate}
 \usepackage{mathrsfs} 
 \usepackage{stmaryrd}
+\usepackage{dsfont}
+\usepackage{comment}
 \pagestyle{fancy}
 %\fancyhf{}
 \geometry{a4paper, top=40mm, bottom=30mm, left=30mm, right=30mm}
@@ -33,16 +35,19 @@
 \newcommand{\ms}[1]{\mathfrak{#1}}
 \newcommand{\mf}[1]{\mathfrak{#1}}
 
-\newtheorem{defi}{Definition}[subsection]
+\newtheorem{defi}{Definition}[section]
 \newtheorem{satz}[defi]{Satz}
 \newtheorem{lemma}[defi]{Lemma}
-\newtheorem*{bem}{Bemerkung}
-\newtheorem{bsp}{Beispiel}[subsection]
 
 \theoremstyle{remark}
 \newtheorem*{bew}{Beweis}
 
+\theoremstyle{definition}
+\newtheorem*{bem}{Bemerkung}
+\newtheorem{bsp}{Beispiel}[subsection]
+
 \DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\esssup}{ess\:\sup}
 
 \setcounter{section}{0}
 

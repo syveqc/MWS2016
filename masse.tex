@@ -1175,7 +1175,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				Analog zum 1-dimensionalen Fall.
 			\end{bew}
 			
-			\begin{bsp}[random shit]
+			\begin{bsp}
 				Für $d\ge 2$ erhalten wir:
 				\[ \mu(]a,b])=\mu(]a_1,b_1]\times...\times]a_d,b_d])=\sum_{e\in\{0,1\}^d} F(ae+b(1-e)), \]
 				wobei 
@@ -1500,3 +1500,243 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				\[ \forall i=1,...,d: f_i:(\Omega,\mathfrak{S})\to(\R, \mathfrak{B}). \]
 			\end{bem}
 			
+			\begin{defi}
+				Ist $(\Omega, \mathfrak{S}, \P)$ ein Wahrscheinlichkeitsraum, so nennt man
+				\[ S:(\Omega,\mathfrak{S})\to(\R^d,\mathfrak{B}_d) \]
+				eine $d$-dimensionale Zufallsvariable oder einen $d$-dimensionalen Zufallsvektor. Bei $d=1$ spricht man von der Zufallsvariable.
+			\end{defi}
+			
+			\begin{satz}
+				Seien $(\Omega_i,\mathfrak{S}_i)$ zwei Messräume und wird $\mathfrak{S}$ durch ein Mengensystem $\mf{C}$ aus $\Omega_2$ erzeugt, so gilt
+				\[ f:(\Omega_1,\mathfrak{S}_1)\to (\Omega_2,\mathfrak{S}_2)\Leftrightarrow f^{-1}(\mf{C}\subseteq \mf{S}_1. \]
+			\end{satz}
+			
+			\begin{bew}
+				wird übergangen.
+			\end{bew}
+			
+			\begin{satz}
+				Ist $f:\R^{d_1}\to\R^{d_2}$ stetig, so ist $f$ Borel-messbar. 
+			\end{satz}
+			
+			\begin{bew}
+				folgt direkt daraus, dass wenn $f$ stetig ist, das Urbild jeder offenen Menge wieder offen ist. 
+			\end{bew}
+			
+			\begin{satz}
+				Ist $f:\R\to\R$ monoton, so ist $f$ Borel-messbar. 
+			\end{satz}
+			
+			\begin{bew}
+				Siehe Kusolitsch Beweis von Folgerung 7.10.
+			\end{bew}
+			
+			\begin{satz}
+				$f:=(f_1,...,f_d): (\Omega, \mf{S})\to(\R^d,\mathfrak{B}_d)$ genau dann, wenn 
+				\[ \forall i=1,...,d: f_i:(\Omega,\mf{S})\to(\R,\mf{B}). \]
+			\end{satz}
+			
+			\begin{bew}
+				Siehe Kusolitsch Beweis Satz 7.11.
+			\end{bew}
+			
+			\begin{satz}
+				Aus $f_i: (\Omega,\mf{S})\to(\R,\mf{B})$, $i=1,2$ folgt
+				\begin{enumerate}
+					\item $f_1+f_2: (\Omega,\mf{S})\to \R)$,
+					\item $f_1f_2: (\Omega,\mf{S})\to \R)$,
+					\item $f_1\land f_2: (\Omega,\mf{S})\to \R)$,
+					\item $f_1\lor f_2: (\Omega,\mf{S})\to \R)$.
+				\end{enumerate}
+			\end{satz}
+			
+			\begin{bew}
+				Kuso Folgerung 7.14.
+			\end{bew}
+			
+			\begin{defi}[7.14]
+				
+			\end{defi}
+			
+		\section{Erweitert reellwertige Funktionen}
+			Whaaaaat??\newline
+			Kuso abschreiben... S.86\newline
+			\begin{satz}
+				Sei $f_n$ eine Folge messbarer Funktionen. Dann ist 
+				\[ M:=[\liminf f_n=\limsup f_n]\in\mf{S} \]
+			\end{satz}
+			
+			\begin{bew}
+				Siehe Kusolitsch Beweis Satz 7.20. 
+			\end{bew}
+			
+			\begin{satz}[7.24]
+				
+			\end{satz}
+			
+		\section{Treppenfunktionen}
+			\begin{defi}
+				Eine Funktion 
+				\[ t:\Omega\to\R \]
+				heißt Treppenfunktion, wenn es eine endliche Zerlegung $A_1,...,A_n$ von $\Omega$ und reelle Zahlen $\alpha_1,...,\alpha_n$ gibt mit
+				\[ \forall \omega\in\Omega: t(\omega)=\sum_{i=1}^n\alpha_i\mathds{1}_{A_i}(\omega). \]
+			\end{defi}
+			
+			\begin{lemma}
+				Eine Funktion $t:\Omega\to\R$ ist genau dann eine Treppenfunktion, wenn es Mengen $B_1,...,B_m$ und reelle Zahlen gibt, sodass $t=\sum_{j=1}^m\beta_j\mathds{1}_{B_j}$. 
+			\end{lemma}
+			
+			\begin{bew}
+				Siehe Beweis Lemma 7.26, Kusolitsch.
+			\end{bew}
+			
+			\begin{bem}
+				Sind die oben genannten Mengen $A_i$ und $B_i$ alle messbar, so ist auch $t$ messbar. Die Umkehrung gilt jedoch im Allgemeinen nicht, man kann also auch eine messbare Treppenfunktoin mit Hilfe einer nichtmessbaren Zerlegung darstellen kann, z.B. $t\equiv 0=0\mathds{1}_A+0\mathds{1}_{A^c}$ mit $A\notin \mf{S}$. 
+			\end{bem}
+			
+			\begin{defi}
+				$t=\sum_{i=1}^{n}x_i\mathds{1}_{[t=x_i]}$ ist die kanonische Darstellung einer messbaren Treppenfunktion. 
+			\end{defi}
+			
+			\begin{satz}
+				Zu jeder messbaren positiven Funktion $f$ gibt es eine monoton steigende Folge $(t_n)$ aus positiven Treppenfunktionen, sodass 
+				\[ \forall \omega\in\Omega: f(\omega)=\lim_{n\to\infty} t_n(\omega). \]
+				Weiters gibt es zu jeder messbaren Funktion $f$ eine Folge $(t_n)$ aus Treppenfunktionen, sodass 
+				\[ \forall \omega\in\Omega: f(\omega)=\lim_{n\to\infty} t_n(\omega) \]
+				und
+				\[ \forall n\in\N: |t_n|\le |f|. \]
+				Ist $f$ beschränkt, so konvergiert $(t_n)$ gleichmäßig gegen $f$. 
+			\end{satz}
+			
+			\begin{bew}
+				Siehe Beweis Satz 7.30, Kusolitsch. 
+			\end{bew}
+			
+		\section{Konvergenzarten}
+			\begin{defi}
+				Zwei Funktionen $f,g$ sind fast überall gleich, falls sie auf dem Komplement einer Nullmenge gleich sind. 
+			\end{defi}
+			
+			\begin{defi}
+				Eine Folge $(f_n)$ messbarer Funktionen konvergiert gleichmäßig $\mu-$fast überall (bzw $P-fs$) gegen eine Funktion $f$, wenn es eine $\mu$-Nullmenge $N$ gibt, sodass $(f_n)$ auf $N^c$ gleichmäßig konvergiert. 
+			\end{defi}
+			
+			\begin{defi}
+				Eine messbare FUnktion $f$ auf einem Maßraum heißt $\mu$-fast überall beschränkt, wenn es ein $c\in\R$ gibt mit $\mu(|f|>c)=0$.
+				\[ \lVert f\rVert_\infty:=\esssup f:=\inf\{c\in\R: \mu(|f|>c)=0\} \]
+				wird als das essentielle Supremum von $f$ bezeichnet. 
+			\end{defi}
+			
+			\begin{satz}
+				Sei \[ \mathfrak{F}:=\{f:(\R^{(n)},\mathfrak{B}_{(n)})\to(\R^{(m)},\mf{B}_{(m)})\}. \]
+				Nun ist $\mf{F}$ die kleinste Menge der reellen Funktionen, die die stetigen Funktionen enthält und bezüglich der Bildung von punktweisen Grenzwerten abgeschlossen ist
+			\end{satz}
+			
+			\begin{bew}
+				Sei $\mf{G}$ diese kleinste Menge. Diese existiert, wie man leicht über Durchschnittbildung über alle diese Systeme zeigen kann, nachdem man auch gezeigt hat, dass die gewünschten Eigenschaften durch Durchschnittbildung erhalten werden.\newline
+				$\mf{G}\subseteq \mf{F}$ ist offensichtlich. Bleibt also noch "$\supseteq$" zu zeigen:\newline
+				Da jede messbare Funktion als Limes von Treppenfunktion dargestellt werden kann, ist zu zeigen, dass $\mf{G}$ alle Treppenfunktionen enthält, wofür es genügt zu zeigen, dass $\mf{G}$ alle Indikatorfunktionen enthält und abgeschlossen bzgl. Addition und Multiplikation ist:
+				\begin{itemize}
+					\item Abgeschlossenheit:\newline
+					\zz:
+					\[ f,g\in\mf{G}\Rightarrow f+g,fg\in\mf{G}. \]
+					Wir zeigen dies über das Prinzip der guten Mengen: Sei für $f\in\mf{G}$
+					\[ \mf{G}(f):=\{g\in\mf{G}: f+g,fg\in\mf{G}\}. \]
+					Nun ist $\mf{G}$ bzgl. Limesbildung abgeschlossen:
+					\[ g_n\in\mf{G}(f), g_n\to g\Rightarrow g\in\mf{G} \]
+					\[ \Rightarrow f+g_n\in\mf{G}(f), f+g_n\to g \]
+					und
+					\[ \Rightarrow fg_n\in\mf{G}(f), fg_n\to g, \]
+					und damit $g\in \mf{G}(f)$. Sind nun $f,g$ stetig, so ist auch $fg$ und $f+g$ stetig und daher in $\mf{G}$, womit
+					\[ \mf{G}\subseteq \mf{G}(f) \]
+					folgt, also für stetiges $f$ und $g\in\mf{G}$ folgt $f+g, fg\in\mf{G}$ und analog für vertauschte Rollen von $f$ und $g$. Dann ist $g\in\mf{G}(f)$, womit $\mf{G}$ abgeschlossen bzgl. Addition und Multiplikation ist. 
+					\item Enthält Indikatoren von Borelmengen
+					Sei 
+					\[ \mf{C}=\{A\subseteq B: A()\in\mf{G}\}. \]
+					Wir müssen nun zeigen, dass $\mf{C}=\mf{B}$. Wir zeigen also zunächst, dass $\mf{C}$ Sigmaalgebra ist. 
+					\begin{itemize}
+						\item Algebra:\newline
+						Sei $A\in\mf{C}$, dann ist $A()\in\mf{G}$. Dann ist
+						\[ A^c()=1-A()\in\mf{G}\Rightarrow A^c\in\mf{C}. \]
+						Seien $A,B\in\mf{C}$. Dann ist 
+						\[ A\cap B()=A()B()\in\mf{G}. \]
+						\item Sigmaalgebra:\newline
+						Es genügt zu zeigen: Wenn $A_n\uparrow A$, $A_n\in\mf{C}$, so folgt $A\in\mf{C}$. Nun sind also $A_n()\in\mf{G}$, damit also $A_n()\uparrow A()$ (punktweise) und damit $A\in\mf{C}$ aus der Abgeschlossenheit bzgl punktweisen Limiten. 
+					\end{itemize}
+					Nun zeigen wir $a\le b: ]a,b]\in\mf{C}$. Wir definieren:
+					\[ f_n(\omega)=\left\{\begin{array}{ll}
+					0&\text{für } \omega \le a\\
+					(\omega-a)n&\text{für }a<\omega\le a+\frac{1}{n}\\
+					1&\text{für }a+\frac{1}{n}<\omega\le b\\
+					1-(\omega-b)n&\text{für }b<\omega\le b+\frac{1}{n}\\
+					0&\text{für } \omega >b+\frac{1}{n}
+					\end{array}\right. \]
+					Diese sind alle stetig und konvergieren gegen $]a,b]()$, damit also $]a,b]\in\mf{C}$. 
+				\end{itemize}
+			\end{bew}
+			
+			\begin{defi}
+				Sei $P$ eine Aussage und $(\Omega,\mf{S}, \mu)$ ein Maßraum. Wir sagen, $P$ gilt fast überall oder fast sicher, wenn es eine Menge $N\in\mf{S}$, $\mu(N)=0$ gibt mit $P(\omega)$ für fast alle $\omega \in N^c$.
+			\end{defi}
+			
+			\begin{defi}
+				Seien $(\Omega_1,\mf{S}_1,\mu)$ ein Maßraum und $(\Omega_2,\mf{S}_2)$ ein Messraum. Sei $f:\Omega_1\to\Omega_2$. $f$ heißt fast überall messbar, wenn
+				\[ \exists \Omega_1'\in\mf{S}_1: \mu(\Omega_1'^c)=0, \]
+				wobei $f$ auch nur auf $\Omega_1'$ definiert sein kann. Dann ist
+				\[ f:(\Omega_1',\mf{S}\cap\Omega_1')\to(\Omega_2,\mf{S}_2) \]
+			\end{defi}
+			
+			\begin{defi}
+				$f_n\to f$ heißt $\mu$-fast überall
+				\[ f_n: (\Omega,\mf{S},\mu)\to(\R,\mf{B}), \]
+				wenn es $N\in\mf{S}:\mu(N)=0$ mit 
+				\[ f_n(\omega)\to f(\omega) \]
+				für fast alle $\omega\in N^c$. 
+			\end{defi}
+			
+			\begin{defi}[gleichmäßige Konvergenz]
+				$f_n\to f$ ist gleichmäßig konvergent, wenn
+				\[ \forall \epsilon>0\exists n_0(\epsilon)\forall \omega\in\Omega\forall n\ge n_0(\epsilon): |f_n(\omega)-f(\omega)|<\epsilon \]
+			\end{defi}
+			
+			\begin{defi}[fast überall gleichmäßige Konvergenz]
+				$f_n\to f$ ist fast überall gleichmäßig konvergent für
+				\[ f_n,f:(\Omega,\mf{S},\mu)\to (\R,\mf{B}) \]
+				wenn es eine Menge $M\in\mf{S},\mu(M)=0$ gibt mit $f_n\to f$ gleichmäßig auf $M^c$. 
+			\end{defi}
+			
+			\begin{bem}
+				$f_n\to f$ gleichmäßig, wenn, wie aus der Analysis bekannt,
+				\[ \lVert f_n-f\lVert_{\sup}=\sup\{|f_n(\omega)-f(\omega)|:\omega\in\Omega\}\to0. \]
+			\end{bem}
+			
+			\begin{defi}
+				Sei $f(\Omega,\mf{S})\to(\R,\mf{B})$, $(\Omega,\mf{S},\mu)$ Maßraum. Dann ist das Essentielle Supremum von $f$
+				\[ \esssup f:=\inf\{y\in\R:\mu([f>y])=0\}. \]
+			\end{defi}
+			
+			\begin{bem}
+				Es gilt
+				\[ \mu([f>\esssup f])=0, \]
+				da
+				\[ \mu([f>\esssup f])=\mu\left(\bigcup_{n\in\N} [f>\esssup f+\frac{1}{n}]\right)\le \sum_{n\in\N} \mu([f>\esssup f+\frac{1}{n}])=\sum_{n\in\N}0=0. \]
+			\end{bem}
+			
+			\begin{satz}
+				Sei $c>0$. Dann ist
+				\[ \esssup cf=c\esssup f. \]
+				Weiters ist für $f,g\ge 0$
+				\[ \esssup f+g\le \esssup f+\esssup g \]
+			\end{satz}
+			\begin{bew}
+				Folgt direkt aus der Definition:
+				\begin{align*} \esssup cf&=\inf\{y\in\R: \mu([cf>y])=0\}\\&=\inf\{c\cdot z\in\R: \mu([cf>cz])=0\}\\&=\inf c\odot \{z\in\R: \mu([f>z])=0\}\\&=c\esssup f \end{align*}
+				Weiters
+				\begin{align*} \mu([f+g> \esssup f+\esssup g])&\le \mu([f>\esssup f]\cup[g>\esssup g])\\&\le\mu([f>\esssup f])+\mu([g>\esssup g])\\&=0+0=0 \end{align*}
+			\end{bew}
+			
+			\begin{defi}
+				\[ \lVert f\rVert_\infty :=\esssup |f|. \]
+				Dies ist fast eine Norm, die erste Eigenschaft fehlt, da
+				\[ \lVert f\rVert_\infty=0\Leftrightarrow \mu([|f|>0])=0 \]
+			\end{defi}
