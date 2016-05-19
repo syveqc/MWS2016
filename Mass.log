@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.3.6)  17 MAY 2016 19:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.3.6)  19 MAY 2016 11:38
 entering extended mode
 **./Mass.tex
 (Mass.tex
@@ -541,23 +541,30 @@ Package: stmaryrd 1994/03/03 St Mary's Road symbol package
 LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 (Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\dstroke\dsfont.sty"
+Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\comment\comment.sty"
+\CommentStream=\write3
+
+Excluding comment 'comment')
 \c@defi=\count105
 \c@bsp=\count106
  (Mass.aux)
 \openout1 = `Mass.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -710,14 +717,14 @@ LaTeX Warning: The counter will not be printed.
              The label is: - on input line 213.
 
 [5]
-Overfull \hbox (32.96106pt too wide) in paragraph at lines 278--279
+Overfull \hbox (31.13977pt too wide) in paragraph at lines 278--279
 []\T1/cmr/bx/n/10 Beispiel 1.2.0.4. []$\OT1/cmr/m/n/10 (
 \OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2[]\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 )$\T1
-/cmr/m/it/10 , $\OT1/cmr/m/n/10 
- \OMS/cmsy/m/n/10 6\OT1/cmr/m/n/10 = \U/msb/m/n/10 ?$ \T1/cmr/m/it/10 end-lich,
- $\OML/cmm/m/it/10 C \OT1/cmr/m/n/10 = 2[]\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (
-\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ) = []$ \T1/cmr/m/it/10 ist der Laplace-Wahrs
-cheinlichkeitsraum. 
+/cmr/m/n/10 , $\OT1/cmr/m/n/10 
+ \OMS/cmsy/m/n/10 6\OT1/cmr/m/n/10 = \U/msb/m/n/10 ?$ \T1/cmr/m/n/10 end-lich, 
+$\OML/cmm/m/it/10 C \OT1/cmr/m/n/10 = 2[]\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\
+OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ) = []$ \T1/cmr/m/n/10 ist der Laplace-Wahrsch
+einlichkeitsraum. 
  []
 
 
@@ -743,66 +750,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 715--717
 
  []
 
-[15] [16] [17] [18] [19]
-Overfull \hbox (0.47307pt too wide) in paragraph at lines 963--964
-[]\T1/cmr/bx/n/10 Definition 1.2.8.3. []\T1/cmr/m/it/10 Die $\U/msb/m/n/10 P\OT
-1/cmr/m/n/10 (\OML/cmm/m/it/10 B[]\OT1/cmr/m/n/10 )$ \T1/cmr/m/it/10 in den Sät
--zen vor-her hei-ÿen a-priori Wahr-schein-lich-kei-ten, $\U/msb/m/n/10 P\OT1/cm
-r/m/n/10 (\OML/cmm/m/it/10 B[]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 A\OT1/cmr/m/n/
-10 )$
- []
-
-[20]
+[15] [16] [17] [18] [19] [20]
 Underfull \hbox (badness 10000) in paragraph at lines 1015--1016
 
  []
 
-[21]
+[21] [22]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1051.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1073.
 
- [22] [23] [24] [25] [26] [27] [28] [29]
+ [23] [24] [25] [26] [27] [28] [29]
 Kapitel 2.
 [30
 
-]) [31] (Mass.aux) ) 
+] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 1562--1564
+
+ []
+
+
+Overfull \hbox (0.41844pt too wide) in paragraph at lines 1580--1582
+\T1/cmr/m/it/10 heiÿt Trep-pen-funk-ti-on, wenn es ei-ne end-li-che Zer-le-gung
+ $\OML/cmm/m/it/10 A[]; :::; A[]$ \T1/cmr/m/it/10 von $\OT1/cmr/m/n/10 
+$ \T1/cmr/m/it/10 und re-el-le Zah-len $\OML/cmm/m/it/10 []; :::; []$
+ []
+
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 1582
+.
+("C:\Program Files\MiKTeX 2.9\tex\latex\dstroke\udsrom.fd"
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+) [32] [33] [34]
+[35]) [36] (Mass.aux) ) 
 Here is how much of TeX's memory you used:
- 4427 strings out of 493622
- 55449 string characters out of 3143642
- 132390 words of memory out of 3000000
- 7675 multiletter control sequences out of 15000+200000
- 25482 words of font info for 79 fonts, out of 3000000 for 9000
+ 4488 strings out of 493622
+ 56537 string characters out of 3143642
+ 134404 words of memory out of 3000000
+ 7723 multiletter control sequences out of 15000+200000
+ 25770 words of font info for 82 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 38i,13n,43p,348b,448s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-su
-per-t1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/euler/eufm7.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/symbols/msbm7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/cm-super/sfbx1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm
--super/sfbx1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sf
-bx1440.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx2074.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/cm-super/sfsl1000.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/cm-super/sfti1000.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/hoekwater/stmary10.pfb>
-Output written on Mass.pdf (31 pages, 436575 bytes).
+ 38i,13n,43p,358b,448s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm
+-super-t1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex7.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/dstroke/dsrom10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/euler/eufm7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/symbols/msbm7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/c
+m-super/sfbx1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/s
+fbx1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1440.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx2074.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/cm-super/sfsl1000.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/cm-super/sfti1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/hoekwater/stmary10.pfb>
+Output written on Mass.pdf (36 pages, 465784 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
+ 230 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
