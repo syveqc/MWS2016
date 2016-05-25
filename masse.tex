@@ -92,7 +92,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			\[ \mu \left ( \biguplus_\In A_i \right ) = \sum_\In \mu(A_i) \]
 		\end{bew}
 		
-		\begin{bsp} $ $ \\
+		\begin{bsp} $ $ 
 			\begin{enumerate}[-]
 				\item Für ein beliebiges $\Omega$ ist $\mf C := \{ A \subset \Omega: |A|< \infty \} $ ein Ring und damit auch ein Semiring.
 				\item Sei $a \in \N$, so ist $ \mf C:=\{ A \subset \Omega: |A|<a \}$ für $|\Omega|>a$ nur ein Semiring
@@ -194,9 +194,9 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 		\begin{bew}
 			Es gilt zu zeigen:
 			\begin{enumerate}[1.]
-				\item $ f^{-1}(\mf S_2) \neq \emptyset $\\
+				\item $ f^{-1}(\mf S_2) \neq \emptyset $\newline
 					da $\emptyset \in \mf S_2$ und stets $f(\emptyset) = \emptyset$.
-				\item $A \in f^{-1}(\mf S_2) \Rightarrow A^c \in f^{-1}(\mf S_2)$ \\
+				\item $A \in f^{-1}(\mf S_2) \Rightarrow A^c \in f^{-1}(\mf S_2)$ \newline
 					\[ A \in f^{-1}(\mf S_2) \Rightarrow \exists B \in \mf S_2:f^{-1}(B)=A \Rightarrow A^c=f^{-1}(B)^c=f^{-1}(B^c) \in f^{-1}(\mf S_2) \]
 				\item $ (A_n)_{n \in \N}, A_n \in f^{-1}(\mf S_2) \Rightarrow \bigcup_{n \in \N} A_n \in f^{-1}(\mf S_2) $
 					\[ \Rightarrow \exists (B_n)_{n \in \N} : A_n = f^{-1}(B_n) \Rightarrow \bigcup_{n \in \N} A_n = \bigcup_{n \in \N} f^{-1}(B_n) =f^{-1} \left ( \bigcup_{n \in \N} B_n \right ) \in f^{-1}(\mf S_2) \]
@@ -275,7 +275,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			Sei $\mu$ ein Maß auf $\ms{S}$ und $(\Omega, \ms{S})$ Messraum. Dann heißt $(\Omega, \ms{S}, \mu)$ Maßraum. 
 		\end{defi}
 		\begin{bsp}
-			$(\Omega, 2^\Omega, \mu)$, $\Omega\neq\varnothing$ endlich, $C=2^\Omega, \mu(A)=\frac{|A|}{|\Omega|}$ ist der Laplace-Wahrscheinlichkeitsraum.
+			$(\Omega, 2^\Omega, \mu)$, $\Omega\neq\varnothing$ endlich, $C=2^\Omega, \mu(A)=\frac{|A|}{|\Omega|}$ ist der Laplace-Wahrscheinlich\-keitsraum.
 		\end{bsp}
 		\begin{satz}
 			Seien $\mu_n$ Inhalte auf $\ms{C}$, und existiere $\mu(A)=\lim_{n\to\infty} \mu_n(A)$. Dann ist $\mu$ ein Inhalt. 
@@ -317,7 +317,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				\[ \mu(B\setminus A)=\mu(B\setminus (A\cap B))=\mu(B)-\mu(A\cap B) (\text{ wenn }\mu(A\cap B)<\infty) \]
 				\[ \Rightarrow \mu(A\cup B)=\mu(A)+\mu(B)-\mu(A\cap B) \]
 				Außerdem (Zusatz für zwei Mengen):
-				\[ \mu(A\cup B\cup C)=\mu((A\cup B)\cup C)=\mu(A)+\mu(B)+\mu(C)-\mu(A\cap B)-\mu(A\cap C)-\mu(B\cap C)+\mu(A\cap B\cap C) \]
+				\begin{align*} \mu(A\cup B\cup C)&=\mu((A\cup B)\cup C)\\&=\mu(A)+\mu(B)+\mu(C)-\mu(A\cap B)-\mu(A\cap C)-\mu(B\cap C)+\mu(A\cap B\cap C) \end{align*}
 				\item Es gilt:
 				\[ A,B\in\ms{R}: \mu(A\cup B)=\mu(A\cup (B\setminus A))=mu(A)+\mu(B\setminus A)\le \mu(A)+\mu(B) \]
 				\[ \Rightarrow \mu\left(\bigcup_{i=1}^n A_i\right)\le \sum_{i=1}^n \mu(A_i) \]
@@ -1773,7 +1773,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			\end{defi}
 			
 			\begin{bsp}
-				Sei $([0,1],\mf{B}}\cap[0,1],\lambda\big|_{\mf{B}\cap[0,1]})$ und
+				Sei $([0,1],\mf{B})\cap[0,1],\lambda\big|_{\mf{B}\cap[0,1]})$ und
 				\[ f_n(\omega)=\omega^n, \]
 				dann ist
 				\[ \lim_{n\to\infty}f_n(\omega)=\left\{\begin{array}{ll}
@@ -1801,7 +1801,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 					\[ \bigcup_{N\in\N}A_{N,\varepsilon}\supset B \]
 					\[ \Rightarrow \lim_{N\to\infty}=\mu(B)=\mu(\Omega) \]
 					Und für $\varepsilon=\frac{1}{2^K}$ wählen wir $N_K$, sodass
-					\[ \mu(A_{N_\varepsilon,\frac{1}{2^K})\ge\mu(\Omega)-\frac{1}{2^K}. \]
+					\[ \mu(A_{N_\varepsilon,\frac{1}{2^K}})\ge\mu(\Omega)-\frac{1}{2^K}. \]
 					Mit 
 					\[ C_K:=\bigcap_{k\ge K} A_{N_k,\frac{1}{2^k}} \]
 					gilt dann
@@ -1848,7 +1848,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 					&\text{fast überall gleichmäßig}\\
 					&\Downarrow\\
 					&\text{fast gleichmäßig}\\
-					\Downarrow&\Downarrow\\
+					\hfill\schircherarrow&\Downarrow\\
 					\text{fast überall}&\text{im Maß}
 				\end{array}\]
 			\end{bem}
