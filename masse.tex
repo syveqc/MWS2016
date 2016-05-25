@@ -1740,3 +1740,116 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				Dies ist fast eine Norm, die erste Eigenschaft fehlt, da
 				\[ \lVert f\rVert_\infty=0\Leftrightarrow \mu([|f|>0])=0 \]
 			\end{defi}
+			
+			\begin{bew}
+				\[ \norm{cf}_\infty=|c|\norm{f}_\infty \]
+				folgt direkt aus einem oben bewiesenen Satz.
+				\[ \snorm{f+g}=\esssup|f+g|\le\esssup(|f|+|g|)\le \esssup|f|+\esssup|g|=\snorm{f}+\snorm{g}. \]
+				Es fehlt 
+				\[ \snorm{f}=0\Leftrightarrow f=0, \]
+				denn es gilt
+				\[ \snorm{f}=0\Leftrightarrow f=0 \text{ fast überall.} \]
+			\end{bew}
+			
+			\begin{defi}
+				Sei
+				\[ \Li(\Omega,\mf{S},\mu):=\left\{f:(\Omega,\mf{S})\to(\overline{\R},\overline{\mf{B}}): f\text{ ist fast überall messbar, }\snorm{f}<\infty\right\}, \]
+				dann ist 
+				\[ f\sim g\Leftrightarrow\snorm{f-g}=0\Leftrightarrow f=g\text{ fast überall} \]
+				eine Äquivalenzrelation (trivial).  Damit ist 
+				\[\Li(\Omega,\mf{S},\mu)=\Li\setminus\sim \]
+				und $\snorm{.}$ eine Norm auf $\Li$ und somit auch $\Li$ ein normierter Vektorraum, bzw. sogar ein Banachraum. 
+			\end{defi}
+			
+			\begin{bew}[$\Li$ ist vollständig]
+				Sei $f_n$ Cauchyfolge bezüglich $\snorm{.}$, also $\lim\limits_{m,n\to\infty}\snorm{f_n-f_m}=0$. Damit konvergiert $f_n$ gleichmäßig und somit auch in $\Li$. 
+			\end{bew}
+			
+			\begin{defi}
+				Sei $(f_n)$ eine Folge von Funktionen,
+				\[ f_n:(\Omega,\mf{S})\to(\R,\mf{B}), \]
+				die gegen ein $f$ fast gleichmäßig konvergiert, wenn 
+				\[ \forall \varepsilon>0\exists A\in\mf{S}: \mu(A^c)<\varepsilon \text{ mit } f_n\to f\text{ gleichmäßig auf }A. \]
+			\end{defi}
+			
+			\begin{bsp}
+				Sei $([0,1],\mf{B}}\cap[0,1],\lambda\big|_{\mf{B}\cap[0,1]})$ und
+				\[ f_n(\omega)=\omega^n, \]
+				dann ist
+				\[ \lim_{n\to\infty}f_n(\omega)=\left\{\begin{array}{ll}
+				0:&0\le\omega<1\\1:&\omega=1
+				\end{array}\right., \]
+				wir können also ein beliebig kleines Intervall $A$ um 1 herausnehmen, sodass $f_n$ gleichmäßig auf $A^c$ konvergiert, also konvergiert $f_n$ fast gleichmäßig. 
+			\end{bsp}
+			
+			\begin{satz}[Satz von Egorov]
+				Sei $(\Omega,\mf{S},\mu)$ endlich
+				\[ f_n,f:(\Omega,\mf{S})\to(\R,\mf{B}) \]
+				dann ist
+				\[ f_n\to f\,\,\mu-\text{fast überall}\Leftrightarrow f_n\to f\,\,\mu-\text{fast gleichmäßig.} \]
+			\end{satz}
+			
+			\begin{bew}$ $
+				\begin{itemize}
+					\item "$\Leftarrow$" gilt natürlich immer.
+					\item "$\Rightarrow$":\newline
+					Sei $f_n(\omega)\to f(\omega)$, also
+					\[ \forall \varepsilon>0\exists N=N(\varepsilon)\forall n\ge N(t) |f_n(\omega)-f(\omega)<\varepsilon. \]
+					Es gibt $B\in\mf{S}, \mu(B^c)=0, f_n\to f$ punktweise auf $B$. Dann gilt für
+					\[ A_{N,\epsilon}=\{\omega:|f_n(\omega)-f(\omega)|<\varepsilon \text{ für }n\ge N, \]
+					wenn wir $\varepsilon$ fix wählen:
+					\[ \bigcup_{N\in\N}A_{N,\varepsilon}\supset B \]
+					\[ \Rightarrow \lim_{N\to\infty}=\mu(B)=\mu(\Omega) \]
+					Und für $\varepsilon=\frac{1}{2^K}$ wählen wir $N_K$, sodass
+					\[ \mu(A_{N_\varepsilon,\frac{1}{2^K})\ge\mu(\Omega)-\frac{1}{2^K}. \]
+					Mit 
+					\[ C_K:=\bigcap_{k\ge K} A_{N_k,\frac{1}{2^k}} \]
+					gilt dann
+					\[ \mu(C_K^c)\le\sum_{k\ge K}\mu(A_{N_k,\frac{1}{2^K}})\le \frac{2}{2^K} \]
+					Dann gilt klarerweise
+					\[ f_n\to f\text{ auf }C_K\text{ gleichmäßig,} \]
+					womit die Behauptung bewiesen ist. 
+				\end{itemize}
+			\end{bew}
+			
+			\begin{defi}
+				Sei $(\Omega,\mf{S},\mu)$
+				\[ f_n,f: (\Omega,\mf{S})\to(\R,\mf{B}). \]
+				Dann ist $f_n\to f$ im Maß (in Wahrscheinlichkeit, wenn $(\Omega, \mf{S},\mu)$ ein Wahrscheinlichkeitsraum ist), wenn
+				\[ \forall \varepsilon>0: \lim_{n\to\infty}\mu([|f_n-f|]\ge\varepsilon])=0. \]
+			\end{defi}
+			
+			\begin{bem}
+				Diese Konvergenz ist später wichtig in der Statistik. Dies ist auf endlichen Maßräumen die schwächste Konvergenzart. 
+			\end{bem}
+			
+			\begin{satz}
+				Gilt $f_n\to f$ im Maß und $f_n\to g$ im Maß, so folgt
+				\[ f=g \text{ fast überall}. \]
+			\end{satz}
+			
+			\begin{bew}
+				Es gilt nun für ein $\varepsilon>0$
+				\[ \lim_{n\to\infty} \mu([|f_n-f|\ge \frac{\varepsilon}{2}])=0 \]
+				\[ \lim_{n\to\infty} \mu([|f_n-g|\ge \frac{\varepsilon}{2}])=0 \]
+				Also existiert für ein $\delta>0$ ein $n\in\N$, sodass
+				\[ \mu([|f_n-f|\ge\frac{\varepsilon}{2}])<\delta. \]
+				Betrachte nun
+				\[ \mu([|f-g|>\varepsilon])=\mu([f-f_n+f_n-g>\varepsilon])\le\mu([|f-f_n|+|f_n-g|>\varepsilon]) \]
+				\[ \le \mu([|f_n-f|>\frac{\varepsilon}{2})+\mu([|f_n-g|>\frac{\varepsilon}{2}])\le 2\delta \]
+				und da $\delta$ beliebig ist
+				\[ \mu([|f-g|>\varepsilon])=0\Rightarrow\mu([|f-g|>0])=0, \]
+				womit $f=g$ fast überall. 
+			\end{bew}
+			
+			\begin{bem}
+				\[
+				\begin{array}{c c}
+					&\text{fast überall gleichmäßig}\\
+					&\Downarrow\\
+					&\text{fast gleichmäßig}\\
+					\Downarrow&\Downarrow\\
+					\text{fast überall}&\text{im Maß}
+				\end{array}\]
+			\end{bem}
+			
