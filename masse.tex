@@ -1428,7 +1428,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			\end{defi}
 			
 			\begin{satz}
-				Sei $\mathfrak{C}$ ein Mengensystem über $\Omega_2$, das $\mathfrak{S}_2$ erzeugt, $\mathfrak{S}_2=\mathfrak{A}_\sigma(\mathbb{C}$, dann ist $f:\Omega_1\to\Omega_2$ $\mathfrak{S}_1-\mathbb{S}_2$-messbar genau dann, wenn
+				Sei $\mathfrak{C}$ ein Mengensystem über $\Omega_2$, das $\mathfrak{S}_2$ erzeugt, $\mathfrak{S}_2=\mathfrak{A}_\sigma(\mathbb{C}$, dann ist $f:\Omega_1\to\Omega_2$ $\mathfrak{S}_1-\mathfrak{S}_2$-messbar genau dann, wenn
 				\[ f^{-1}(\mathfrak{C})\subseteq \mathfrak{S}_1 \]
 			\end{satz}
 			
@@ -1508,7 +1508,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			
 			\begin{satz}
 				Seien $(\Omega_i,\mathfrak{S}_i)$ zwei Messräume und wird $\mathfrak{S}$ durch ein Mengensystem $\mf{C}$ aus $\Omega_2$ erzeugt, so gilt
-				\[ f:(\Omega_1,\mathfrak{S}_1)\to (\Omega_2,\mathfrak{S}_2)\Leftrightarrow f^{-1}(\mf{C}\subseteq \mf{S}_1. \]
+				\[ f:(\Omega_1,\mathfrak{S}_1)\to (\Omega_2,\mathfrak{S}_2)\Leftrightarrow f^{-1}(\mf{C})\subseteq \mf{S}_1. \] 
 			\end{satz}
 			
 			\begin{bew}
@@ -1852,4 +1852,94 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 					\text{fast überall}&\text{im Maß}
 				\end{array}\]
 			\end{bem}
+			
+			\begin{defi}
+				Sei $(f_n)\to f$ eine Folge von fast überall messbaren, fast überall endlichen, rellwertigen Funktionen. Sei $f$ ebenfall fast überall messbar, fast überall endlich. Wenn 
+				\[ \forall\varepsilon>0: \mu([|f_n-f|>\varepsilon)\to 0\Rightarrow f_n\to f\text{ im Maß} \]
+				gilt, dann nennen wir $f_n$ Barock. \colorbox{yellow}{??? - nicht sicher ob das stimmt}
+			\end{defi}
+			
+			\begin{lemma}
+				Sei $\mathcal{L}_0=\{f:(\Omega,\mf{S})\to(\R,\mf{B})\}$. Dann ist
+				\[ d(f,g):=\inf\{\varepsilon>0: \mu([|f-g|>\varepsilon])<\varepsilon\} \]
+				eine Pseudometrik auf $\mathcal{L}_0$. $d$ heißt Lévy-Metrik. 
+			\end{lemma}
+			
+			\begin{bew}
+				$d(f,f)=0$, $d(f,g)=d(g,f)$ ist klar. Zu zeigen bleibt also noch die Dreiecksungleichung:
+				\[ \forall f,g,h\in\mathcal{L}_0: d(f,g)\le d(f,g)+d(g,h). \]
+				Für $d(f,g)=\infty$ oder $d(g,h)=\infty$ ist die Behauptung natürlich erfüllt. Seien also die entsprechenden Pseudometriken kleiner $\infty$. Dann gilt für ein $\delta >0$:
+				\[ \mu([|f-g|>d(f,g)+\frac{\delta}{2}])\le d(f,g)+\frac{\delta}{2} \]
+				\[ \mu([|g-h|>d(g,h)+\frac{\delta}{2}])\le d(g,h)+\frac{\delta}{2} \]
+				und damit
+				\[ \mu([|f-h|>d(f,g)+d(g,h)+\delta])
+				\le\mu([|f-g|+|g-h|>d(f,g)+d(g,h)+\delta]) \]
+				\[ \le\mu([|f-g|>d(f,g)+\frac{\delta}{2}])+\mu([|g-h|>d(g,h)+\frac{\delta}{2}])\le d(f,g)+d(g,h)+\delta \]
+				\[ \Rightarrow d(f,g)\le d(f,g)+d(g,h)+\xcancel{{\delta}}, \]
+				da $\delta>0$ beliebig ist.
+			\end{bew}
+			\begin{bem}
+				Es gilt
+				\[ d(f,g)=0\Leftrightarrow f=g \;\;\mu-\text{fast überall} \]
+				Mithilfe der Äquivalenzrelation
+				\[ f\sim g:\Leftrightarrow f=g\;\;\mu\text{-fast überall}, \]
+				zerfällt $\mathcal{L}_0$ in Äquivalenzklassen. Auf \[L_0=\mathcal{L}_0\setminus\sim=\{[f]_\sim: f\in\mathcal{L}_0\}, [f]_\sim=\{g\in\mathcal{L}_0: g\sim f\}\]
+				ist damit $d$ eine Metrik.
+			\end{bem}
+			
+			\begin{defi}
+				$(f_n), f_n\in\mathcal{L}_0$ ist eine Cauchyfolge im Maß, wenn 
+				\[ \forall\varepsilon>0: \lim_{m,n\to\infty}\mu([|f_n-f_m|>\varepsilon])=0, \]
+				das heißt
+				\[ \forall \Delta>0\exists n_0\forall m,n\ge n_0: \mu([|f_n-f_m|>\varepsilon]<\delta \]
+			\end{defi}
+			
+			Im Folgenden arbeiten wir auf den folgenden Satz hin:
+			\begin{satz}
+				$(L_0,d)$ ist vollständig. 
+			\end{satz}
+			
+			\begin{satz}
+				Sei $(f_n)$. Es gilt
+				\[ f_n\to f\text{ im Maß}\Leftrightarrow d(f_n,f)\to 0. \]
+			\end{satz}
+			
+			\begin{bew}
+				Gelte $f_n\to f$ im Maß., also
+				\[ \lim_{n\to\infty} \mu([|f_n-f|>\varepsilon])\to 0 \]
+				\[ \Rightarrow \exists n_0: n\ge n_0: \mu([|f_n-f|>\varepsilon])<\varepsilon \]
+				\[ \forall n\ge n_0\Rightarrow d(f_n,f)\le \varepsilon \]
+				\[ \Rightarrow d(f_n,f)\to 0. \]
+				Gelte $d(f_n,f)\to 0$. Wähle dann $\varepsilon>0, \varepsilon>\delta>0$.  Dann 
+				\[ \exists n_0\forall n\ge n_0: d(f_n,f)<\delta  \]
+				\[ \Rightarrow \mu([|f_n-f|>\delta])<\delta \]
+				\[ \Rightarrow \mu([|f_n-f|>\varepsilon])<\delta, \]
+				also konvergiert $f_n\to f$ im Maß. 
+			\end{bew}
+			
+			\begin{satz}
+				Sei $(f_n)$ Cauchyfolge im Maß. Dann existiert eine Teilfolge $(f_{n_k})$, die fast gleichmäßig konvergiert. 
+			\end{satz}
+			
+			\begin{bew}
+				Sei $(f_n)$ eine Cauchyfolge im Maß, also bzgl der Lévy-Metrik. Dann gilt
+				\[ \forall \varepsilon>0\exists n_0(\varepsilon): \forall n,m\ge n_0(\varepsilon): \mu([|f_n-f_m|>\varepsilon])<\varepsilon. \]
+				Wir setzen $n_k=n_0(2^{-k})$, so dass $n_{k+1}>n_k$. Nun gilt
+				\[ \forall n,m\ge n_k: \mu([|f_n-f_m|>2^{-k}])\le 2^{-k} \]
+				speziell für $n=n_k, m=n_{k+1}$:
+				\[ \mu([|f_n-f_m|>2^{-k}])<2^{-k} \]
+				Behauptung: $(f_{n_k})$ konvergiert fast gleichmäßig. Nämlich: Sei $\varepsilon>0$. Dann
+				\[ \exists k_0: 2^{-k_0}<\varepsilon. \]
+				Mit 
+				\[ A_\varepsilon:=\bigcup_{k>k_0}[|f_{n_k}-f_{n_{k+1}}|>2^{-k}] \]
+				folgt
+				\[ \mu(A_\varepsilon^c)\le \sum_{k>k_0} 2^{-k}=2^{-k_0}<\varepsilon. \]
+				Mit $r>l>k_0$ folgt dann für $\omega\in A_\varepsilon$
+				\[ |f_{n_r}-f_{n_l}|\le |f_{n_r}(\omega)-f_{n_{r-1}}(\omega)+...+|f_{n_{l+1}}(\omega)-f_{n_l}(\omega)|\le 2^{-(r-1)}+...+2^{-l}\le 2\cdot 2^{-l}, \]
+				also ist $f_{n_k}$ auf $A_\varepsilon^C$ eine gleichmäßige Cauchyfolge . Damit
+				\[ \forall \omega\in A_\varepsilon^c:f(\omega)=\lim_{n\to\infty} f_n(\omega), \]
+				also konvergiert  $(f_{n_k})$ fast gleichmäßig, da
+				\[ d(f,f_n)\le d(f_n,f_{n_k})+d(f_{n_k},f) \]
+			\end{bew}
+			
 			
