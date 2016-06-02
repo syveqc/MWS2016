@@ -1942,4 +1942,131 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				\[ d(f,f_n)\le d(f_n,f_{n_k})+d(f_{n_k},f) \]
 			\end{bew}
 			
+			Erinnerung:
+				Sei 
+				\[ f: \Omega_1\to \Omega_2, \]
+				$\mf{S}_2$ Sigmaalgebra über $\Omega_2$, $f^{-1}(\mf{S}_2)$ ist Sigmaalgebra über $\Omega_1$ (und zwar die kleinste Sigmaalgebra, bezüglich der $f$ messbar ist).
 			
+			\begin{defi}
+				Sei $(f_i)_{i\in I}$ eine Familie von Funktionen $\Omega\to\Omega_i$, $\mf{S}_i$ Sigmaalgebra über $\Omega_i$. Die von $(f_i)_{i\in I}$ erzeugte Sigmaalgebra $\mf{S}_\sigma((f_i)_{i\in I})$ ist die kleinste Sigmaalgebra, bezüglich der alle $f_i$ messbar sind.
+				\[ \mf{S}_\sigma((f_i)_{i\in I})=\mf{S}_\sigma(\{f_i^{-1}(B), i\in I, B\in\mf{S}_i\} \]
+			\end{defi}
+			
+			\begin{bem}
+				Anschaulich: $\{f: \mf{S}_\sigma((f_i)_{i\in I})\to (\R,\mf{B})\}$ sind alle Funktionen, die wir aus den Funktionen $(f_i)_{i\in I}$ berechnen können. (kleine Lüge, eigentlich ist es alles, was wir "`vernünftig"' aus den Funktionen berechnen können)
+			\end{bem}
+			
+			\begin{satz}
+				Sei $f:\Omega_1\to\Omega_2$, $(\Omega_2,\mf{S}_2)$ ein Messraum. Dann ist
+				\[ g:\Omega_1\to \R \]
+				genau dann bezüglich $f^{-1}(\mf{S}_2)$ messbar (also $g:(\Omega_1,f^{-1}(\mf{S}_2))\to(\R,\mf{B})$) wenn es ein $h:(\Omega_2,\mf{S}_2)\to(\R, \mf{B})$ mit $g=h\circ f$ gibt. 
+			\end{satz}
+			
+			\begin{bew}
+				$\Leftarrow$ ist klar.\newline
+				Wir zeigen also $\Rightarrow$: (Kochrezept für Beweise von Sätzen über messbare Funktionen: Indikatoren $\rightarrow$ Treppenfunktionen $\rightarrow$ messbare Funktion)\newline
+				Wir unterscheiden also mehrere Fälle:
+				\begin{enumerate}[(1)]
+					\item $g$ ist Indikatorfunktion, also $g=A(), A\in f^{-1}(\mf{S}_2)$
+					\[ \Rightarrow \exists B: A=f^{-1}(B) \]
+					also gilt mit $h:=B$
+					\[ g=h\circ f \]
+					und wegen
+					\[ g(\omega)=1\Leftrightarrow \omega\in A\Leftrightarrow f(\omega)\in B\Leftrightarrow h(f(\omega))=1 \]
+					sind wir fertig.
+					\item $g$ ist Treppenfunktion, also $g=\sum_{i=1}^n a_i A_i$, aus dem vorigen Punkt erhalten wir $A_i()=h_i\circ f$, damit
+					\[ g=\sum_{i=1}^{n}a_i\cdot h_i\circ f=\left(\sum_{i=1}^{n}a_i\cdot h_i\right)\circ f \]
+					die Behauptung.
+					\item $g$ ist messbar, also existiert eine Folge $g_n$ von Treppenfunktionen, sodass
+					\[ g_n\to g, \]
+					also 
+					\[ g_n=h_n\circ f, h_n:(\Omega_2, \mf{S}_2)\to(\R,\mf{B}). \]
+					An dieser Stelle wäre es schön, wenn wir $h=\lim h_n$ setzen könnten, das geht aber nicht immer, aber $h=\limsup h_n$ geht. Damit ist die Behauptung bewiesen. 
+				\end{enumerate}
+			\end{bew}
+			
+		\section{Messbare Funktionen und Maße}
+			\begin{defi}
+				Seien $(\Omega_1,\mf{S}_1,\mu_1),(\Omega_2,\mf{S}_2,\mu_2)$ Maßräume. Dann heißt $f:\Omega_1\to \Omega_2$ maßtreu, wenn
+				\[ f: (\Omega_1,\mf{S}_1)\to (\Omega_2, \mf{S}_2) \]
+				und
+				\[ \forall B\in\mf{S}_2: \mu_2(B)=\mu_1(f^{-1}(B)). \]
+			\end{defi}
+			
+			\begin{satz}
+				Sei $(\Omega_1,\mf{S}_1,\mu_1)$ ein Maßraum und $(\Omega_2,\mf{S}_2)$ ein Messraum. Für eine Funktion
+				\[ f:(\Omega_1,\mf{S}_1)\to (\Omega_2,\mf{S}_2) \]
+				kann man ein eindeutig bestimmtes Maß
+				\[ \mu_2(B)=\mu_1(f^{-1}(B)) \]
+				definieren, sodass $f$ eine maßtreue Abbildung wird. $\mu_2$ heißt das von $f$ induzierte Maß. 
+			\end{satz}
+			
+			\begin{bew}
+				Der Beweis, dass $\mu_2$ ein Maß ist, wird (fast vollständig) dem Leser überlassen. Seien nun $B_n$ disjunkt. Dann ist
+				\[ \mu(\bigcup_n B_n)=\mu_1(f^{-1}(\bigcup_n B_n))=\mu_1(\bigcup_n f^{-1}(B_n)=\sum_n \mu_1(f^{-1}(B_n))=\sum_n\mu_2(B_n). \]
+			\end{bew}
+			
+			\begin{bem}
+				Ist $(\Omega,\mf{S}, \P)$ ein Wahrscheinlichkeitsraum so heißt $X:(\Omega,\mf{S})\to(\Omega_2,\mf{S}_2)$,
+				\[ \P\circ X^{-1}=\P_X \]
+				die Verteilung von $X$. 
+			\end{bem}
+			
+		\section{Zufallsvariable und ihre Vertilungen}
+			\begin{defi}
+				Sei $(\Omega,\mf{S},\P)$ ein Wahrscheinlichkeitsraum und 
+				\[ X_i: (\Omega,\mf{S})\to (\Omega_i, \mf{S}_i), i\in I. \]
+				Wir nennen $(X_i)_{i\in I}$ unabhängig, wenn 
+				\[ \forall n\in N\forall \{i_1,...,i_n\}\subseteq I: \P\left(\bigcap_{k=1}^n X_{i_k}^{-1}(A_{i_k})\right)=\prod_{k=1}^n\P(X_{i_k}^{-1}(A_{i_k})), A_{i_k}\in\mf{S}_{i_k}. \]
+			\end{defi}
+			
+			\begin{bem}
+				Sei $(\Omega, \mf{S}, \P)$ ein Wahrscheinlichkeitsraum. $(\mf{S}_i)_{i\in I}$ Teilsigmaalgebra von $\mf{S}$ (d.h. $\mf{S}_i\subseteq\mf{S}$), dann heißen $(\mf{S}_i)_{i\in I}$ unabhängig, wenn 
+				\[ \forall n\in \N,\forall \{i_1,...,i_n\}\subseteq I:\P\left(\bigcap_{k=1}^n A_{i_k}\right)=\prod_{k=1}^{n}\P(A_{i_k}) \]
+			\end{bem}
+			
+			\begin{bem}
+				Ab jetzt: $\Omega_i=\R$, $\mf{S}_i=\mf{B}$. 
+			\end{bem}
+			
+			\begin{defi}[Alternativ- oder Bernoulliverteilung]
+				Sei $X$ eine Indikatorfunktion $X=A(), A\in\mf{S}$. 
+				\[ \P_X(\{1\})=\P(A), \P(A)=p,\P_x(\{0\})=1-\P(A) \]
+				mit $0\le p\le 1$ heißt Alternativ- oder Bernoulliverteilung. $p=\frac{1}{2}$ werden wir dann als Münzwurf bezeichnen. 
+			\end{defi}
+			
+			\begin{defi}[Diskrete Gleichverteilung: (Laplacescher Warhscheinlichkeitsraum)]
+				
+				\[ \P(X=x)=\frac{1}{b-a+1}, x=a,a+1,...,b; a,b\in\Z \]
+			\end{defi}
+			
+			\begin{defi}[Binomialverteilung]
+				Seien $A_1,...,A_n$ unabhängig $\P(A)=p$. 
+				\[ X=\text{Anzahl der Ereignisse, die eintreten}\in\{0,...,n\} \]
+			\end{defi}
+			
+			\begin{bsp}
+				Binomialverteilung: 
+				\[ \P(X=n)=\P(A_1\cap ...\cap A_n)=\P(A_1)\cdots\P(A_n)=p^n \]
+				\[ \P(X=0)=\P(A_1^c\cap...\cap A_n^c)=(1-p)^n \]
+				Alles weitere ist etwas komplizierter:
+				\[ \P(X=1)=\P((A_1\cap A_2^c\cap...\cap A_n^c)\cup(A_1^c\cap A_2\cap ...)\cup...\cup(A_1^c\cap...\cap A_{n-1}^c\cap A_n))= \]
+				\[ n\cdot p^1\cdot (1-p)^{n-1}. \]
+				Der allgemeine Fall sieht dann wie folgt aus:
+				\[ \P(X=k)=\binom{n}{k}p^k (1-p)^{n-k}, k=0,...,n \]
+				mit der Konvention $\binom{n}{k}=0$, wenn $k<0$ oder $k>n$. Diese Verteilung heißt Binomialverteilung $B(n,p)$. 
+			\end{bsp}
+			
+			\begin{defi}[Poisson-Verteilung]
+				$\P(X=n)=\frac{\lambda^ne^{-\lambda}}{n!}, n=0,1,...; \lambda>0$. Dies ist der Grenzfall der Binomialverteilungen für $np\to \lambda$ für $n\to\infty$ (vgl Übung.)
+			\end{defi}
+			
+			\begin{defi}[Geometrische Verteilung]
+				\[G(p): \P(X=n)=p(1-p)^n, n\ge 0\] 
+				\[\tilde{G}(p), \P(X=n)=p(1-p)^{n-1}, n\ge 1\]
+			\end{defi}
+			
+			\begin{defi}[negative Binomialverteilung]
+				\[ NB(\alpha,p): \P(X=n)=(1-p)^np^\alpha\binom{n+\alpha-1}{n}, n\ge 0 \]
+				
+			\end{defi}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.3.6)  1 JUN 2016 11:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.3.6)  2 JUN 2016 11:13
 entering extended mode
 **./Mass.tex
 (Mass.tex
@@ -656,6 +656,41 @@ G,.JBIG2,.JB2,.eps]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+(Mass.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+esvect on input line 3.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\esvect\uesvect.fd"
+File: uesvect.fd 
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 3.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Try loading font information for U+stmry on input line 3.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\stmaryrd\ustmry.fd")
+LaTeX Font Info:    Try loading font information for U+euf on input line 10.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+))
+\tf@toc=\write4
+\openout4 = `Mass.toc'.
+
+ [1
+
+
+{C:/Users/Tobias/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 Kapitel 1.
 (masse.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 3.
@@ -664,43 +699,14 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3.
-LaTeX Font Info:    Try loading font information for U+msa on input line 10.
+ [2
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 10.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for U+esvect on input line 10.
-
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\esvect\uesvect.fd"
-File: uesvect.fd 
-)
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 10.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Try loading font information for U+stmry on input line 10.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\stmaryrd\ustmry.fd")
-LaTeX Font Info:    Try loading font information for U+euf on input line 10.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [1
-
-
-{C:/Users/Tobias/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+]
 
 LaTeX Warning: The counter will not be printed.
              The label is: - on input line 96.
 
-[2] [3]
+[3] [4]
 Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
@@ -713,25 +719,25 @@ LaTeX Warning: The counter will not be printed.
 LaTeX Warning: The counter will not be printed.
              The label is: - on input line 213.
 
-[4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
+[5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
 Underfull \hbox (badness 10000) in paragraph at lines 715--717
 
  []
 
-[15] [16] [17] [18] [19] [20]
+[16] [17] [18] [19] [20] [21]
 Underfull \hbox (badness 10000) in paragraph at lines 1015--1016
 
  []
 
-[21] [22]
+[22] [23]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1073.
 
- [23] [24] [25] [26] [27] [28] [29]
+ [24] [25] [26] [27] [28] [29] [30]
 Kapitel 2.
-[30
+[31
 
-] [31]
+] [32]
 Underfull \hbox (badness 10000) in paragraph at lines 1562--1564
 
  []
@@ -747,47 +753,56 @@ LaTeX Font Info:    Try loading font information for U+dsrom on input line 1582
 .
 ("C:\Program Files\MiKTeX 2.9\tex\latex\dstroke\udsrom.fd"
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [32] [33] [34]
-[35] [36] [37] [38]) [39] (Mass.aux) ) 
+) [33] [34] [35]
+[36] [37] [38] [39] [40] [41]
+Overfull \hbox (7.29358pt too wide) in paragraph at lines 2033--2034
+[]\T1/cmr/bx/n/10 Definition 2.5.2 \T1/cmr/m/n/10 (Al-ter-na-ti-v- oder Ber-nou
+l-li-ver-tei-lung)\T1/cmr/bx/n/10 . []\T1/cmr/m/it/10 Sei $\OML/cmm/m/it/10 X$ 
+\T1/cmr/m/it/10 ei-ne In-di-ka-tor-funk-ti-on $\OML/cmm/m/it/10 X \OT1/cmr/m/n/
+10 = \OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ()\OML/cmm/m/it/10 ; A \OMS/cmsy/m/n/10 
+2$
+ []
+
+[42]) [43] (Mass.aux) ) 
 Here is how much of TeX's memory you used:
- 4524 strings out of 493622
- 57013 string characters out of 3143642
+ 4529 strings out of 493622
+ 57057 string characters out of 3143642
  135287 words of memory out of 3000000
- 7755 multiletter control sequences out of 15000+200000
- 25770 words of font info for 82 fonts, out of 3000000 for 9000
+ 7756 multiletter control sequences out of 15000+200000
+ 26542 words of font info for 83 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  38i,13n,43p,358b,443s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dv
-ips/cm-super/cm-super-t1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-mextra/cmex7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-mi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
-y5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/dstroke/dsrom10.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm7.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/cm-super/sfbx1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/cm-super/sfbx1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-sup
-er/sfbx1440.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx20
-74.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx2488.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfsl1000.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/cm-super/sfti1000.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/hoekwater/stmary10.pfb>
-Output written on Mass.pdf (39 pages, 487121 bytes).
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm
+-super-t1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex7.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/dstroke/dsrom10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/euler/eufm7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/latxfont/line10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/symbols/msbm7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-
+super/sfbx1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfb
+x1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1440.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx2074.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/cm-super/sfsl1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/cm-super/sfti1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/hoekwater/stmary10.pfb>
+Output written on Mass.pdf (43 pages, 504758 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
+ 259 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
