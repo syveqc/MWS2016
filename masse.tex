@@ -319,7 +319,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				Außerdem (Zusatz für zwei Mengen):
 				\begin{align*} \mu(A\cup B\cup C)&=\mu((A\cup B)\cup C)\\&=\mu(A)+\mu(B)+\mu(C)-\mu(A\cap B)-\mu(A\cap C)-\mu(B\cap C)+\mu(A\cap B\cap C) \end{align*}
 				\item Es gilt:
-				\[ A,B\in\ms{R}: \mu(A\cup B)=\mu(A\cup (B\setminus A))=mu(A)+\mu(B\setminus A)\le \mu(A)+\mu(B) \]
+				\[ A,B\in\ms{R}: \mu(A\cup B)=\mu(A\cup (B\setminus A))=\mu(A)+\mu(B\setminus A)\le \mu(A)+\mu(B) \]
 				\[ \Rightarrow \mu\left(\bigcup_{i=1}^n A_i\right)\le \sum_{i=1}^n \mu(A_i) \]
 				\item Induktion (wahrscheinlich)
 			\end{enumerate}
@@ -1428,12 +1428,12 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			\end{defi}
 			
 			\begin{satz}
-				Sei $\mathfrak{C}$ ein Mengensystem über $\Omega_2$, das $\mathfrak{S}_2$ erzeugt, $\mathfrak{S}_2=\mathfrak{A}_\sigma(\mathbb{C}$, dann ist $f:\Omega_1\to\Omega_2$ $\mathfrak{S}_1-\mathfrak{S}_2$-messbar genau dann, wenn
+				Sei $\mathfrak{C}$ ein Mengensystem über $\Omega_2$, das $\mathfrak{S}_2$ erzeugt, $\mathfrak{S}_2=\mathfrak{A}_\sigma(\mathfrak{C})$, dann ist $f:\Omega_1\to\Omega_2$ $\mathfrak{S}_1-\mathfrak{S}_2$-messbar genau dann, wenn
 				\[ f^{-1}(\mathfrak{C})\subseteq \mathfrak{S}_1 \]
 			\end{satz}
 			
 			\begin{bew}
-				$\mathfrak{A}_\sigma(f^{-1}(\mathfrak{C})=f^{-1}(\mathfrak{A}_\sigma(\mathfrak{C}))$ wurde schon zu Beginn der Vorlesung gezeigt. Wegen
+				$\mathfrak{A}_\sigma(f^{-1}(\mathfrak{C}))=f^{-1}(\mathfrak{A}_\sigma(\mathfrak{C}))$ wurde schon zu Beginn der Vorlesung gezeigt. Wegen
 				\[ f^{-1}(\mathfrak{A}_\sigma(\mathfrak{C}))=f^{-1}(\mathfrak{S}_2), \]
 				sind wir an dieser Stelle schon fertig. 
 			\end{bew}
@@ -1891,7 +1891,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				$(f_n), f_n\in\mathcal{L}_0$ ist eine Cauchyfolge im Maß, wenn 
 				\[ \forall\varepsilon>0: \lim_{m,n\to\infty}\mu([|f_n-f_m|>\varepsilon])=0, \]
 				das heißt
-				\[ \forall \Delta>0\exists n_0\forall m,n\ge n_0: \mu([|f_n-f_m|>\varepsilon]<\delta \]
+				\[ \forall \delta>0\exists n_0\forall m,n\ge n_0: \mu([|f_n-f_m|>\varepsilon]<\delta \]
 			\end{defi}
 			
 			Im Folgenden arbeiten wir auf den folgenden Satz hin:
