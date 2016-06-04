@@ -15,8 +15,8 @@
 \contentsline {subsection}{\numberline {1.2.11}Mehrdimensionale Lebesgue-Stieltjes Ma\IeC {\ss }e und Verteilungsfunktionen}{25}
 \contentsline {subsection}{\numberline {1.2.12}Approximationss\IeC {\"a}tze und Regularit\IeC {\"a}t}{29}
 \contentsline {chapter}{\numberline {2}Das Lebesgue-Integral}{31}
-\contentsline {section}{\numberline {2.1}Erweitert reellwertige Funktionen}{33}
-\contentsline {section}{\numberline {2.2}Treppenfunktionen}{34}
+\contentsline {section}{\numberline {2.1}Erweiterte $\mathbb {R}$-Funktionen}{33}
+\contentsline {section}{\numberline {2.2}Treppenfunktionen}{33}
 \contentsline {section}{\numberline {2.3}Konvergenzarten}{34}
 \contentsline {section}{\numberline {2.4}Messbare Funktionen und Ma\IeC {\ss }e}{42}
-\contentsline {section}{\numberline {2.5}Zufallsvariable und ihre Vertilungen}{42}
+\contentsline {section}{\numberline {2.5}Zufallsvariable/Verteilungen}{42}
