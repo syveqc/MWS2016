@@ -336,7 +336,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			\[ \sum_{n\in\N} \mu(A_n)\le \mu(A) \]
 		\end{bew}
 		
-		\subsection{Folgerungen für Maße}
+		\section{Folgerungen für Maße}
 		
 		\begin{satz}
 			Sei $\mu$ ein Maß auf $\ms{R}$:
@@ -363,7 +363,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			\end{enumerate}
 		\end{bew}
 			
-		\subsection{Eigenschaften von Maßen (Inhalten) auf Ringen(Semiringen)}
+		\section{Eigenschaften von Maßen (Inhalten) auf Ringen(Semiringen)}
 			\begin{satz}
 				Sei $\mu$ ein Maß auf dem Ring $\ms{R}$, $A_n\uparrow A$, $A_n, A\in \ms{R}$. Dann gilt
 				\[ \mu(A)=\lim_{n\to\infty} \mu(A_n) \]
@@ -453,7 +453,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				\[ \Rightarrow \mathbb{P}(\text{kein Fixpunkt})=1-\sum_{k=1}^n(-1)^{k-1} \frac{1}{k!}=\sum_{k=0}^n (-1)^k \frac{1}{k!}\stackrel{\rightarrow}{n\to\infty} \frac{1}{e} \]
 			\end{bsp}
 			
-			\subsection{Bedingte Wahrscheinlichkeit}
+			\section{Bedingte Wahrscheinlichkeit}
 			\begin{defi}
 				Sei $(\Omega, \ms{S}, \P)$ ein Wahrscheinlichkeitsraum. Nun heißt $A,B\in\ms{S}$ Ereignisse. Gilt $\P(B)\neq 0$ so heißt 
 				\[ \P(A|B):=\frac{\P(A\cap B)}{\P(B)} \]
@@ -528,7 +528,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				\[ \P\left(\bigcup_{n=1}^\infty\bigcap_{k=n}^\infty A_k\right)\le \sum_{n=1}^\infty \P\left(\bigcap_{k=n}^\infty A_k\right)=\sum_{n=1}^\infty 0=0 \]\arge
 			\end{bew}
 			
-			\subsection{Der Fortsetzungssatz für Maßfunktionen}
+			\section{Der Fortsetzungssatz für Maßfunktionen}
 			
 			In diesem Abschnitt werden wir den folgenden Satz beweisen:
 			\begin{satz}[Fortsetzungssatz für Maßfunktionen]
@@ -758,7 +758,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				Nun ist der Fortsetzungssatz für Maßfunktionen vollständig bewiesen.
 			\end{bem}
 			
-			\subsection{Zusammenhang zwischen dem Maß auf dem Ring und dem Maß auf dem Sigmaring}
+			\section{Zusammenhang zwischen dem Maß auf dem Ring und dem Maß auf dem Sigmaring}
 			\begin{satz} [Approximationstheorem I]
 				Sei $\mu$ ein sigmaendliches Maß auf einem Ring $\mf{R}$. Sei $A\in\mf{R}_\sigma(\mf{R}), \mu(A)<\infty$. Dann gilt
 				\[ \forall \epsilon>0: \exists B\in\mf{R}: \mu(A\Delta B)<\epsilon \]
@@ -866,7 +866,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				Damit folgt statt $\ge$ Gleichheit. 
 			\end{bew}
 			
-		\subsection{Maße auf $(\R, \mf{B})$}
+		\section{Maße auf $(\R, \mf{B})$}
 			
 			Die Frage, die sich stellt ist: Ist $\mu^*$ auf $\R$ frei definiert, wann gilt $\mf{B}\subseteq \mf{M}_{\mu^*}$?
 			
@@ -885,7 +885,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				Dieser Satz erfordert einige Trickserei und wird hier nicht bewiesen.
 			\end{bew}
 			
-		\subsection{Maße auf $(\R, \mf{B})$, zweiter Anlauf}
+		\section{Maße auf $(\R, \mf{B})$, zweiter Anlauf}
 			Im folgenden ist immer $\mf{T}:=\{(a,b], a\le b, a,b\in\R\}$.
 			
 			\begin{satz}
@@ -941,7 +941,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				Zu jeder Lebesgue-Stieltjes Maßfunktion gibt es eine Verteilungsfunktion. Diese ist bis auf eine additive Konstante eindeutig bestimmt. 
 			\end{satz}
 			
-		\subsection{Ergänzungen zu bedingten Wahrscheinlichkeiten}
+		\section{Ergänzungen zu bedingten Wahrscheinlichkeiten}
 			\begin{satz}[Satz von der vollständigen Wahrscheinlichkeit]
 				Sei $(\Omega, \mf{S}, \P)$ ein Wahrscheinlichkeitsraum.
 				Sei dann $(B_i, i\in I)$ eine Partition, $I$ höchstens abzählbar mit $B_i\in\mf{S}, \P(B_i)>0, \sum_{i\in I}B_i=\Omega$ und $A\in\mf{S}$. Dann ist
@@ -981,7 +981,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				genauso für A und B, also ist die Wahrscheinlichkeit für Blutgruppe 0 am größten. 
 			\end{bsp}
 			
-		\subsection{Eigenschaften von Verteilungsfunktionen}
+		\section{Eigenschaften von Verteilungsfunktionen}
 			\begin{satz}
 				Sei $F:\R\to\R$ eine Verteilungsfunktion. Dann gilt:
 				\begin{enumerate}
@@ -1057,7 +1057,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				Eine Verteilungsfunktion, die das erfüllt, heißt Verteilungsfunktion im engeren Sinn. 
 			\end{bem}
 			
-		\subsection{Maße von Mengen mit Verteilungsfunktionen}
+		\section{Maße von Mengen mit Verteilungsfunktionen}
 			Ab diesem Kapitel werden wir offene Intervallgrenzen auch mit eckigen Klammern schreiben.\newline
 			Wir wissen schon:
 			\[ \mu(]a,b])=F(b)-F(a). \]
@@ -1136,7 +1136,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				\[ \mathcal{N}(\mu,\sigma^2,x)=\frac{1}{\sqrt{2\pi \sigma^2}}e^\frac{-(x-\mu)^2}{2\sigma^2} \]
 			\end{bsp}
 			
-		\subsection{Mehrdimensionale Lebesgue-Stieltjes Maße und Verteilungsfunktionen}
+		\section{Mehrdimensionale Lebesgue-Stieltjes Maße und Verteilungsfunktionen}
 			Der hier verwendete Maßraum ist $(\R^d, \mf{B}_d)$ mit 
 			\[ \mf{B}_d:=\mf{A}_\sigma\left(\{]a,b]: a,b\in\R, a\le b\}\right), \]
 			wobei die Ungleichung $a\le b$ komponentenweise zu verstehen ist, also
@@ -1312,7 +1312,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				Kann man mit dem Prinzip der guten Mengen machen, vielleicht in der Übung. 
 			\end{bew}
 			
-		\subsection{Approximationssätze und Regularität}
+		\section{Approximationssätze und Regularität}
 			
 			\begin{defi}
 				Sei $\mu$ ein Inhalt auf $(\R^d, \mathfrak{B}_d)$ bzw $(\R^d, \mathfrak{S})$ mit $\mathfrak{B}_d\subseteq\mathfrak{S}$, dann heißt $A\in\mathfrak{S}$ regulär von oben, wenn
@@ -2015,44 +2015,221 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				Ab jetzt: $\Omega_i=\R$, $\mf{S}_i=\mf{B}$. 
 			\end{bem}
 			
-			\begin{defi}[Alternativ- oder Bernoulliverteilung]
-				Sei $X$ eine Indikatorfunktion $X=A(), A\in\mf{S}$. 
-				\[ \P_X(\{1\})=\P(A), \P(A)=p,\P_x(\{0\})=1-\P(A) \]
-				mit $0\le p\le 1$ heißt Alternativ- oder Bernoulliverteilung. $p=\frac{1}{2}$ werden wir dann als Münzwurf bezeichnen. 
-			\end{defi}
+			\subsection{Diskrete Verteilungen}
 			
-			\begin{defi}[Diskrete Gleichverteilung: (Laplacescher Warhscheinlichkeitsraum)]
+				\begin{defi}[Alternativ- oder Bernoulliverteilung]
+					Sei $X$ eine Indikatorfunktion $X=A(), A\in\mf{S}$. 
+					\[ \P_X(\{1\})=\P(A), \P(A)=p,\P_x(\{0\})=1-\P(A) \]
+					mit $0\le p\le 1$ heißt Alternativ- oder Bernoulliverteilung. $p=\frac{1}{2}$ werden wir dann als Münzwurf bezeichnen. 
+				\end{defi}
 				
-				\[ \P(X=x)=\frac{1}{b-a+1}, x=a,a+1,...,b; a,b\in\Z \]
-			\end{defi}
-			
-			\begin{defi}[Binomialverteilung]
-				Seien $A_1,...,A_n$ unabhängig $\P(A)=p$. 
-				\[ X=\text{Anzahl der Ereignisse, die eintreten}\in\{0,...,n\} \]
-			\end{defi}
-			
-			\begin{bsp}
-				Binomialverteilung: 
-				\[ \P(X=n)=\P(A_1\cap ...\cap A_n)=\P(A_1)\cdots\P(A_n)=p^n \]
-				\[ \P(X=0)=\P(A_1^c\cap...\cap A_n^c)=(1-p)^n \]
-				Alles weitere ist etwas komplizierter:
-				\[ \P(X=1)=\P((A_1\cap A_2^c\cap...\cap A_n^c)\cup(A_1^c\cap A_2\cap ...)\cup...\cup(A_1^c\cap...\cap A_{n-1}^c\cap A_n))= \]
-				\[ n\cdot p^1\cdot (1-p)^{n-1}. \]
-				Der allgemeine Fall sieht dann wie folgt aus:
-				\[ \P(X=k)=\binom{n}{k}p^k (1-p)^{n-k}, k=0,...,n \]
-				mit der Konvention $\binom{n}{k}=0$, wenn $k<0$ oder $k>n$. Diese Verteilung heißt Binomialverteilung $B(n,p)$. 
-			\end{bsp}
-			
-			\begin{defi}[Poisson-Verteilung]
-				$\P(X=n)=\frac{\lambda^ne^{-\lambda}}{n!}, n=0,1,...; \lambda>0$. Dies ist der Grenzfall der Binomialverteilungen für $np\to \lambda$ für $n\to\infty$ (vgl Übung.)
-			\end{defi}
-			
-			\begin{defi}[Geometrische Verteilung]
-				\[G(p): \P(X=n)=p(1-p)^n, n\ge 0\] 
-				\[\tilde{G}(p), \P(X=n)=p(1-p)^{n-1}, n\ge 1\]
-			\end{defi}
-			
-			\begin{defi}[negative Binomialverteilung]
-				\[ NB(\alpha,p): \P(X=n)=(1-p)^np^\alpha\binom{n+\alpha-1}{n}, n\ge 0 \]
+				\begin{defi}[Diskrete Gleichverteilung: (Laplacescher Warhscheinlichkeitsraum)]
+					
+					\[ \P(X=x)=\frac{1}{b-a+1}, x=a,a+1,...,b; a,b\in\Z \]
+				\end{defi}
 				
+				\begin{defi}[Binomialverteilung]
+					Seien $A_1,...,A_n$ unabhängig $\P(A)=p$. 
+					\[ X=\text{Anzahl der Ereignisse, die eintreten}\in\{0,...,n\} \]
+				\end{defi}
+				
+				\begin{bsp}
+					Binomialverteilung: 
+					\[ \P(X=n)=\P(A_1\cap ...\cap A_n)=\P(A_1)\cdots\P(A_n)=p^n \]
+					\[ \P(X=0)=\P(A_1^c\cap...\cap A_n^c)=(1-p)^n \]
+					Alles weitere ist etwas komplizierter:
+					\[ \P(X=1)=\P((A_1\cap A_2^c\cap...\cap A_n^c)\cup(A_1^c\cap A_2\cap ...)\cup...\cup(A_1^c\cap...\cap A_{n-1}^c\cap A_n))= \]
+					\[ n\cdot p^1\cdot (1-p)^{n-1}. \]
+					Der allgemeine Fall sieht dann wie folgt aus:
+					\[ \P(X=k)=\binom{n}{k}p^k (1-p)^{n-k}, k=0,...,n \]
+					mit der Konvention $\binom{n}{k}=0$, wenn $k<0$ oder $k>n$. Diese Verteilung heißt Binomialverteilung $B(n,p)$. 
+				\end{bsp}
+				
+				\begin{defi}[Poisson-Verteilung]
+					$\P(X=n)=\frac{\lambda^ne^{-\lambda}}{n!}, n=0,1,...; \lambda>0$. Dies ist der Grenzfall der Binomialverteilungen für $np\to \lambda$ für $n\to\infty$ (vgl Übung.)
+				\end{defi}
+				
+				\begin{defi}[Geometrische Verteilung]
+					\[G(p): \P(X=n)=p(1-p)^n, n\ge 0\] 
+					\[\tilde{G}(p), \P(X=n)=p(1-p)^{n-1}, n\ge 1\]
+				\end{defi}
+				
+				\begin{defi}[negative Binomialverteilung]
+					\[ NB(\alpha,p): \P(X=n)=(1-p)^np^\alpha\binom{n+\alpha-1}{n}, n\ge 0 \]
+					
+				\end{defi}
+				
+				\begin{defi}[Hypergeometrische Verteilung]
+					Bsp: Sei eine Urne mit $N$ Kugeln, $A$ schwarze, $N-A$ weiße. Es werden $n$ Kugeln ohne zurücklegen gezogen. Sei 
+					\[ X=\text{Anzahl der schwarzen Kugeln unter den gezogenen} \]
+					Dann ist
+					\[ H(N,A,n):\P(X=x)=\frac{\binom{A}{x}\binom{N-A}{n-x}}{\binom{N}{n}}\]
+					\[\left(=\binom{n}{x}\frac{A\cdot(A-1)\cdots (A-x+1)\cdot(N-A)\cdots(N-A-n+x+1)}{N\cdots (N-n+1)}\right) \]
+				\end{defi}
+			
+			\subsection{Stetige Verteilungen}
+				\begin{defi}[Stetige Gleichverteilung]
+					\[ \P(A)=\frac{\lambda(A)}{b-a}, A\subseteq[a,b], A\in\mf{B}, \]
+					\[ F_X(x)=\left\{\begin{array}{ll}
+					0: &x<a\\
+					\frac{x-a}{b-a}: &a\le x<b\\
+					1: &x\ge b
+					\end{array}\right\}=\int_{-\infty}^{x}f_x(u) du, \]
+					\[ f_x(x)=\begin{cases}
+					\frac{1}{b-a}: &a\le x\le b\\0: &\text{sonst}
+					\end{cases} \]
+				\end{defi}
+				
+				\begin{defi}[Normalverteilung]
+					\[ F_X(x)=\Phi\left(\frac{x-\mu}{\sigma}\right) \]
+					\[ \P_X=\P\circ X^{-1} \]
+					\[ \Phi(x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x}e^{-\frac{x^2}{2}} \]
+					\[ \Rightarrow \Phi\left(\frac{x-\mu}{\sigma}\right)=\frac{1}{\sqrt{2\pi\sigma^2}} \int_{-\infty}^{x}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\]
+				\end{defi}
+				
+				\begin{defi}
+					Ist die Verteilungsfunktion $F_X$ differenzierbar, so heißt $f_X=F_X'$ die Dichte (-funktion) von $X$. Es gilt hierbei
+					\[ f\text{ ist Dichte}\Leftrightarrow f\ge 0, \int_{-\infty}^{\infty}f(x)dx=1. \] 
+				\end{defi}
+				
+				\begin{defi}[Exponentialverteilung $E(\lambda)$]
+					\[ f(x)=\lambda e^{-\lambda x}, x\ge 0 \]
+					bzw
+					\[ F(x)=(1-e^{-\lambda x}), x\ge 0. \]					
+				\end{defi}
+				
+				\begin{defi}[Gammaverteilung]
+					\[ f(x)=\frac{x^{\alpha-1}\lambda^\alpha}{\Gamma(\alpha)}e^{-\lambda x}, x\ge 0, \alpha 0, \lambda >0 \]
+					\[ \Gamma(\alpha)=\int_0^\infty x^{\alpha-1}e^{-x}dx \]
+					wobei
+					\[ \Gamma(\alpha+1)=\alpha\Gamma(\alpha) \]
+					und
+					\[ \forall n\in\N: \Gamma(n)=(n-1)! \]
+					gilt.
+				\end{defi}
+				
+				\begin{defi}[Betaverteilung 1. Art, $B_1(\alpha, \beta)$]
+					\[ f(x)=\frac{1}{B(\alpha,\beta)} x^{\alpha-1}(1-x)^{\beta-1}, 0\le x\le 1\]
+					\[ B(\alpha, \beta)=\int_0^1 x^{\alpha-1}(1-x)^{\beta-1} dx=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)} \]
+				\end{defi}
+				
+				\begin{defi}[Betaverteilung 2. Art, $B_2(\alpha, \beta)$]
+					\[ f(x)=\frac{1}{B(\alpha,\beta)}\cdot \frac{x^{\alpha-1}}{(1+x)^{\alpha+\beta}}, x\ge 0.\]
+				\end{defi}
+				
+				\begin{defi}[Chiquadratverteilung mit $n$ Freiheitsgraden]
+					\[ \Gamma(\frac{n}{2},\frac{1}{2})=\chi^2 n, \]
+					ist für uns derzeit nicht besonders wichtig, aber in der Statistik schon. 
+				\end{defi}
+				
+				\begin{defi}
+					Sei $X$ eine Zufallsvariable. Dann bedeutet $X\sim F$, dass $X$ die Verteilung $F$ besitzt. 
+				\end{defi}
+				
+				\begin{bsp}
+					Sei $X$ eine Zufallsvariable mit stetiger und streng monotoner Verteilungsfunktion $F_X$. Sei 
+					\[ Y = F_X(X) \]
+					die Verteilung von $Y$. Da $F_X$ stetig und streng monoton steigend ist, existiert eine Umkehrfunktion $F_X^{-1}$. Damit ist
+					\[ F_Y(y)=\P(Y\le y)=\P(F_X(X)\le y)=\P(X\le F_X^{-1}(y))=F(F^{-1}(y))=y. \]
+					Damit hat $Y$ die Verteilungsfunkiton $F(X)\sim U(0,1)$. Setzt man also eine Zufallsvariable in ihre Verteilungsfunktion ein, so erhält man eine Gleichverteilung. \newline
+					Sei umgekehrt $U$ auf $[0,1]$ gleichverteilt, dann ist $F^{-1}(U)\sim F$. (Beweis übergangen)
+				\end{bsp}
+				
+				\begin{defi}[Verallgemeinerte Inverse]
+					Die Verallgemeinerte Inverse einer Verteilungsfunktion $F$ ist 
+					\[ F^{-1}(y)=\inf \{x: F(x)\ge y\}. \]
+					Damit folgt 
+					\[ x<F^{-1}(y)\Rightarrow F(x)<y. \]
+				\end{defi}
+				
+				\begin{satz}
+					Sei $U\sim U[0,1]$ und $F$ eine Verteliungsfunktion. Dann ist
+					\[ F^{-1}(U)\sim F. \] 
+				\end{satz}
+				
+				\begin{bew}
+					Es gilt
+					\[ F^{-1}(U)\le x\Leftrightarrow U\le F(x), \]
+					damit ist
+					\[ [F^{-1}(U)\le x]=[U\le F(x)] \]
+					\[ \Rightarrow \P(F^{-1})\le x)=\P(U\le F(x))=F(x), \]
+					und damit sind wir fertig. 
+				\end{bew}
+				
+				\begin{satz}
+					Sei $F$ stetig und $X\sim F$. Dann gilt
+					\[ F(X)\sim U(0,1). \]
+				\end{satz}
+				
+				\begin{bew}
+					Es gilt:
+					\[ \P(F(X)<y)=\P(Y<F(y))=F(F^{-1}(y)-0)\stackrel{stetig}{=}F(F^{-1}(y))\stackrel{stetig}{=}y \]
+				\end{bew}
+				
+		\section{Das Integral}
+			Anschaulich: Beim Lebesgue Integral wird im Gegensatz zum Riemann-Integral der Grenzwert nicht über vertikale, sondern über horizontale "`Scheiben"' gebildet. 
+			\begin{defi}
+				Sei 
+				\[ f:(\Omega,\mf{S})\to (\R_0^+, \mf{B}) \]
+				in einem Maßraum $(\Omega, \mf{S}, \mu)$. Dann definieren wir das Lebesgue-Maß als
+				\[ \int fd\mu=\int_0^\infty \mu([f>y])dy, \]
+				also als uneigentliches Riemann-Integral, wobei wir das Integral gleich $\infty$ setzen, falls es ein $y$ gibt, sodass $\mu([f>y])=\infty$. 
 			\end{defi}
+			
+			\begin{defi}[Allgemeiner]
+				Für
+				\[ f:(\Omega,\mf{S})\to (\R, \mf{B}) \]
+				definieren wir 
+				\[ f_+:=\max (f,0) \]
+				\[ f_-:=\max(-f,0). \]
+				Dann gilt 
+				\[ f=f_+-f_- \]
+				und wir können 
+				\[ \int fd\mu=\int f_+d\mu-\int f_-d\mu \]
+				schreiben, falls der Ausdruck definiert ist, also nicht "`$\infty-\infty$"' ist. Andernfalls sagen wir, dass $\int f d\mu$ nicht existiert. Existiert $\int fd\mu$, so nennen wir $f$ integrierbar, falls 
+				\[ \int fd\mu<\infty. \] 
+			\end{defi}
+			
+			\begin{defi}
+				Sei 
+				\[ \mf{L}_1(\Omega,\mf{S}, \mu):=\left\{f: \left|\int fd\mu\right|<\infty\right\}, \]
+				also die Menge der integrierbaren Funktionen. 
+			\end{defi}
+			
+			\begin{bem}[Notation]
+				Man kann auch 
+				\[ \int fd\mu=\int f(x) d\mu(x)=\int f(x)\mu(dx) \]
+				schreiben. Wissen wir, von welchem Maß die Rede ist, so schreibt man auch einfach
+				\[ \int f. \]
+				Außerdem schreibt man für eine messbare Menge $A\in\mf{S}$
+				\[ \int_A f=\int A()\cdot f, \]
+				also das bestimmte Integral. 
+			\end{bem}
+			
+			\begin{satz}
+				$  $
+				\begin{enumerate}[(1)]
+					\item Sei $f\ge 0$. Dann gilt
+					\[ \int f\ge 0, \]
+					wobei
+					\[ \int f=0\Leftrightarrow f=0 \mu-\text{fast überall} \]
+					gilt. 
+					\item Sei $f\le g$, so folgt
+					\[ \int f\le \int g. \]
+					\item Sei $c\ge 0$, dann gilt
+					\[ \int cf=c\int f. \]
+					\item Seien $f,g$. Dann gilt
+					\[ \int (f+g)=\int f+\int g. \] 
+					\item Satz von der monotonen Konvergenz, Satz von Beppo-Levi:\newline
+					 Sei $f_n\uparrow f$. Dann folgt
+					\[ \int f_n\uparrow \int f \]
+					\item Sei $f=\sum_{i=1}^n a_i A_i(),a_i\ge 0, A_i\in\mf{S}$ disjunkt, also eine Treppenfunktion. Dann gilt
+					\[ \int fd\mu=\sum_{i=1}^n a_i\mu(A_i) \]
+				\end{enumerate}
+			\end{satz}
+			
+			\begin{bew}
+				(1)-(3) kann man elementar durch Übergang zum Riemann-Integral zeigen. (4) ist mühsam, daher schieben wir diesen Punkt auf. (5) und (6) machen wir morgen. 
+			\end{bew}
+				
+				
