@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.3.6)  8 JUN 2016 09:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.3.6)  9 JUN 2016 11:11
 entering extended mode
 **./Mass.tex
 (Mass.tex
@@ -553,8 +553,7 @@ Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
 \c@defi=\count105
 \c@bsp=\count106
-
-Excluding comment 'bew' (Mass.aux)
+ (Mass.aux)
 \openout1 = `Mass.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
@@ -703,12 +702,15 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
  [2
 
 ]
-Excluding 'bew' comment.
 
 LaTeX Warning: The counter will not be printed.
              The label is: - on input line 96.
 
-Excluding 'bew' comment. [3] [4] Excluding 'bew' comment.
+[3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
+
+ []
+
 
 LaTeX Warning: The counter will not be printed.
              The label is: - on input line 209.
@@ -717,8 +719,7 @@ LaTeX Warning: The counter will not be printed.
 LaTeX Warning: The counter will not be printed.
              The label is: - on input line 213.
 
-Excluding 'bew' comment. [5] Excluding 'bew' comment. Excluding 'bew' comment.
-Excluding 'bew' comment. Excluding 'bew' comment. Excluding 'bew' comment.
+[5] [6] [7]
 Overfull \hbox (23.78822pt too wide) in paragraph at lines 366--366
 []\T1/cmr/bx/n/14.4 Eigenschaften von Ma-ÿen (In-hal-ten) auf Rin-gen(Semiringe
 n) 
@@ -730,39 +731,37 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6] Excluding 'bew' comment. Excluding 'bew' comment. Excluding 'bew' comment.
-Excluding 'bew' comment. [7] [8] Excluding 'bew' comment. [9]
-Excluding 'bew' comment. Excluding 'bew' comment. Excluding 'bew' comment.
-Excluding 'bew' comment. [10] Excluding 'bew' comment.
-Excluding 'bew' comment. Excluding 'bew' comment. Excluding 'bew' comment.
+[8] [9] [10] [11] [12] [13] [14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 715--717
+
+ []
+
+[16]
 
 Package Fancyhdr Warning: \headheight is too small (12.51453pt): 
  Make it at least 22.48724pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[11] Excluding 'bew' comment. Excluding 'bew' comment. [12]
-Excluding 'bew' comment. Excluding 'bew' comment. [13]
-Excluding 'bew' comment.
+[17] [18] [19] [20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 1015--1016
+
+ []
+
+[22] [23]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1073.
 
- Excluding 'bew' comment. [14] [15]
-Excluding 'bew' comment. [16] Excluding 'bew' comment.
-Excluding 'bew' comment. [17] Excluding 'bew' comment.
-Excluding 'bew' comment. Excluding 'bew' comment. Excluding 'bew' comment.
-Excluding 'bew' comment. [18] [19]
+ [24] [25] [26] [27] [28] [29] [30]
 Kapitel 2.
-Excluding 'bew' comment. Excluding 'bew' comment. [20
+[31
 
-]
-Excluding 'bew' comment. Excluding 'bew' comment. Excluding 'bew' comment.
-Excluding 'bew' comment. Excluding 'bew' comment. Excluding 'bew' comment.
+] [32]
 Underfull \hbox (badness 10000) in paragraph at lines 1548--1550
 
  []
 
-Excluding 'bew' comment. [21]
+
 Overfull \hbox (0.41844pt too wide) in paragraph at lines 1566--1568
 \T1/cmr/m/it/10 heiÿt Trep-pen-funk-ti-on, wenn es ei-ne end-li-che Zer-le-gung
  $\OML/cmm/m/it/10 A[]; :::; A[]$ \T1/cmr/m/it/10 von $\OT1/cmr/m/n/10 
@@ -773,13 +772,8 @@ LaTeX Font Info:    Try loading font information for U+dsrom on input line 1568
 .
 ("C:\Program Files\MiKTeX 2.9\tex\latex\dstroke\udsrom.fd"
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-)
-Excluding 'bew' comment. Excluding 'bew' comment. Excluding 'bew' comment.
-[22] Excluding 'bew' comment. Excluding 'bew' comment.
-Excluding 'bew' comment. [23] Excluding 'bew' comment.
-Excluding 'bew' comment. [24] Excluding 'bew' comment.
-Excluding 'bew' comment. Excluding 'bew' comment. Excluding 'bew' comment.
-[25] Excluding 'bew' comment.
+) [33] [34] [35]
+[36] [37] [38] [39] [40] [41]
 Overfull \hbox (7.29358pt too wide) in paragraph at lines 2021--2022
 []\T1/cmr/bx/n/10 Definition 2.5.2 \T1/cmr/m/n/10 (Al-ter-na-ti-v- oder Ber-nou
 l-li-ver-tei-lung)\T1/cmr/bx/n/10 . []\T1/cmr/m/it/10 Sei $\OML/cmm/m/it/10 X$ 
@@ -788,43 +782,57 @@ l-li-ver-tei-lung)\T1/cmr/bx/n/10 . []\T1/cmr/m/it/10 Sei $\OML/cmm/m/it/10 X$
 2$
  []
 
-[26] [27] [28] Excluding 'bew' comment. Excluding 'bew' comment. [29]
-Excluding 'bew' comment.) [30] (Mass.aux) ) 
+[42] [43] [44] [45] [46]
+Underfull \hbox (badness 10000) in paragraph at lines 2237--2238
+
+ []
+
+[47]
+Overfull \hbox (19.83537pt too wide) detected at line 2263
+\OT1/cmr/m/n/10 ([] \OMS/cmsy/m/n/10 !\OT1/cmr/m/n/10 )[] \OMS/cmsy/m/n/10 ! []
+ ! []
+ []
+
+[48] [49]) [50] (Mass.aux) ) 
 Here is how much of TeX's memory you used:
- 4497 strings out of 493622
- 56746 string characters out of 3143642
- 134334 words of memory out of 3000000
- 7735 multiletter control sequences out of 15000+200000
+ 4498 strings out of 493622
+ 56766 string characters out of 3143642
+ 135287 words of memory out of 3000000
+ 7736 multiletter control sequences out of 15000+200000
  22063 words of font info for 63 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 38i,14n,43p,358b,454s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/e
-nc/dvips/cm-super/cm-super-t1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
-y7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/dstroke/dsrom10.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm7.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/cm-super/sfbx1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/cm-super/sfbx1440.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/c
-m-super/sfbx2074.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/s
-fbx2488.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1000.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfsl1000.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on Mass.pdf (30 pages, 434817 bytes).
+ 38i,14n,43p,358b,469s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/cm-sup
+er/cm-super-t1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cme
+x7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/dstroke/dsrom10.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/euler/eufm7.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/latxfont/line10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/symbols/msbm7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/cm-super/sfbx1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-supe
+r/sfbx1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx144
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx2074.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/cm-super/sfsl1000.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/cm-super/sfti1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/hoekwater/stmary10.pfb>
+Output written on Mass.pdf (50 pages, 528459 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
+ 281 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2225,11 +2225,126 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 					\[ \int f_n\uparrow \int f \]
 					\item Sei $f=\sum_{i=1}^n a_i A_i(),a_i\ge 0, A_i\in\mf{S}$ disjunkt, also eine Treppenfunktion. Dann gilt
 					\[ \int fd\mu=\sum_{i=1}^n a_i\mu(A_i) \]
+					\item Gilt $f=g$ $\mu$-fast überall, so folgt
+					\[ \int f=\int g \]
+					\item 
+					\[ \mu(A):=\int_A f=\int A() f \]
+					ist ein Maß. 
 				\end{enumerate}
 			\end{satz}
 			
 			\begin{bew}
-				(1)-(3) kann man elementar durch Übergang zum Riemann-Integral zeigen. (4) ist mühsam, daher schieben wir diesen Punkt auf. (5) und (6) machen wir morgen. 
+				(1)-(3) kann man elementar durch Übergang zum Riemann-Integral zeigen. (4) ist mühsam, daher schieben wir diesen Punkt auf. (8) ist klar, da $\mu([f\ge y])=\mu([g\ge y])$.\newline
+				\begin{enumerate}[1]
+					\item[(6)] Es gilt
+					\[ \int f=\int_0^\infty\mu([f>y]) dy. \]
+					wobei
+					\[ [f>y]=\bigcup_{a_i>y} A_i \]
+					und damit
+					\[ \mu([f>y])=\sum_{i: a_i>y} \mu(A_i)=\sum_{i=1}^n[y<a_i]\cdot\mu(A_i) \]
+					\[ \Rightarrow \int f=\int_0^\infty\sum_{i=1}^{n}[y<a_i]\mu(A_i)dy=\sum_{i=1}^n\mu(A_i)\int_0^\infty [y<a_i]dy=\sum_{i=1}^n\mu(A_i)\int_0^{a_i} dy=\sum_{i=1}^{n}\mu(A_i)\cdot a_i \]
+					\arge 
+					\item[(5)] Sei $f_n$ mit $f_n\le f_{n+1}$, damit folgt also nach (2)
+					\[ \int f_n\le\int f_{n+1}\Rightarrow \exists I=\lim\int f_n, \]
+					womit
+					\[ f_n\le f: \int f_n\le \int f\Rightarrow I\le \int f \]
+					und
+					\[ \int f=\int_0^\infty \mu([f>y])dy=\lim\limits_{a\to 0, b\to \infty} \int_a^b\mu([f>y])dy.  \]
+					Wir wählen nun $M<\int f$, also
+					\[ \exists 0<t_0<t_1<...<t_N<\infty: \sum_{i=1}^{n}(t_i-t_{i-1})\cdot \mu([f>t_i]). \]
+					Betrachte
+					\[ [f_n>t_i]\uparrow [f>t]\Rightarrow \mu([f_n>t_i])\to \mu([f>t_i])\Rightarrow \lim\int f_n>M\Rightarrow \lim_{n\to\infty} \int f_n\ge\int f \]
+					\arge
+					\item[Anmerkung: ]Ist $f_n$ Treppenfunktion mit $f_n\uparrow f$, dann ist 
+					\[ \int f=\lim_{n\to\infty} \int f_n, \]
+					dies wird häufig als Definition des Integrals verwendet. Alternativ wird manchmal auch
+					\[ \int f=\sup\left\{\int g: g\le f, g\text{ Treppenfunktion}\right\} \]
+					verwendet. Wir erhalten somit ein "`Kochrezept"', um Sätze über Integrale zu beweisen:
+					\[ (\text{Indikatorfunktion}\rightarrow) \text{Treppenfunktionen}\rightarrow \text{nichtnegative messbare Funktion}\rightarrow\text{messbare Funktion} \]
+					\item[(4)] Seien $f,g$ Treppenfunktionen,
+					\[ f=\sum_{i=1}^{n}a_i A_i()\qquad g=\sum_{j=1}^{m}b_j B_j()\qquad \sum A_i=\sum B_j =\Omega. \]
+					Dann ist
+					\[ f+g=\sum_{i=1}^{n}\sum_{j=1}^{m}(a_i+b_j)\cdot(A_i\cap B_j)() \]
+					\[ \Rightarrow \int f+g=\sum_{i=1}^{n}\sum_{j=1}^{m} (a_i+b_j)\mu(A_i\cap B_j)=\sum_{i=1}^{n}a_i\sum_{j=1}^{m} \mu(A_i\cap B_j)+\sum_{j=1}^{m}b_j\sum_{i=1}^{n}\mu(A_i\cap B_j)=\int f+\int g, \]
+					wir haben die Behauptung also für Treppenfunktionen. Seien also $f,g$ messbar und $f_n$, $g_n$ Treppenfunktionen,
+					\[ f_n\uparrow f\qquad g_n\uparrow g, \]
+					dann ist
+					\[ f_n+g_n\uparrow f+g, \]
+					also
+					\[ \int (f+g)=\lim_{n\to\infty}\int (f_n+g_n)=\lim_{n\to\infty}\int f_n+\lim_{n\to\infty} \int g_n=\int f+\int g  \]
+					\arge 
+					\item[(8)] \zz: sigmaadditiv:\newline
+					Sei
+					\[ A=\sum_{n\in\N} A_n, \]
+					also
+					\[ A()=\sum_{n\in\N}A_n(). \]
+					Damit ist
+					\[ \int_A f=\int A() f=\sum_{n\in\N}A_n()f=\lim_{N\to\infty}\left(\sum_{n=1}^{N} A_n()\right)=\lim_{N\to\infty}\sum_{n=1}^N\int A_n() f=\sum_{n=1}^\infty \int A_n() f. \]
+					\arge
+				\end{enumerate}
+				
+			\end{bew}
+			
+			
+			\begin{satz}
+				Für eine messbare Funktion $f$ gilt nun
+				\begin{enumerate}[(1)]
+					\item $f=g$ $\mu$-fast überall, dann folgt
+					\[ \int f=\int g \]
+					\item 
+					\[ \int cf=c\int f \]
+					\item 
+					\[ \int f+g=\int f+\int g \]
+					\item 
+					\[ \sigma(A)=\int_A fd\mu \]
+					ist sigmaadditiv. 
+				\end{enumerate}
+			\end{satz}
+				
+			\begin{bew}
+				Generell gilt
+				\[ \int f=\int f_+-\int f_- \]
+				\begin{enumerate}[(1)]
+					\item ist klar
+					\item ist $c>0$ so ist 
+					\[ (cf)_+=c f_+, (cf)_-=cf_-, \]
+					für $c<0$
+					\[ (cf)_+=-cf_-, (cf)_+=-cf_+, \]
+					für $c=0$ ist die Behauptung klar.\arge
+					\item Wir nehmen oBdA an, dass
+					\[ \int f_-<\infty \int g_-<\infty. \]
+					Nun ist
+					\[ (f+g)_-\le f_-+g_-.\Rightarrow \int (f+g)_-<\infty, \]
+					ist also die rechte Seite definiert, so auch die linke.
+					Dann ist 
+					\[ f+g=(f+g)_+-(f+g)_-=f_+-f_-g_+-g_- \]
+					\[ \Rightarrow(f+g)_++f_-+g_-=(f+g)_-+f_++g_+ \]
+					\[ \Rightarrow\int (f+g)_+-\int f_-+\int g_-=\int(f+g)_-+\int f_++\int g_+ \]
+					\[ \Rightarrow \int (f+g)=\int (f+g)_+-\int (f+g)_-=\int f_+-\int f_-+\int g_+-\int g_- \]
+					\arge
+					\item
+					\[ \sigma(A)=\int_A fd\mu=\int_{A}f_+-\int_A f_- \]
+					und damit
+					\[ \sigma(\sum A_n)=\sigma_+(\sum A_n)-\sigma_-(\sigma A_n)=\sum\sigma_+(A_n)-\sum\sigma_-(A_n)=\sum\sigma(A_n), \]
+					da die Integrale existieren müssen. \arge  
+				\end{enumerate}
 			\end{bew}
 				
+			\begin{satz}
+				Sei $f$ fast überall messbar. Dann kann man $f$ erweitern:
+				\[ \exists \tilde{f}\text{ messbar}: f=\tilde{f}\quad\mu-\text{fast überall} \]
+			\end{satz}
 				
+			\begin{bew}
+				?? - nicht mitgekommen...
+			\end{bew}
+			
+			\begin{bem}
+				Für komplexe Funkionen
+				\[ f: (\Omega, \mf{S})\to(\C, \mf{B}(\C)), \]
+				wobei $\mf{B}(\C)$ zweidimensionale Borelmengen sind, können wir schreiben
+				\[ f=f_1+if_2, \]
+				womit wir
+				\[ \int f=\int f_1+i\int f_2 \]
+				erhalten. Die obigen Sätze gelten somit auch für komplexe Funktionen/Konstanten. 
+			\end{bem}
