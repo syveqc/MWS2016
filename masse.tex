@@ -2348,3 +2348,165 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				\[ \int f=\int f_1+i\int f_2 \]
 				erhalten. Die obigen Sätze gelten somit auch für komplexe Funktionen/Konstanten. 
 			\end{bem}
+			
+			\begin{satz}
+				Es gilt für reelle Funkionen $f$:
+				\[ \left|\int fd\mu\right|\le \int |f|d\mu. \]
+			\end{satz}
+			
+			\begin{bew}
+				\[ \left|\int fd\mu\right|=\left|\int f_+-\int f_-\right|\le \int f_++\int f_-=\int |f| \]
+			\end{bew}
+			
+			\begin{bem}
+				Dies gilt auch für $f:(\Omega,\mf{S})\to(\C,\mf{B}(\C))$. 
+			\end{bem}
+			
+			\begin{defi}
+				Der Erwartungswert von $X$ ist
+				\[ \mathbb{E}=\int X d\P. \]
+			\end{defi}
+			
+			\begin{satz}
+				Seien $X,Y$ unabhängig mit endlichen Integralen. Dann gilt
+				\[ \E(X Y)=\E(X)\E(Y). \]
+			\end{satz}
+			
+			\begin{bew}
+				Seien $X,Y$ Treppenfunktionen, $X=\sum_{i=1}^n a_i A_i(), Y=\sum_{j=1}^{m}b_j B_j()$. Nun ist
+				\[ XY=\sum_{i=1}^{n}\sum_{j=1}^{m}a_ib_j(A_i\cap A_j)(). \]
+				Nun gilt
+				\[ \P(X=a_i, Y=b_j)=\P(A_i\cap B_j)=\P(X=a_i)\P(Y=b_j)=\P(A_i)\P(B_j) \]
+				Damit folgt
+				\[ \int XY=\sum_{i=1}^n\sum_{j=1}^m a_ib_j\P(A_i\cap B_j)=\sum_{i=1}^{n}\sum_{j=1}^{m}a_ib_j\P(A_i)\P(B_j)=\int X\int Y. \]
+				Seien nun $X,Y\ge 0$ messbar. Dann können wir 
+				\[ X=\lim_{n\to\infty} X_n,\qquad X_n:=\frac{1}{2^n}\lfloor\min(X,n)\cdot 2^n\rfloor \]
+				\[ \Rightarrow X_n\uparrow X, Y_n\uparrow Y\Rightarrow X_nY_n\uparrow XY. \]
+				\[ \Rightarrow \int XY=\lim\int X_nY_n=\lim \int X_n\int Y_n=\int X\int Y. \]
+				Für den Allgemeinen Fall teilen wir 
+				\[ X=X_+-X_- \]
+				\[ Y=Y_+-Y_- \]
+				auf. Damit folgt
+				\[ \int XY=\int (X_+-X_-)(Y_+-Y_-)=\stackrel{\text{selbst überprüfen}}{...}=\int X\int Y \]
+			\end{bew}
+			
+			\begin{defi}
+				Gilt
+				\[ \int XY=\int X\int Y, \]
+				dann heißten $X$ und $Y$ unkorreliert. 
+			\end{defi}
+			
+			\begin{satz}
+				Seien $(\Omega_1,\mf{S}_1,\mu)$ und $(\Omega_2,\mf{S}_2)$ ein Maß- und ein Messraum. Seien weiters 
+				\[ f: (\Omega_1,\mf{S}_1)\to(\Omega_2,\mf{S}_2) \]
+				\[ g: (\Omega_2,\mf{S}_2)\to(\overline{\R},\mf{B}(\overline{\R})). \]
+				Dann gilt
+				\[ \int g\circ f d\mu=\int gd\mu_f, \]
+				wobei (Erinnerung)
+				\[ A\in\mf{S}_2: \mu_f(A)=\mu\circ f^{-1}(A)=\mu(f^{-1}(A)). \]
+			\end{satz}
+			
+			\begin{defi}
+				Ist $g$ Indikatorfunktion, so die Behauptung klar. Aufgrund der Linearität des Integrals gilt dann
+				\[ \int A\circ f d\mu=\mu(f^{-1}(A))\mu_f(A).  \]
+				Und damit, wenn $g=\sum_{i=1}^{n}a_i A_i$
+				\[ \int g\circ f=\int \sum_{i=1}^n a_i A_i\circ f d\mu=\sum_{i=1}^na_I\int A_i\circ f\dagger\mu=\sum_{i=1}^{n}\int A_id\mu_f=\int g d\mu_f \]
+				und somit für $g\ge 0$, falls
+				\[ g_n\uparrow g\Rightarrow g_n\circ f\uparrow g\circ f \]
+				\[ \Rightarrow \int g\circ fd\mu=\lim \int g_n\circ fd\mu=\lim\int g_nd\mu_f=\int gd\mu_f. \]
+			\end{defi}
+			
+			\begin{bsp}
+				Sei $f: [a,b]\to\R$ stetig. Dann gilt
+				\[ \int_{[a,b]} fd\lambda=\int_a^b f(x)dx. \]
+				Beweis in der Übung. 
+			\end{bsp}
+			
+			\begin{bsp}
+				Sei $(\Omega,2^\Omega,\zeta)$ ein Maßraum, $\zeta$ das Zählmaß, $\zeta(A)=|A|$. Dann gilt
+				\[ \int f(\omega)d\zeta(\omega)=\sum_{\omega\in\Omega} f(\omega). \]
+			\end{bsp}
+			
+		\section[Integration$\leftrightarrow$Grenzwert]{Vertauschbarkeit von Integration und Grenzübergang}
+			Der folgende Satz ist schon bekannt:
+			\begin{satz}[Beppo-Levi, monotone Konvergenz]
+				Sei $f_n\ge 0, f_n$ messbar mit $f_n\uparrow f$. Dann folgt
+				\[ \int f=\lim_{n\to\infty}\int f_n. \] 
+			\end{satz}
+			wir können ihn allerdings noch wie folgt verbessern:
+			\begin{satz}
+				Seien $f_n$ fast überall messbar, 
+				\[ f_n(\omega)\uparrow \text{fast überall,} \]
+				 $f_n\ge g$ fast überall für eine Funktion $g$ mit 
+				 \[ \int g>-\infty, \]
+				 bzw äquivalent dazu, $g\in\mf{L}_1$. Dann gilt
+				 \[ \lim \int f_n=\int f. \] 
+			\end{satz}
+			\begin{bew}
+				Es gilt
+				\[ f_n+g_-\ge 0\text{ fast überall} \]
+				\[ \Rightarrow f_n+g_n\uparrow f+g_-\text{ fast überall} \]
+				\[ \Rightarrow \int f+g_-=\lim\int f_n+g_- \]
+				\[ \Rightarrow \int f+\cancel{\int g_-}=\lim\int f_n +\cancel{\int g_-} \].
+			\end{bew}
+			
+			\begin{lemma}[Fatou]
+				Sei $f_n\ge g$, $g\in\mf{L}_1$. Dann gilt
+				\[ \int \liminf f_n\le\liminf\int f_n. \]
+				Gilt $f_n\le g$, $g\in\mf{L}_1$, dann gilt
+				\[ \limsup\int f_n\le\limsup\int f_n \]
+			\end{lemma}
+			
+			\begin{bew}
+				Es gilt
+				\[ \liminf f_n=\sup_{n\to\infty}\underbrace{\inf_{k\ge n} f_k}_{=:h_n}. \]
+				Nun ist
+				\[ h_n\le h_{n+1}, h_n\uparrow \liminf f_n. \]
+				Damit ist
+				\[ \int \liminf f_n=\lim\int h_n=\liminf \int h_n\le\liminf\int f_n \]
+				Analog zeigt man die zweite Behauptung. 
+			\end{bew}
+			
+			\begin{satz}[Deckelung, Satz von Lebesgue, Satz von der Konvergenz durch Majorisierung, Satz von der dominierten Konvergenz]
+				Seien $f_n,f$ fast überall messbar, $f_n\to f$ entweder fast überall oder im Maß. Gelte weiters $|f_n|\le g$ fast überall, $g\in\mf{L}_1$. Dann gilt
+				\[ \lim\int f_n=\int f. \]
+				Weiters gilt
+				\[ \lim\int |f_n-f|=0. \]
+			\end{satz}
+			
+			\begin{bew}
+				Es ist nichts mehr zu tun, außer für den Fall $f_n\to f$ fast überall. Wir setzen nun alle "`fast überalls"' außer Kraft, indem wir die $f_n,f$ dort gleich 0 setzen. Dann kann man das Lemma von Fatou anwenden. \newline
+				Die zweite Behauptung folgt dann trivial für fast überall, für Konvergenz im Maß indirekt: Sei $f_n\to f$ im Maß und wir nehmen an, dass
+				\[ \int f_n\not\to\int f. \]
+				Nun existiert eine Teilfolge $f_{n_k}$ mit 
+				\[ \left|\int f_{n_k}-f\right|>\varepsilon. \]
+				Nun geht allerdings 
+				\[ f_{n_k}\to f\text{ fast überall,} \]
+				also der Widerspruch
+				\[ \int f_{n_k}\to\int f. \]
+			\end{bew}
+			
+			\begin{bem}
+				Nie wieder $\varepsilon$. (außer gleich unten in der Definition...)
+			\end{bem}
+			
+			\begin{defi}[Gleichmäßige Integrierbarkeit]
+				Sei $f_n, f_n\in\mf{L}_1$ heißt gleichmäßig integrierbar, wenn es für jedes $\varepsilon>0$ eine $g_\varepsilon\in\mf{L}_1$ gibt, sodass
+				\[ \forall n\in\N: \int |f_n|[|f_n>g_\varepsilon]<\varepsilon,  \]
+				oder äquivalent
+				\[ \exists h_\varepsilon\in\mf{L}_1, h_\varepsilon\ge 0: \int (|f_n|-f_\varepsilon)<\varepsilon. \]
+			\end{defi}
+			
+			\begin{bew}
+				Die Äquivalenz folgt durch ($x,y\ge 0$)
+				\[ x[x>y]\ge(x-y)_+ \land x[x>y]\le 2(x-\frac{y}{2})_+.\]
+			\end{bew}
+			
+			\begin{satz}
+				Konvergiert $f_n\to f$ fast überall oder im Maß und ist $f_n$ gleichmäßig integrierbar, so folgt
+				\[ \int f_n\to\int f. \]
+			\end{satz}
+			
+			\begin{bew}
+				morgen
+			\end{bew}
