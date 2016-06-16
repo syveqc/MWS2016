@@ -141,7 +141,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			\[ A_n \in \mf C, A_n \supset A_{n+1} , n\in \N \Rightarrow \bigcap_{n \in \N} A_n \in \mf C \]
 		\end{defi}
 		
-		\begin{satz}[monotone classstheorem]
+		\begin{satz}[monotone class theorem]
 			Der von einem Ring erzeugte Sigmaring stimmt mit dem erzeugten monotonen System überein (Jeder monotone Ring ist Sigmaring)
 		\end{satz}
 		
@@ -427,8 +427,8 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			\end{satz}
 			
 			\begin{bew}
-				Sei $\epsilon>0$ beliebig. Es gilt:
-				\[ \mu(\limsup A_n)\le \mu\left(\bigcup_{k\ge n_0} A_k\right)\le \sum_{k\ge n_0} \mu(A_k)\le \epsilon \]
+				Sei $\varepsilon>0$ beliebig. Es gilt:
+				\[ \mu(\limsup A_n)\le \mu\left(\bigcup_{k\ge n_0} A_k\right)\le \sum_{k\ge n_0} \mu(A_k)\le \varepsilon \]
 				\arge
 			\end{bew}
 			
@@ -609,10 +609,10 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				wenn $\sum_{n\in\N} \mu^*(A_n)=\infty$, so sind wir fertig.\newline
 				Sei also $\sum_{n\in\N} \mu^*(A_n)<\infty$. Dann ist
 				\[ \mu^*(A_n)=\inf\{\sum_{k\in\N}\mu(B_k): A_n\subseteq \bigcup B_k, B_k\in\mf{R}\} \]
-				Sei $\epsilon >0$. Für $B_{nk}\in\mf{R}: A_n\subseteq\bigcup_{k\in\N} B_{nk}$ und $\sum_{k\in\N} \mu(B_{nk})\le \mu^*(A_n)+\frac{\epsilon}{2}$. Nun ist
+				Sei $\varepsilon >0$. Für $B_{nk}\in\mf{R}: A_n\subseteq\bigcup_{k\in\N} B_{nk}$ und $\sum_{k\in\N} \mu(B_{nk})\le \mu^*(A_n)+\frac{\varepsilon}{2}$. Nun ist
 				\[ \bigcup_{n\in\N} A_n\subseteq \bigcup_{n\in\N}\bigcup_{k\in\N} B_{nk} \]
 				und damit
-				\[ \mu^*\left(\bigcup_{n\in\N} A_n\right)\le \sum_{n\in\N}\sum_{k\in\N} \mu(B_nk) \le \sum_{n\in\N} (\mu^*(A_n)+\frac{\epsilon}{2^n})=\sum_{n\in\N} \mu^* (A_n)+\epsilon \]
+				\[ \mu^*\left(\bigcup_{n\in\N} A_n\right)\le \sum_{n\in\N}\sum_{k\in\N} \mu(B_nk) \le \sum_{n\in\N} (\mu^*(A_n)+\frac{\varepsilon}{2^n})=\sum_{n\in\N} \mu^* (A_n)+\varepsilon \]
 				\[ \Rightarrow \mu\left(\bigcup_{n\in\N}A_N\right)\le\sum_{n\in\N} \mu^* (A_n) \]
 				\arge
 			\end{bew}
@@ -761,21 +761,21 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			\section{Zusammenhang zwischen dem Maß auf dem Ring und dem Maß auf dem Sigmaring}
 			\begin{satz} [Approximationstheorem I]
 				Sei $\mu$ ein sigmaendliches Maß auf einem Ring $\mf{R}$. Sei $A\in\mf{R}_\sigma(\mf{R}), \mu(A)<\infty$. Dann gilt
-				\[ \forall \epsilon>0: \exists B\in\mf{R}: \mu(A\Delta B)<\epsilon \]
+				\[ \forall \varepsilon>0: \exists B\in\mf{R}: \mu(A\Delta B)<\varepsilon \]
 			\end{satz}
 			
 			\begin{bew}
 				Mit $\mu(A)<\infty$ und
 				\[ \mu(A)=\mu^*(A)=\inf\left\{\sum_{n\in\N}\mu(B_n): B_n\in\mf{R}, A\subseteq \bigcup_{n\in\N} B_n\right\} \]
-				folgt: Wir wählen ein $(B_n)$, sodass $\sum_{n\in\N} \mu(B_n)\le \mu(A)+\frac{\epsilon}{2}$. Das geht, weil wir ja beliebig nahe an das Infimum herankommen können. Wir wählen nun $N$ so, dass $\sum_{n>N}\mu(B_n)<\frac{\epsilon}{2}$. Sei weiters
+				folgt: Wir wählen ein $(B_n)$, sodass $\sum_{n\in\N} \mu(B_n)\le \mu(A)+\frac{\varepsilon}{2}$. Das geht, weil wir ja beliebig nahe an das Infimum herankommen können. Wir wählen nun $N$ so, dass $\sum_{n>N}\mu(B_n)<\frac{\varepsilon}{2}$. Sei weiters
 				\[ B:=\bigcup_{n=1}^N B_n\in\mf{R}. \]
 				Dann folgt:
 				\[ \mu(A\Delta B)=\mu (A\setminus B)+\mu(B\setminus A) \]
 				Außerdem:
 				\[ A\setminus B\subseteq\bigcup_{n\in\N} B_n\setminus \bigcup_{n=1}^N B_n\subseteq \bigcup_{n>N}B_n. \]
 				Damit gilt:
-				\[ \mu(A\setminus B)\le\sum_{n>N} \mu(B_n)<\frac{\epsilon}{2} \]
-				\[ \mu(B\setminus A)\le \mu\left(\left(\bigcup_{n\in\N} B_n\right)\setminus A\right)=\mu\left(\bigcup_{n\in\N} B_n\right)-\mu(A)\le \sum_{n\in\N} \mu(B_n)-\mu(A)<\frac{\epsilon}{2} \]
+				\[ \mu(A\setminus B)\le\sum_{n>N} \mu(B_n)<\frac{\varepsilon}{2} \]
+				\[ \mu(B\setminus A)\le \mu\left(\left(\bigcup_{n\in\N} B_n\right)\setminus A\right)=\mu\left(\bigcup_{n\in\N} B_n\right)-\mu(A)\le \sum_{n\in\N} \mu(B_n)-\mu(A)<\frac{\varepsilon}{2} \]
 				und wir sind fertig. 
 			\end{bew}
 			
@@ -1027,17 +1027,17 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 					\[ \mu_F((a,b])\ge\sum_{n\in\N} \mu_F((a_n,b_n]). \]
 					\zz:
 					\[ \mu_F((a,b])\le\sum_{n\in\N} \mu_F((a_n,b_n]) \]
-					Sei $a'>a$, $F(a')\le F(a)+\epsilon$ und $b_n'>b_n$, $F(b_n')\le F(b_n)+\frac{\epsilon}{2^n}$. Dann ist
+					Sei $a'>a$, $F(a')\le F(a)+\varepsilon$ und $b_n'>b_n$, $F(b_n')\le F(b_n)+\frac{\varepsilon}{2^n}$. Dann ist
 					\[ [a',b]\subseteq (a,b]=\bigcup_{n\in\N}(a_n,b_n]\subseteq \bigcup_{n\in\N} (a_n,b_n') \]
 					Nach dem Satz von Heine-Borel gibt es also eine endliche Teilüberdeckung, also
 					\[ \exists N\in\N: [a',b]\subseteq\bigcup_{n=1}^N(a_n,b_n') \]
 					\[ \Rightarrow (a',b]\subseteq\bigcup_{n=1}^N (a_n,b_n']. \]
 					Nun haben wir eine endliche Vereinigung und wir erhalten aus der endlichen Subadditivität des Inhalts $\mu_F$:
 					\[ \mu_F((a',b])\le\sum_{n=1}^{N}\mu_F((a_n,b_n'])\le\sum_{n=1}^{\infty}\mu_F((a_n,b_n']) \]
-					\[ F(b)-F(a)-\epsilon\le F(b)-F(a')\le\sum_{n\in\N}(F(b_n')-F(a_n) \]
-					\[ \Rightarrow F(b)-F(a)-\epsilon\le\sum_{n\in\N} (F(b_n)+\frac{\epsilon}{2^n}-F(a_n))=\sum_{n\in\N}(F(b_n)-F(a_n))+\epsilon \]
-					\[ \Rightarrow F(b)-F(a)\le \sum_{n\in\N}(F(b_n)-F(a_n))+2\epsilon, \]
-					da $\epsilon$ beliebig, erhalten wir die Behauptung. 
+					\[ F(b)-F(a)-\varepsilon\le F(b)-F(a')\le\sum_{n\in\N}(F(b_n')-F(a_n) \]
+					\[ \Rightarrow F(b)-F(a)-\varepsilon\le\sum_{n\in\N} (F(b_n)+\frac{\varepsilon}{2^n}-F(a_n))=\sum_{n\in\N}(F(b_n)-F(a_n))+\varepsilon \]
+					\[ \Rightarrow F(b)-F(a)\le \sum_{n\in\N}(F(b_n)-F(a_n))+2\varepsilon, \]
+					da $\varepsilon$ beliebig, erhalten wir die Behauptung. 
 					
 				\end{enumerate}
 			\end{bew}
@@ -1357,11 +1357,11 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				also 
 				\[ \mu(A)=\mu^*(A)=\inf\left\{\sum_{n\in\N}\mu(]a_n,b_n]), A\subseteq\bigcup_{n\in\N} ]a_n,b_n]\right\}. \]
 				Im Fall $\mu(A)=\infty$ sind wir fertig. Wir betrachten also $\mu(A)<\infty$. Dann
-				\[ \exists a_n,b_n,n\in\N: A\subseteq \bigcup_{n\in\N}]a_n,b_n]\text{ und } \sum_{n\in\N}\mu(]a_n,b_n])\le\mu(A)+\epsilon \:\:\:\forall \epsilon>0 \]
+				\[ \exists a_n,b_n,n\in\N: A\subseteq \bigcup_{n\in\N}]a_n,b_n]\text{ und } \sum_{n\in\N}\mu(]a_n,b_n])\le\mu(A)+\varepsilon \:\:\:\forall \varepsilon>0 \]
 				Wähle nun $b_n'>b_n$ sodass 
-				\[\mu(]a_n,b_n'[)\le\mu(]a_n,b_n[)+\frac{\epsilon}{2^n}\]
+				\[\mu(]a_n,b_n'[)\le\mu(]a_n,b_n[)+\frac{\varepsilon}{2^n}\]
 				Dann ($U:=\bigcup_{n\in\N} ]a_n,b_n'[$)
-				\[ \mu(U)=\mu\left(\bigcup_{n\in\N} ]a_n,b_n'[\right)\le\sum_{n\in\N}\mu(]a_n,b_n'[)\le\sum_{n\in\N}\mu(]a_n,b_n])+\epsilon \]
+				\[ \mu(U)=\mu\left(\bigcup_{n\in\N} ]a_n,b_n'[\right)\le\sum_{n\in\N}\mu(]a_n,b_n'[)\le\sum_{n\in\N}\mu(]a_n,b_n])+\varepsilon \]
 			\end{bew}
 			
 			\begin{satz}
@@ -1370,11 +1370,11 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			
 			\begin{bew}
 				Auch hier begnügen wir uns mit $d=1$, der allgemeine Fall läuft genau so, ist nur mehr Schreibarbeit.\newline
-				Zunächst ist $\mu$ endlich und damit regulär von oben. Sei $A\in\mathfrak{B}$, dann gibt es ein offenes $U$ mit $A^c\subseteq U, \mu(U)\le\mu(A^c)+\epsilon$. Bekannterweise ist dann $U^c$ abgeschlossen und
-				\[ \mu(U^c)=\mu(\Omega)-\mu(U)\ge \mu(\Omega)-\mu(A^c)-\epsilon=\mu(A)-\epsilon, \]
+				Zunächst ist $\mu$ endlich und damit regulär von oben. Sei $A\in\mathfrak{B}$, dann gibt es ein offenes $U$ mit $A^c\subseteq U, \mu(U)\le\mu(A^c)+\varepsilon$. Bekannterweise ist dann $U^c$ abgeschlossen und
+				\[ \mu(U^c)=\mu(\Omega)-\mu(U)\ge \mu(\Omega)-\mu(A^c)-\varepsilon=\mu(A)-\varepsilon, \]
 				wir können also A durch eine abgeschlossene Menge approximieren. Es fehlt also noch der Schritt der Beschränktheit. $K_N:=U^c\cap[-N,N]$ ist nun also kompakt und monoton steigend, $K_N\subseteq K_{N+1}$ und $\bigcup_{N\in\N}K_N=U^c$. Weiters ist
 				\[ \mu(U^c)=\mu\left(\bigcup_{N\in\N} K_N\right)=\lim\limits_{n\to\infty}\mu(K_N) \]
-				\[ \Rightarrow \exists N\in\N: \mu(K_N)\ge\mu(A)-2\epsilon, \]
+				\[ \Rightarrow \exists N\in\N: \mu(K_N)\ge\mu(A)-2\varepsilon, \]
 				damit ist für endliche Maße die Regularität von unten gezeigt. \newline
 				Sei nun $\mu$ sigmaendlich, dann 
 				\[ \exists (B_n)_{n\in\N}\in\mathfrak{B}, \forall n\in\N:\mu(B_n)<\infty \]
@@ -1682,7 +1682,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			
 			\begin{defi}[gleichmäßige Konvergenz]
 				$f_n\to f$ ist gleichmäßig konvergent, wenn
-				\[ \forall \epsilon>0\exists n_0(\epsilon)\forall \omega\in\Omega\forall n\ge n_0(\epsilon): |f_n(\omega)-f(\omega)|<\epsilon \]
+				\[ \forall \varepsilon>0\exists n_0(\varepsilon)\forall \omega\in\Omega\forall n\ge n_0(\varepsilon): |f_n(\omega)-f(\omega)|<\varepsilon \]
 			\end{defi}
 			
 			\begin{defi}[fast überall gleichmäßige Konvergenz]
@@ -1782,7 +1782,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 					Sei $f_n(\omega)\to f(\omega)$, also
 					\[ \forall \varepsilon>0\exists N=N(\varepsilon)\forall n\ge N(t) |f_n(\omega)-f(\omega)<\varepsilon. \]
 					Es gibt $B\in\mf{S}, \mu(B^c)=0, f_n\to f$ punktweise auf $B$. Dann gilt für
-					\[ A_{N,\epsilon}=\{\omega:|f_n(\omega)-f(\omega)|<\varepsilon \text{ für }n\ge N, \]
+					\[ A_{N,\varepsilon}=\{\omega:|f_n(\omega)-f(\omega)|<\varepsilon \text{ für }n\ge N, \]
 					wenn wir $\varepsilon$ fix wählen:
 					\[ \bigcup_{N\in\N}A_{N,\varepsilon}\supset B \]
 					\[ \Rightarrow \lim_{N\to\infty}=\mu(B)=\mu(\Omega) \]
@@ -2508,5 +2508,164 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			\end{satz}
 			
 			\begin{bew}
-				morgen
+				Seien oBdA $f_n\ge 0$. Denn ist dies nicht der Fall, können wir $f_n$ in positiven und negativen Teil zerlegen. Da $f_n$ gleichmäßig integrierbar sind, folgt
+				\[ \Rightarrow \forall\varepsilon\exists g_\varepsilon\in\mf{L}_1,  g_\varepsilon\ge 0: \int (\underbrace{|f_n|}_{=f_n}-g_\varepsilon)_+\le \varepsilon. \]
+				Wir zerlegen nun
+				\[ f_n=\min(f_n,g_\varepsilon)+(f_n-g_\varepsilon)_+. \]
+				Nun konvergiert $\min(f_n,g_\varepsilon)\to \min(f,g_\varepsilon)$ und 
+				\[ \lim_{n\to\infty}\int\min(f_n,g_\varepsilon)=\int\min(f,g_\varepsilon)  \]
+				Wir wissen auch, dass
+				\[ (f_n-g_\varepsilon)_+\to(f_n-g_\varepsilon)_+. \]
+				Nun gilt:
+				\[ \int f_n=\int \min(f_n,g_\varepsilon)+\int(f_n-g_\varepsilon)_+ \]
+				\[ \Rightarrow\limsup_{n\to\infty} \int f_n=\int\min(f,g_\varepsilon)+\limsup_{n\to\infty} \int (f_n-g_\varepsilon)_+\le\int f+\varepsilon \]
+				\[ \Rightarrow\limsup_{n\to\infty}\int f_n\le\int f \]
+				Und damit
+				\[ \int f=\int \liminf_{n\to\infty} f_n\le \liminf_{n\to\infty} \int f_n \]
 			\end{bew}
+			
+			\paragraph{\it Wichtige Beweise für die Prüfung}
+			\begin{itemize}
+				\item monotone class theorem
+				\item Fortsetzungssatz für Maßfunktionen ($\mu^*$ ist äußeres Maß $\Rightarrow$ $\mf{M}$ ist Sigmaalgebra $\land$ $\mu^*|_\mf{M}$ ist Maß)
+				\item $F$ rechtsstetig und nicht-fallend $\Leftrightarrow$ $F$ ist Verteilungsfunktion, d.h.
+				\[ \mu_F(]a,b])=F(b)-F(a). \]
+				\item "`Approximationssatz"': Ist $f: (\Omega_1,\mf{S}_1)\to(\R,\mf{B})$, so existiert eine Folge von Treppenfunktionen $(f_n)$, so, dass $f_n\to f$, $|f_n|\le|f|$. 
+				\item Satz von der dominierten Konvergenz
+				\item starkes Gesetz der großen Zahlen 
+				\item Zerlegungssatz von Jordan
+				\item Zerlegungssatz von Lebesgue
+			\end{itemize}
+			Nur, was wir noch durchbringen. 
+			
+			\begin{satz}[Umkehrung des vorhergehenden Satzes]
+				Seien $f_n\ge 0$, $f_n,f\in\mf{L}_1$, $f_n\to f$, mit 
+				\[ \int f_n\to\int f, \]
+				so folgt, dass $(f_n)$ gleichmäßig integrierbar ist.  
+			\end{satz}
+			
+			\begin{bew}
+				Es gilt
+				\[ f_n=\min(f_n,f)+(f_n-f)_+ \]
+				\[ \Rightarrow\underbrace{\int f_n}_{\to \int f}=\underbrace{\int\min(f_n,f)}_{\to\int\min(f,f)=\int f}+\int (f_n-f)_+ \]
+				\[ \Rightarrow \int (f_n-f)_+\to 0, \]
+				es existiert also ein $n_0\in\N$, sodass
+				\[ \forall n>n_0: \int (f_n-f)<\varepsilon, \]
+				Nun können wir 
+				\[ g_\varepsilon=\max(f_1,...,f_n,f) \]
+				wählen und sind fertig. 
+			\end{bew}
+			
+			\begin{defi}
+				Sei $X: (\Omega,\mf{S})\to(\overline{\R},\mf{B})$. Ist dann
+				\[ \E(X^2)<\infty, \]
+				so heißt $\E(X^2)$ das 2. Moment. 
+			\end{defi}
+			
+			\begin{defi}
+				$\E(X^k)$ heißt das $k$-te Moment. 
+			\end{defi}
+			
+			\begin{bem}
+				Es gilt
+				\[ \E(|X|)\le\E(|X|[|X|<1])+\E(|X|[|X|\ge 1]) \le 1+\E(X^2[|X|\ge 1])\le 1+\E(X^2) \]
+				Damit können wir die Varianz $\V$ von $X$ definieren:
+			\end{bem}
+			
+			\begin{defi}
+				Die Varianz $\V$ von $X$ ist
+				\[ \V(X)=\E(X-\E(X))^2.  \]
+			\end{defi}
+			
+			\begin{satz}
+				Es gilt
+				\[ \V(c\cdot X)=c^2\V(X) \]
+				\[ \V(X+a)=\V(X) \]
+				Steiner'scher Verschiebungssatz: 
+				\[ \E((X-a)^2)=\E(X-\E(X)+\E(X)-a)=\V(X)+2(\E(X)-a)\cdot\underbrace{\E(X-\E(X))}_{\E(X)-\E(X)=0}+(\E(X)-a)^2 \]
+				Dies liefert für $a=0$:
+				\[ \V(X)=\E(X^2)-\E(X)^2.  \]
+			
+			\end{satz}
+			
+			\begin{bew}
+				klar. 
+			\end{bew}
+			
+			\begin{bsp}[Gleichverteilung]
+				Sei $U[0,1]$. Dann ist
+				\[ \E(X)=\int_{[0,1]}xd\lambda(x)=\int_0^1 x dx=\frac{1}{2}, \]
+				\[ \Rightarrow \E(X^2)=\int_0^1 x^2 dx=\frac{1}{3}. \]
+				\[ \Rightarrow \V(X)=\frac{1}{12} \]	
+			\end{bsp}
+			
+			\begin{defi}[Covarianz]
+				Die Covarianz ist
+				\[ \Cov(X,Y)=\E((X-\E(X))(Y-\E(Y)))=\E(XY)=\E(X)\E(Y). \]
+			\end{defi}
+			
+			\begin{satz}
+				Es gilt
+				\begin{align*}
+				 \V(X+Y)&=\E((X+Y-\E(X+Y))^2)\\
+				 &=\E(X-\E(X)^2+2\E((X-\E(X))(Y-\E(Y))))+\E((Y-\E(Y))^2)\\
+				 &=\V(X)+\V(Y)+2\Cov(X,Y)
+				\end{align*}
+			\end{satz}
+			
+			\begin{satz}
+				Sind $X,Y$ unabhängig (oder unkorelliert,  $\Cov(X,Y)=0$), dann gilt
+				\[ \V(X+Y)=\V(X)+\V(Y) \]
+			\end{satz}
+			
+			\begin{satz}[Ungleichung von Markov]
+				Seien $(\Omega,\mf{S}, \mu)$, $c>0$ und 
+				\[ f: \Omega\to\R^+_0. \]
+				Dann ist 
+				\[ \mu([f\ge c])\le\frac{1}{c}\int fd\mu \]
+			\end{satz}
+			
+			\begin{bew}
+				Sei 
+				\[ g: \Omega\to \R, \omega\mapsto g(\omega):=\begin{cases}
+					c: & f(\omega)\ge c\\
+					0: &\text{sonst}
+				\end{cases}. \]
+				Jetzt gilt
+				\[ g\le f\Rightarrow\int g\le\int f \]
+				\[ \Rightarrow \int g=c\cdot \mu([f\ge c]). \]
+			\end{bew}
+			
+			\begin{satz}[Ungleichung von Chebychev]
+				Sei $(\Omega,\mf{S}, \P)$ ein Wahrscheinlichkeitsraum, $X$ eine Zufallsvariable, $\V(X)<\infty$, $c>0$. Dann gilt
+				\[ \P(|X-\E(X)|>c)\le\frac{\V(X)}{c^2}. \]				
+			\end{satz}
+			
+			\begin{bew}
+				trivial?
+			\end{bew}
+			
+			\begin{satz}[Schwaches Gesetz der großen Zahlen]
+				Seien $(X_n)$ unkorrelliert, $\E(X_n)=m$, $\V(X_n)=\sigma^2<\infty$ Dann gilt mit
+				\[ S_n=X_1+...+X_n, s_0=0 \]
+				und
+				\[ \overline{X_n}=\frac{S_n}{n} \]
+				das folgende:
+				\[ \overline{X_n}\to m\text{ in Wahrscheinlichkeit.} \]
+			\end{satz}
+			
+			\begin{bew}
+				Sei $\epsilon >0$. Dann soll
+				\[ \P(|\overline{X_n}-m|\ge \varepsilon)=\P(|S_n-n\cdot m|\ge n\varepsilon)=\E(|S_n-\E(S_n)|\ge n\cdot \varepsilon) \]
+				\[ \le \frac{\V(S_n)}{(n\cdot \varepsilon)^2}=\frac{n\sigma^2}{n^2\epsilon^2}=\frac{\sigma^2}{n\varepsilon^2}\to 0\lightning \]
+			\end{bew}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
