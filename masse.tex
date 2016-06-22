@@ -638,13 +638,13 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			\end{bem}
 			
 			\begin{defi}
-				$m_{\mu^*}$ bezeichnet das System aller $\mu^*$-messbaren Mengen. Ist klar, um welches Maß $\mu^*$ es sich handelt (oder das egal ist), so schreiben wir einfach $m$.
+				$\mf{M}_{\mu^*}$ bezeichnet das System aller $\mu^*$-messbaren Mengen. Ist klar, um welches Maß $\mu^*$ es sich handelt (oder das egal ist), so schreiben wir einfach $\mf{M}$.
 			\end{defi}
 			
 			\begin{satz}
 				\begin{enumerate}
-					\item $m$ ist eine Sigmaalgebra, $\mu^*|_m$ ein Maß.
-					\item Wenn $\mu^*$ von einem Maß $\mu$ auf einem Ring $\mf{R}$ erzeugt wird und $\mu^*(B)=\mu(B)$, so folgt $\mf{R}\subseteq m$.
+					\item $\mf{M}$ ist eine Sigmaalgebra, $\mu^*|_\mf{M}$ ein Maß.
+					\item Wenn $\mu^*$ von einem Maß $\mu$ auf einem Ring $\mf{R}$ erzeugt wird und $\mu^*(B)=\mu(B)$, so folgt $\mf{R}\subseteq \mf{M}$.
 				\end{enumerate}  
 			\end{satz}
 			
@@ -664,7 +664,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				wurde schon gezeigt. Sei jetzt $A_1=A$, $A_n=\varnothing$ für $n>1$. Dann folgt 
 				\[ \mu^*(A)\ge\mu(A), \]
 				A ist also messbar.\newline\newline
-				Für 1. erste Behauptung: $m$ ist Algebra und $\mu^*|_m$ ist additiv. Wir wollen zeigen:
+				Für 1. erste Behauptung: $\mf{M}$ ist Algebra und $\mu^*|_m$ ist additiv. Wir wollen zeigen:
 				\[ A_1,A_2\text{ messbar}\Rightarrow A_1\cup A_2 \text{ messbar} \]
 				\[ A \text{ messbar}\Rightarrow A^c \text{ messbar} \]
 				Das zweite folgt direkt daraus, dass ${A^c}^c=A$ und die Definition von "`messbar"' diesbezüglich symmetrisch ist. \newline
@@ -679,16 +679,15 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				&\ge \mu^*\left((B\cap A_1\cap A_2)\cup(B\cap A_1\cap A_2^c)\cup (B\cap A_1^c\cap A_2)\right)+ \mu^*(B\cap (A_1\cup A_2)^c)\\
 				&=\mu^*(B\cap(A_1\cup A_2))+\mu^*(B\cap (A_1\cup A_2)^c)
 				\end{align*}
-				Damit ist $m$ tatsächlich eine Algebra.\newline
-				Um nachzuweisen, dass $\mu^*|_m$ additiv ist, seien $A_1, A_2\in m$, $A_1\cup A_2=\varnothing$. Über die Messbarkeit von $A_1$ erhalten wir:
+				Damit ist $\mf{M}$ tatsächlich eine Algebra.\newline
+				Um nachzuweisen, dass $\mu^*|_\mf{M}$ additiv ist, seien $A_1, A_2\in \mf{M}$, $A_1\cap A_2=\varnothing$. Über die Messbarkeit von $A_1$ erhalten wir:
 				\[ \mu^*(A_1\cup A_2)=\mu^*((A_1\cup A_2)\cap A_1)+\mu^*((A_1\cup A_2)\cap A_1^c)=\mu^*(A_1)+\mu^*(A_2) \]
-				\arge
-				Nun bleibt noch zu zeigen, dass $m$ Sigmaalgebra ist, seien also $A_n\in m, A_n\text{ disjunkt}, B\subseteq \Omega$.\newline
+				Nun bleibt noch zu zeigen, dass $\mf{M}$ Sigmaalgebra ist, seien also $A_n\in \mf{M}, A_n\text{ disjunkt}, B\subseteq \Omega$.\newline
 				\zz:
 				\[ \mu^*(B)\ge \mu^*\left(B\cap \bigcup_{n\in \N} A_n\right)+\mu^*\left(B\setminus \bigcup_{n\in\N} A_n\right) \]
 				Wir wissen schon:
 				\begin{align*}
-				\mu^*(B)=\mu^*\left(B\cap \bigcup_{n=1}^N A_n\right)+\mu^*\left(B\setminus\bigcup_{n=1}^N A_n\right)\\
+				\mu^*(B)&=\mu^*\left(B\cap \bigcup_{n=1}^N A_n\right)+\mu^*\left(B\setminus\bigcup_{n=1}^N A_n\right)\\
 				&\ge \mu^*\left(B\cap \bigcup_{n=0}^N A_n\right)+\mu^*\left(B\setminus\bigcup_{n\in\N} A_n\right)\\
 				&=\sum_{n=1}^N\mu^*(B\cap A_n)+\mu^*\left(B\setminus\bigcup_{n\in\N} A_n\right)\\
 				\end{align*}
@@ -1006,7 +1005,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			
 			\begin{satz}
 				Sei $F:\R\to\R$ nichtfallend und rechtsstetig. Dann ist durch 
-				\[ \mu_F((A,b]):=F(b)-F(a) \]
+				\[ \mu_F((a,b]):=F(b)-F(a) \]
 				ein Maß auf $\mf{T}=\{(a,b], a\le b, a,b,\in\R\}$ definiert.
 			\end{satz}
 			
@@ -2660,8 +2659,85 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				\[ \le \frac{\V(S_n)}{(n\cdot \varepsilon)^2}=\frac{n\sigma^2}{n^2\epsilon^2}=\frac{\sigma^2}{n\varepsilon^2}\to 0\lightning \]
 			\end{bew}
 			
+		\section[Starke Grenzwertsätze]{Starke Grenzwertsätze (Konvervenz fast sicher)}
+			\begin{bem}
+				Konvergenz in Wahrscheinlichkeit: Wir müssen $\P(|\overline{X}_n-\E(x)|\ge \varepsilon)$ kontrollieren. \newline
+				Wir wollen nun für die Konvergenz fast sicher
+				\[ \P(|\overline{X}_n-\E(x)|\ge \varepsilon\text{ für }n\ge n_0) \]
+				\[ \Rightarrow \P(\sup_{n\ge n_0} |\overline{X}_n-\E(x)|\ge\varepsilon) \]
+				Abschätzungen erhalten.
+			\end{bem}
 			
+			\begin{satz}[Maximalungleichungen]
+				Sei $X_1,...,X_n,...$ eine Folge von Zufallsvariablen, die unabhängig sind. Sei dann wieder $S_0=0$, $S_n=X_1+...+X_n$. Nun gilt
+				\begin{enumerate}
+					\item Ungleichung von Lévy-Ottaviani: ($a,b>(\ge)0$)				
+					\[ \P(\max_{k\le n}|S_k|\ge a+b)\le\frac{\P(S_n\ge a)}{1-\max\limits_{1\le i\le n}\P(|S_n-S_i|\ge b)} \] 
+					\item Ungleichung von Kolmogorov: Sei $\E(X_i)=0\forall i=1,...,n$, $\V(X_i)<\infty, c>0$. Dann gilt
+					\[ \P(\max_{k\le n}|S_k|\ge c)\le\frac{\V(S_n)}{c^2} \]
+				\end{enumerate}
+			\end{satz}
 			
+			\begin{bew} $ $
+				\begin{enumerate}
+					\item Lévy-Ottaviani:\newline
+						Sei $A_k=[|S_i<a+b, \forall i<k\land |S_k|\ge a+b]$. Nun sind $A_1,...,A_n$ disjunkt. Nun ist
+						\[ [\max\limits_{k\le n}|S_k|\ge a+b]=\bigcup_{k=1}^n A_k \]
+						\[ \Rightarrow \P(\max_{k\le n} |S_n|)=\sum_{k=1}^n \P(A_k) \]
+						\[ \Rightarrow \P(|S_n|\ge a)\ge \P(|S_n|\ge a, \max_{k\le n}|S_k|\ge a+b)=\P\left([|S_n|\ge a\cap\bigcup_{k=1}^nA_k\right)=\sum_{k=1}^{n}\P(A_k\cap[|S_n|\ge a]) \]
+						\[ \ge \sum_{k=1}^n\P(\underbrace{A_k}_{\text{hängt von $X_1,...,X_k$ ab}}\cap[\underbrace{|S_n-S_k|}_{\text{hängt von $X_{k+1},...,X_n$ ab}}\le b) \]
+						\[ \ge \sum_{k=1}^n\P(A_k)\left(1-\underbrace{\P(|S_n-S_k|\ge b)}_{\le \max_{i\le n}\P(|S_n-S_i|\ge b)}\right) \]
+						\[ \ge (1-\max_{i\le n} \P(|S_n-S_i|\ge b))\sum_{k=1}^n A_k \]
+						\arge
+					\item Kolmogorov:\newline
+						Es gilt:
+						\[ \V(S_n)=\E(S_n^2)\ge\E(S_n^2\cdot [\max_{k\le n}|S_n|\ge c]) \]
+						Sei nun $A_k=[|S_i|<c, \forall i=1,...,k-1]$. Damit:
+						\[ \E(S_n^2\cdot [\max_{k\le n}|S_n|\ge c])=\E(S_n^2\cdot\sum_{k=1}^n A_k)=\sum_{k=1}^n\E(S_n^2A_k)=\sum_{k=1}^n\E((S_k+S_n-S_k)^2A_k) \]
+						\[ =\sum_{k=1}^n\left(\E(S_k^2\cdot A_k)+\underbrace{\cancel{2\E(S_kA_k(S_n-S_k))}}_{\text{Ereignisse unabhängig}}+\underbrace{\cancel{\E(A_k(S_n-S_k)^2)}}_{\text{nach unten abschätzen}}\right) \]
+						\[ \ge c^2 c^2\sum_{k=1}^n\P(A_k)=c^2\P(\max_{k\le n}|S_k|\ge c).  \]
+				\end{enumerate}
+			\end{bew}
+			
+			\begin{bem}
+				Nun stellen wir uns die folgende Frage:
+				Wann konvergiert $\sum_{n\in\N}X_n$? Das bedeutet, wann konvergiert $\lim_{n\to\infty}S_n$. \newline
+				Hier wie auch in den folgenden Sätzen sind $X_n$ immer unabhängig. 
+			\end{bem}
+			
+			\begin{satz}[Äquivalenzzatz von Lévy]
+				$\sum_{n\in\N}X_n$ konvergiert genau dann fast sicher, wenn sie in Wahrscheinlichkeit konvergiert. 
+			\end{satz}
+			
+			\begin{bew}
+				Konvergiert die Reihe fast sicher, so konvergiert sie auch in Wahrscheinlichkeit, da wir uns in einem Wahrscheinlichkeitsraum, also einem endlichen Maßraum, befinden und somit den Satz von Egorov anwenden können. Wir betrachten also die andere Richtung:\newline
+				Konvergiere $(S_n)$ in Wahrscheinlichkeit. Dann ist $(S_n)$ Cauchy-Folge in Wahrscheinlichkeit, d.h. 
+				\[ \forall\varepsilon>0\forall\delta>0\exists n_0\in\N\forall n,m\ge n_0: \P(|S_n-S_m|\ge \frac{\varepsilon}{2})<\delta. \]
+				Nun gilt
+				\[ \P(\sup_{n\ge n_0}|S_n-S_{n_0}|>\varepsilon)=\P\left(\bigcup_{N\ge n_0}[\max_{n_0\le n\le N} |S_n-S_{n_0}|>\varepsilon]\right) \]
+				\[ =\lim_{N\to\infty}\P(\max_{n_0\le n\le N}|S_n-S_{n_0}|>\varepsilon)\stackrel{\text{Lévy-Ottaviani}}{\le}\frac{\P(|S_N-S_{n_0}|\ge\frac{\varepsilon}{2})}{1-\max_{n_0\le n\le N}\P(|S_N-S_n|\ge\frac{\varepsilon}{2})}\le \frac{\delta}{1-\delta} \]
+				Sei nun $A_n=[\sup\limits_{m\ge n}|S_m-S_n|>\varepsilon]$. Damit ist
+				\[ \lim_{n\to\infty}\P(A_n)=0 \]
+				wobei natürlich, da $A_n$ fallend ist 
+				\[ \lim_{n\to\infty}\P(A_n)=\P(\bigcup A_n)=\P(|S_m-S_n|>\varepsilon\text{ "`unendlich oft"'})=\P(\limsup S_n-\liminf S_n>\varepsilon) \]
+				\[ \Rightarrow \P(\limsup S_n\neq \liminf S_n)=0 \]
+				womit $S_n$ fast sicher konvergiert. 
+			\end{bew}
+			
+			\begin{satz}[Dreireihensatz von Kolmogorov]
+				$\sum_{n\in\N}$ konvergiert genau dann, wenn die folgenden 3 Bedingungen erfüllt sind: ($\forall \epsilon>0$)
+				\begin{enumerate}[(1)]
+					\item $\sum_{n\in\N}\P(|X_n|>\varepsilon)$
+					\item $\sum_{n\in\N}\E(X_n\cdot[|X_n|\le \varepsilon])$
+					\item $\sum_{n\in\N}\V(X_n\cdot[|X_n|\le \varepsilon])$
+				\end{enumerate}
+			\end{satz}
+			
+			\begin{bew}
+				Zu zeigen: Sind alle $|Y_n|\le c$, $Y_n$ unabhängig, so ist
+				\[ \sum Y_n\text{ konvergiert}\Leftrightarrow\!\!\!\!\not \quad\sum \E(Y_n)\text{ konvergiert}\land \sum \V(Y_n)\text{ konvergiert}. \]
+				Wir zeigen nun nur eine Richtung (von rechts nach links), für die andere fehlt uns noch ein Werkzeug. (siehe Maß 2) 
+			\end{bew}
 			
 			
 			
