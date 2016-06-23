@@ -2098,7 +2098,7 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				\end{defi}
 				
 				\begin{defi}[Gammaverteilung]
-					\[ f(x)=\frac{x^{\alpha-1}\lambda^\alpha}{\Gamma(\alpha)}e^{-\lambda x}, x\ge 0, \alpha 0, \lambda >0 \]
+					\[ f(x)=\frac{x^{\alpha-1}\lambda^\alpha}{\Gamma(\alpha)}e^{-\lambda x}, x\ge 0, \alpha \ge 0, \lambda >0 \]
 					\[ \Gamma(\alpha)=\int_0^\infty x^{\alpha-1}e^{-x}dx \]
 					wobei
 					\[ \Gamma(\alpha+1)=\alpha\Gamma(\alpha) \]
@@ -2739,8 +2739,90 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 				Wir zeigen nun nur eine Richtung (von rechts nach links), für die andere fehlt uns noch ein Werkzeug. (siehe Maß 2) 
 			\end{bew}
 			
+			\begin{lemma}[Kronecker]
+				Für eine Folge $(a_n)\ge 0, a_n\uparrow\infty$, sodass $\sum_{n\in\N}\frac{x_n}{a_n}$ konvergiert, folgt \[\frac{1}{a_n}\sum_{i=1}^n x_i\to 0.\]
+			\end{lemma}
 			
+			\begin{bew}
+				Sei 
+				\[ s_n=\sum_{k=n}^\infty \frac{x_n}{a_n}, \]
+				also $s_n\to 0$. Nun gilt
+				\[ x_n=(s_n-s_{n+1})\cdot a_n \]
+				\[ \Rightarrow  \sum_{i=1}^n x_i=\sum_{i=1}^na_i(s_i-s_{i+1})=\sum_{i=1}^n a_is_i-\sum_{n=2}^{n+1} a_{i-1}s_i=a_1s_1-a_ns_{n+1}+\sum_{i=2}^n(a_i-a_{i-1})s_i \]
+				\[ \Rightarrow\left|\sum_{i=1}^n x_i\right|\le |a_1s_1|+|a_ns_{n+1}|+\sum_{i=2}^n(a_i-a_{i-1})|s_i|\]
+				\[=|a_1s_1|+|a_ns_{n+1}|+\sum_{i=2}^{n_0} (a_i-a_{i-1})|s_i|+\sum_{i=n_0+1}^n(a_i-a_{i-1})|s_i|\le c(\varepsilon)+2a_n\varepsilon  \]
+				\[ \Rightarrow\limsup_{n\to\infty}\left|\frac{1}{a_n}\right|\left|\sum_{i=1}^n x_i\right|\le 2\varepsilon  \]
+			\end{bew}
 			
+			\begin{satz}[Cesaro]
+				Gelte $a_n\to a$. Dann folgt, dass
+				\[ \frac{1}{n}\sum_{i=1}^n a_i\to a. \]
+			\end{satz}
+			
+			\begin{bew}
+				Ana letztes Semester. (glaub ich)
+			\end{bew}
+			
+			\begin{satz}[Starkes Gesetz der großen Zahlen]
+				$ $
+				\begin{enumerate}[(1)]
+					\item Starkes Gesetz von Kolmogorov I:\newline
+						Sei $(X_n)$ eine Folge von unabhängigen Zufallsvariablen, $m_n:=\E(X_n)$, $\sum_{i=1}^{\infty}\frac{\V(X_n)}{n^2}<\infty$. Dann gilt mit Wahrscheinlichkeit 1:
+						\[ \overline{X}_n-\overleftarrow{m}_n=\sum_{i=1}^n\frac{X_i-\E(X_i)}{n}\to 0. \]
+					\item Starkes Gesetz von Kolmogorov II:\newline
+						Seien $(X_n)$ unabhängig identisch verteilt und integrierbar,
+						\[ \E(X_n)=m \text{ endlich}, \]
+						so gilt
+						\[ \overline{X}_n\to m\text{ fast sicher} \]
+				\end{enumerate}
+			\end{satz}
+			
+			\begin{bew}
+				$ $
+				\begin{enumerate}[(1)]
+					\item Gestern haben wir schon gezeigt:
+						\[ Y_n\text{ unabhängig, }\sum_{n\in\N}\V(Y_n)<\infty\Rightarrow\sum_{n\in\N} Y_n\text{ ist konvergent}. \]
+						Nun müssen wir nur noch geschickt einsetzen: 
+						\[ \frac{\V(X_n)}{n^2}=\V\left(\frac{X_n-\E(X_n)}{n}\right) \]
+						\[ \Rightarrow \sum_{n\in\N} \frac{X_n-\E(X_n)}{n}\text{ konvergiert.} \]
+						Nach dem Kronecker-Lemma für 
+						\[ a_n=n, x_n=X_n-\E(X_n), \]
+						so konvergiert
+						\[ \frac{1}{n}\sum_{n\in\N} (X_n-\E(X_n))\to 0, \]
+						also genau die Behauptung. 
+					\item Trick: (Konrad $\to$ abschneiden(winsorize))\newline
+						Seien 
+						\[ Y_n=X_n[|X_n|\le n. \]
+						Nun ist
+						\[ \P(Y_n\neq X_n)=\P(|X_n|>n) \]
+						\[ \Rightarrow \P(Y_n\neq X_n)=\sum_{n=1}^\infty \P(|X_n|>n)=\sum_{n=1}^\infty\P(|X_1|>n)\le \int_0^\infty\P(|X_1|>y)dy=\E(|X_n|)<\infty \]
+						Nach Borel-Cantelli ist $Y_n\neq X_n$ nur für endlich viele $n$, womit $\overline{X}_n$ genau dann konvergiert, wenn $\overline{Y}_n$ konvergiert und im konvergenten Fall die Grenzwerte übereinstimmen.\newline
+						Es gilt:
+						\[ |\E(X_n)-\E(Y_n)|=|\E(X_n\cdot[|X_n|>n])|=|\E(X_1[|X_1|>n])\le\E(|X_1|\cdot[|X_1|>n])\to 0.  \]
+						\[ \Rightarrow \lim_{n\to\infty}\E(Y_n)=\E(X_1). \]
+						Nach dem Satz von Cesaro gilt nun
+						\[ \sum_{n\in \N} \frac{\V(Y_n)}{n^2}\le \sum_{n\in\N}\frac{\E(Y_n^2)}{n^2}=\sum_{n\in\N}\frac{\E(X_n^2\cdot[|X_n|\le n])}{n^2}=\sum_{n=1}^\infty\int \frac{x^2\cdot[|x|\le n]}{n^2}d\P_X(x) \]
+						\[ =\int x^2\sum_{n\in\N}\frac{[|x|\le n]}{n^2}d\P_X(x)=\int x^2\sum_{n\ge |x|} \frac{1}{n^2}d\P_X(x). \]
+						Nun ist
+						\[ \sum_{n=m}\frac{1}{m^2}\le \frac{1}{m^2}+\int_m^\infty\frac{dx}{x^2}=\frac{1}{m^2}+\frac{1}{m}\int x^2\sum_{n=1}^\infty\frac{[|x|\le n]}{n^2}d\P_X(x)=\int x^2\int_{n\ge|x|}\frac{1}{n^2}d\P_X(x)\]
+						\[\le \int x^2(\frac{1}{x^2}+\frac{1}{|x|}d\P_X(x)=1+\E(|X|)<\infty \]
+						womit die Behauptung gezeigt ist. 
+				\end{enumerate}
+			\end{bew}
+			
+			\begin{satz}[Umkehrung des vorigen Satzes]
+				Seien $(X_n)$ (paarweise) unabhängig und identisch verteilt. Ist nun $\lim\limits_{n\to\infty}\overline{X}_n$ endlich (mit positiver Wahrscheinlichkeit), so folgt
+				\[ \E(X_n)\text{ ist endlich.} \]
+				Ist $\E(|X_n|)=\infty$, so konvergiert $\overline{X}_n$ mit Wahrscheinlichkeit 1 nicht.
+			\end{satz}
+			
+			\begin{bew}
+				Ist $\lim\overline{X}_n(\omega)$ endlich ($=a$) so ist
+				\[ a=\lim_{n\to a}\overline{X}_n(\omega)=\lim_{n\to\infty}\frac{n-1}{n}\overline{X}_{n-1}(\omega) \]
+				\[ \Rightarrow 0=\lim_{n\to\infty}\left(\overline{X}_n-\frac{n-1}{n}\overline{X}_{n-1}\right)=\lim_{n\to\infty}\frac{X_n}{n}\]
+				\[ \Rightarrow \sum_{n\in\N}\P(|X_n|>n)=\sum_{n\in\N}\P(|X_n|>n)=\infty \]
+				also ist mit Wahrscheinlichkeit 1 für unendlich viele $n$ $|X_n|>n$ und somit $\frac{|X_n|}{n}>1$, womit der Widerspruch folgt. 
+			\end{bew}
 			
 			
 			
