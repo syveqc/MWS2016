@@ -2825,5 +2825,128 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			\end{bew}
 			
 			
-			
-			
+		\section{Riemann- und Lebesgueintegral}
+			\begin{bem}
+			Wann ist $f:[a,b]\to\R$ Riemann-integrierbar? Wir wissen aus der Analysis:
+			\begin{enumerate} [(1)]
+				\item $f$ muss beschränkt sein.
+				\item Ober/Untersumme:
+					\[ O_n=\sum_{i=1}^{N_n} (t_{n,i}-t_{n,i-1})\cdot\sup f([t_{n,i-1},t_{n,i}]) \]
+					\[ U_n=\sum_{i=1}^{N_n} (t_{n,i}-t_{n,i-1})\cdot\inf f([t_{n,i-1},t_{n,i}]) \]
+					Wir basteln nun Funktionen 
+					\[N_n=2^n, t_{n,i}=a+\frac{b-a}{2^n}\cdot i, i=0,...,2^n\]
+					\[ \overline{f}_n=\sum_{i=1}^{2^n} ]t_{n,i-1},t_{n,i}]()\cdot \sup f([t_{n,i-1}, t_{n,i}]) \]
+					\[ \underline{f}_n=\sum_{i=1}^{2^n} ]t_{n,i-1},t_{n,i}]()\cdot \inf f([t_{n,i-1}, t_{n,i}]) \]
+					Nun ist 
+					\[ \int \overline{f}_nd\lambda= O_n, \int\underline{f}_nd\lambda=U_n. \]
+					Außerdem ist $\overline{f}_n$ fallend und $\underleftarrow{f}_n$ steigend, also 
+					\[\overline{f}_n\ge \overline{f}_{n+1}\ge f\]
+					\[ \underline{f}_n\le \underline{f}_{n+1}\le f.\]
+					Aus den Sätzen von der monotonen Konvergenz wissen wir, dass 
+					\[ \lim_{n\in\N} \overline{f}_n=\overline{f} \text{   und   }\lim_{n\in\N} \underline{f}_n=\underline{f}\]
+					existieren. Außerdem ist 
+					\[ \int \overline{f}d\lambda=\lim_{n\in\N} \int\overline{f}_nd\lambda=\lim_{n\in\N} O_n \]
+					\[ \int \underline{f}d\lambda=\lim_{n\in\N}\int \underline{f}_nd\lambda=\lim_{n\in\N} U_n. \]
+					Damit ist $f$ genau dann Riemann-integrierbar, falls
+					\[ \int \overline{f}d\lambda=\int \overline{f}d\lambda. \]
+					Es gilt jedenfalls
+					\[ \underline{f}\le\overline{f}. \]
+					Damit ist obiges auch äquivalent zu 
+					\[ \overline{f}=\underline{f} \qquad \lambda-\text{fast überall.} \]
+					Wann stimmen sie nun überein? Dazu nehmen wir $x\in(a,b]$. Ist $f$ stetig in $x$, so folgt aus der $\varepsilon-\delta$ Definition von Stetigkeit, dass $\lim_{n\in\N} \overline{f}_n(x)=\lim_{n\in\N}\underline{f}_n(x)$. Da die Endpunkte der Invervalle abzählbar sind, haben sie Lebesgue-Maß 0. Damit erhalten wir insgesamt den folgenden Satz:
+			\end{enumerate}
+		\end{bem}
+		
+		\begin{satz}
+			Eine Funktion $f$ ist im Intervall $[a,b]$ genau dann Riemann-integrierbar, falls die Menge $\mathcal{D}f$ der Unstetigkeitsstellen Lebesguemaß 0 hat,
+			\[ f\text{ Riemann-integrierbar }\Leftrightarrow \lambda(\mathcal{D}f)=0. \]
+			In diesem Fall gilt
+			\[ \int_a^bf(x)dx=\int_{]a,b]} fd\lambda. \]
+		\end{satz}
+		
+		\begin{defi}[Stieltjes-Integral]
+			Das Integral
+			\[ \int fdF \]
+			wird als (Riemann-)Stieltjes-Integral bezeichnet, dabei ist
+			\[ \int fdF=\lim \sum_{i=1}^n (F(t_{n,i})-F(t_{n,i-1}))\cdot f(x_{n,i}). \]
+		\end{defi}
+		
+		\begin{bsp}
+			Wir betrachten
+			\[ \int_0^\infty \frac{1}{x}\sin(x)dx. \]
+			Dieses konvergiert nicht absolut, und es gilt
+			\[ \int_0^\infty \frac{1}{x}\sin(x)dx\neq\int_{[0,\infty[}\frac{1}{x}\sin(x)d\lambda(x). \]
+			Wir können uns allerdings durch Grenzwertbildung retten:
+			\[ \int_0^\infty \frac{1}{x}\sin(x)dx=\lim_{M\to\infty}\int_{]0,M]}\frac{1}{x}\sin(x)d\lambda(x) \]
+		\end{bsp}
+		
+	\chapter{Signierte Maße}
+		\begin{defi}
+			Sei $\mu$ eine Mengenfunktion auf einer Sigmaalgebra $\mf{S}$. $\mu$ heißt signiertes Maß, falls
+			\[ \mu:\mf{S}\to\overline{\R}\text{ und }\mu \text{ sigmaadditiv}. \]
+		\end{defi}
+		
+		\begin{bem}
+			Für die Sigmaadditivität verlangen wir, dass für disjunkte $(A_n)$
+			\[ \mu(\bigcup_{n\in\N}A_n)=\sum_{n\in\N}\mu(A_n) \]
+			die rechte Seite definiert sein muss, also unbedingt konvergiert. Außerdem muss für $A,B\in\mf{S}$
+			\[ A\cap B=\varnothing\Rightarrow \mu(A\cup B)=\mu(A)+\mu(B). \]
+			Somit dürfen nicht $-\infty$ und $\infty$ beide also Funktionswerte auftreten. Nämlich seien $A,B\in\mf{S}$ mit $\mu(A)=+\infty, \mu(B)=-\infty$, dann gilt
+			\[ \mu(B)=\mu(B\setminus A)+\mu(B\cap A) \]
+			\[ \mu(A)=\mu(A\setminus B)+\mu(B\cap A), \]
+			was einen Widerspruch ergibt. Damit darf nur eine Unendlichkeit als Wert auftreten. 
+		\end{bem}
+		
+		\begin{bsp}
+			Für beliebiges Maß $\mu$ ist
+			\[ \nu(A)=\int_A fd\mu \]
+			sigmaadditiv, außerdem gilt
+			\[ \int_Afd\mu=\int_A f_+d\mu-\int_A f_-d\mu, \]
+			wir können also so $\nu$ auch aufteilen in
+			\[ \nu(A)=\nu_+(A)-\nu_-(A), \]
+			wobei aufgrund der quadiintegrierbarkeit von $f$ eines der beiden Integrale endlich sein muss. 
+		\end{bsp}
+		
+		\begin{bem}
+			Man kann jedes signierte Maß als Differenz zweier Maßfunktionen schreiben. Diese Aufteilung ist jedoch nicht eindeutig. Wir können sie jedoch eindeutig machen, indem wir $\mf{S}$ in positive und negative Mengen $P,N$ aufteilen und fordern, dass $\nu_+=0$ auf $N$ und $\nu_-=0$ auf $P$. Solche Maße heißen singulär. Diese Aufteilung ist das Ziel der nächsten Absätze.
+		\end{bem}
+		
+		\begin{defi}
+			Eine Menge $A\in\mf{S}$ heißt
+			\begin{itemize}
+				\item positiv, falls
+				\[ \forall B\subseteq A, B\in\mf{S}: \mu(B)\ge 0 \]
+				\item negativ, falls
+				\[ \forall B\subseteq A, B\in\mf{S}: \mu(B)\le 0 \]
+				\item Nullmenge, falls
+				\[ \forall B\subseteq A, B\in\mf{S}: \mu(B)= 0 \]
+			\end{itemize}
+		\end{defi}
+		
+		\begin{defi}
+			$(N,P)$ heißt Hahn-Zerlegung, falls $N\cap P=\varnothing$, $N\cup P=\Omega$, $P$ positiv, $N$ negativ. 
+		\end{defi}
+		
+		\begin{satz}[Zerlegungssatz von Hahn]
+			Zu jedem signierten Maß gibt es eine Hahn-Zerlegung. Diese ist eindeutig bestimmt bis auf Nullmengen.
+		\end{satz}
+		
+		\begin{bem}
+			Sind $(P,N), (\tilde{P},\tilde{N})$ zwei Hahn-Zerlegungen, dann ist $P\Delta \tilde{P}$ eine Nullmenge. 
+		\end{bem}
+		
+		\begin{lemma}
+			Ist $A\in\mf{S}$ und $\mu(\mf{S})\subseteq ]-\infty,\infty]$, so gibt es eine positive Menge $B\subseteq A$ so, dass 
+			\[ \mu(B)\ge\mu(A). \]
+		\end{lemma}
+		
+		\begin{bew}
+			Wir schnitzen alles weg, was nicht wie eine positive Menge aussieht.
+			\[ A_0=A, n_i=\inf\{n\in\N_0: \exists B\subseteq A_{i-1}, B\in\mf{S},\mu(B)<-2^{-n}\}. \]
+			\[ B_i\subseteq A_{i-1}, \mu(B_i)<-2^{-{n_i}}, A_i=A_{i-1}\setminus B_i. \] 
+			Bilden wir den Durchschnitt aller $A_i$, so erhalten wir im $i-$ten Schritt nur noch Mengen, die mindestens Maß $-2^{-n}$ haben, so erhalten wir die gesuchte Menge $B$. 
+		\end{bew}
+		
+		\begin{bew}[Satz]
+			morgen
+		\end{bew}
