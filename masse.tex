@@ -2947,6 +2947,142 @@ In diesem Abschnitt werden wir uns drei Fragen stellen:
 			Bilden wir den Durchschnitt aller $A_i$, so erhalten wir im $i-$ten Schritt nur noch Mengen, die mindestens Maß $-2^{-n}$ haben, so erhalten wir die gesuchte Menge $B$. 
 		\end{bew}
 		
-		\begin{bew}[Satz]
-			morgen
+		\begin{lemma}
+			Ist $A\in\mf{S}$ und $\mu(\mf{S})\subseteq ]-\infty,\infty]$, so gibt es eine negative Menge $B\subseteq A$ so, dass 
+			\[ \mu(B)\le\mu(A). \]
+		\end{lemma}
+		
+		\begin{bew}
+			Wenn $\mu(A)\ge0$, so ist $B=\varnothing$ die gesuchte Menge. Sei also $\mu(A)<0$. Ist $C\subseteq A$, so ist $\mu(C)<\infty$. Nun können wir den Beweis analog zu den positiven Mengen führen. 
 		\end{bew}
+		
+		\begin{lemma}
+			Sei $(A_n)_{n\in\N}$ mit $A_n\in\mf{S}$ positiv (bzw. negativ). Dann ist 
+			\[ \bigcup_{n\in\N} A_n \text{positiv (bzw. negativ)}. \]
+		\end{lemma}
+		
+		\begin{bew}
+			Wir setzen $B\subseteq \bigcup_{n\in\N} A_n=\bigcup_{n\in\N}C_n$, wobei 
+			\[ C_n:=A_n\setminus\bigcup_{i<n} A_i\subseteq A_n\Rightarrow C_n\text{ positiv}. \]
+			Nun ist 
+			\[ \mu(B)=\mu(B\cap\bigcup_{n\in\N}C_n)=\mu(\bigcup_{n\in\N})=\sum_{n\in\N}\underbrace{\mu(B\cap\C_n)}_{\ge 0}\ge 0. \]
+		\end{bew}
+		
+		\begin{bew}[Hahn-Zerlegung]
+			Folgt aus den obigen Lemmas: Wir setzen:
+			\[ c=\inf\{\mu(A): A\in\mf{S}, \text{negativ}\}. \]
+			Wir zeigen: Es gibt eine negative Menge $N$ mit $\mu(N)=c$, also das Infimum ist ein Minimum. Dazu nehmen wir eine Folge $(c_n)_{n\in\N}$, $c_n>c$, $c_n\downarrow c$. Nun gibt es für jedes $n$ eine negative Menge $N_n$ mit 
+			\[ \mu(N_n)<c_n. \]
+			Sei nun
+			\[ N:=\bigcup_{n\in\N} N_n. \]
+			Dies ist nun eine negative Menge. Außerdem können wir schreiben
+			\[ \mu(N)=\mu(N_n)+\underbrace{\mu(N\setminus N_n)}_{\le0}\le \mu(N_n)\le c_n \]
+			\[ \Rightarrow (\mu(N)\le\lim_{n\to\infty} c_n=c\land \mu(N)\ge c (\text{lt. Def. von c}))\Rightarrow\mu(N)=c\land c>-\infty.  \]
+			Behauptung: $P:=N^c$ ist positiv. Angenommen $P$ wäre nicht positiv, so 
+			\[ \exists A\subseteq P: \mu(A)<0. \]
+			\[ \Rightarrow \exists B\subseteq A \text{ negativ}\land\mu(B)\le\mu(A)<0  \]
+			\[ \Rightarrow N\cup B\text{ negativ}\land \mu(N\cup B)=\mu(N)+\mu(B)=c+\mu(B)<c\;\;\lightning \] 
+			Eindeutigkeit: Seien $(P,N), (\tilde{P},\tilde{N})$ zwei Hahn-Zerlegungen. Wir wollen zeigen
+			\[ \mu(P\Delta\tilde{P})=0. \]
+			Es gilt
+			\[ P\Delta\tilde{P}=(P\setminus\tilde{P})\cup(\tilde{P}\setminus P)=\underbrace{(P\cap\tilde{N})}_{\text{Nullmenge}}\cup\underbrace{(\tilde{P}\cap N)}_{\text{Nullmenge}}. \]
+		\end{bew}
+		
+		\begin{defi}[Jordan-Zerlegung]
+			Sei $\mu$ ein signiertes Maß auf einem Messraum $(\Omega,\mf{S})$, dann heißt $(\mu_+,\mu_-)$ eine Jordan-Zerlegung, wenn $\mu_+, \mu_-$ Maße auf demselben Raum, die singulär zu einander sind ($\mu_+\perp\mu_-$) und
+			\[ \mu=\mu_+-\mu_-. \]
+		\end{defi}
+		
+		\begin{satz}[Zerlegungssatz von Jordan]
+			Für jedes signierte Maß $\mu$ existiert genau eine Jordan-Zerlegung. 
+		\end{satz}
+		
+		\begin{bew}
+			Sei $(P,N)$ eine Hahn-Zerlegung, so setzen wir
+			\[ \mu_+(A)=\mu(A\cap P), \]
+			\[ \mu_-(A)=-\mu(A\cap N). \]
+			Dies sind offensichtlich beides Maße und es gilt klarerweise
+			\[ \mu_+(A)-\mu_-(A)=\mu(A\cap P)+\mu(A\cap N)=\mu(A), \]
+			da $N,P$ disjunkt sind. Außerdem ist
+			\[ \mu_+(N)=\mu_-(P)=0. \]
+			Zu zeigen bleibt also noch die Eindeutigkeit. Sei dazu $(\tilde{\mu}_+, \tilde{\mu}_-)$ eine zweite Jordanzerlegung. Sei dann $\tilde{P}, \tilde{N}:=\tilde{P}^c$ mit
+			\[ \tilde{\mu}_+(\tilde{N})=\tilde{\mu}_-(\tilde{P})=0, \]
+			$\tilde{P}$ positiv, $\tilde{N}$ negativ. Nun gilt
+			\[ \forall A\subseteq\tilde{P}\Rightarrow \mu_-(A)=0 \]
+			\[ \Rightarrow \mu(A)=\tilde\mu_+(A)-\tilde\mu_-(A)=\tilde\mu_+(A)\ge 0.  \]
+			\[ \Rightarrow \tilde{\mu}_+(A)=\mu(\tilde{P}\cap A) \]
+			\[ \Rightarrow \tilde{\mu}_-(A)=-\mu(\tilde{N}\cap A). \]
+			Also:
+			\[ \tilde{\mu}_+(A)=\mu(A\cap\tilde{P})=\mu(A\cap\tilde{P}\cap P)+\mu(A\cap\tilde{P}\cap N)=\mu(A\cap\tilde{P}\cap P)=\mu_+(A) \]
+			\[ \tilde{\mu}_-(A)=\mu_-(A), \]
+			also ist die Jordan-Zerlegung eindeutig. 
+		\end{bew}
+		
+		\begin{bsp}
+			Für welche Zahlen $\alpha$ gibt es ein signiertes Maß $\mu$ auf $(\N,2^\N)$ mit $\mu(\{n\})=(-1)^nn^\alpha$?\newline
+			Nun ist klarerweise
+			\[ P=2\odot \N \]
+			\[ N=2\odot \N\ominus 1. \]
+			Damit es so ein $\mu$ gibt, muss entweder
+			\[ \sum_{n=1}^\infty (2n)^\alpha<\infty\text{ oder }\sum_{n=1}^\infty (2n-1)^\alpha <\infty. \]
+			Dies ist offensichtlich dann der Fall, wenn $\alpha<-1$. 
+		\end{bsp}
+		
+		\begin{bsp}
+			Für welche Zahlen $\alpha$ gibt es auf $([0,1],\mf{B})$ ein $\mu$ mit 
+			\[ \mu([0,x])=x^\alpha\sin(\frac{1}{x})? \]
+			Es gilt
+			\[ \mu(]a,x])=x^\alpha\sin(\frac{1}{x})-a^\alpha\sin(\frac{1}{a}), \]
+			also:
+			\[ \mu(]a,x])=\int_a^x(u^\alpha\sin(\frac{1}{u}))'du=\int_{]a,x]}(\alpha u^{\alpha-1}\sin(\frac{1}{u})-u^{\alpha-2}\cos(\frac{1}{u}))d\lambda(x). \]
+			Wenn ein signiertes Maß existiert, dann ist 
+			\[ \mu(A)=\int_A f'(u)du. \]
+			Damit muss $f'$ integrierbar sein. Damit muss $\alpha>1$.  
+		\end{bsp}
+		
+		\begin{defi}
+			Das Maß $\mu_+$ einer Jordan-Zerlegung heißt die positive Variation, $\mu_-$ die negative Variation. $|\mu|=\mu_++\mu_-$ heißt die Totalvariation.
+		\end{defi}
+		
+		\begin{bsp}
+			Sei $\mu$ ein endliches signiertes Maß auf $(\R,\mf{B})$, bzw auf $(]a,b],\mf{B})$. Dann ist
+			\[ \mu_+,\mu_-\text{ endlich}\Rightarrow \text{Es gibt Verteilungsfunktionen }F_+,F_- \]
+			\[ \Rightarrow \mu_+(]a,b])=F_+(b)-F_+(a) \text{ und } \mu_-(]a,b])=F_-(b)-F_-(a). \]
+			\[ \Rightarrow \mu(]a,b])=F(b)-F(a)\text{ für }F=F_+-F_-. \]
+			Es gibt also so etwas wie eine Verteilungsfunktion für das signierte Maß, die wir als Differenz zweier monotoner, nicht fallender Funktionen ist. 
+		\end{bsp}
+		
+		\begin{defi}
+			$f:[a,b]\to\R$ heißt von beschränkter Variation, falls es nichtfallende Funktionen Funktionen $g,h: [a,b]\to\R$ gibt mit $f=g-h$. 
+		\end{defi}
+		
+		\begin{defi}
+			Die Totalvariation von $f$ auf $a,b$ 
+			\[ V_a^bf=\sup\{\sum_{i=1}^n |f(t_i)-f(t_{i-1})|, n\in\N, a=t_0<t_1<...<t_n=b\}. \]
+		\end{defi}
+		
+		\begin{satz}
+			Es gilt 
+			\[f=f_1-f_2\text{ mit }f_1,f_2\uparrow \Leftrightarrow V_a^bf<\infty. \]
+		\end{satz}
+		
+		\begin{bew}
+			Siehe Übungsaufgabe Analysis. Aber wir machens trotzdem:\newline
+			"`$\Rightarrow$"': Wächst $f$ monoton, so sind in der Definition der Variation alle Summen positiv, also gilt
+			\[ V_a^b f=f(b)-f(a). \]
+			Außerdem
+			\[ V_a^b(f+g)\le V_a^b f+V_a^b g. \]
+			Damit
+			\[ V_a^b f\le V_a^bf_1+V_a^b f_2=f_1(b)-f_1(a)+f_2(b)-f_2(a)<\infty. \]
+			"`$\Leftarrow$"': Umgekehrt setzen wir $f_1(x)=V_a^x f$. Damit gilt
+			\[ a<x<y: V_a^yf=V_a^xf+V_a^y f. \]
+			und
+			\[ V_a^b f\ge |f(b)-f(a)|. \]
+			Nun ist auch $f_2=V_a^x-f$ monoton nicht fallend: 
+			\[ x<y: f_2(y)-f_2(x)=V_a^y f-f(y)=V_a^x f+f(x)=V_x^y f-(f(y)-f(x))\ge|f(y)-f(x)|-(f(y)-f(x))\ge 0. \]
+		\end{bew}
+		
+		\begin{bem}
+			Nun ist 
+			\[ |\mu|(]\tilde{a},\tilde{b}])=V_a^b F, \text{ wenn }\mu(]\tilde{a},\tilde{b}])=F(\tilde{b})-F(\tilde{a}). \]
+		\end{bem}
